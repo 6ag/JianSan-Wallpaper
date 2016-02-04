@@ -7,21 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A57901121C62E31700B89DB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57901111C62E31700B89DB7 /* AppDelegate.swift */; };
-		A57901141C62E31700B89DB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57901131C62E31700B89DB7 /* ViewController.swift */; };
-		A57901171C62E31700B89DB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A57901151C62E31700B89DB7 /* Main.storyboard */; };
+		3CAE6F39219E550FA6FED092 /* Pods_JianSan_Wallpaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F750E282254FD16A770D836D /* Pods_JianSan_Wallpaper.framework */; };
+		A505597B1C6310EA008DB463 /* JFHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505597A1C6310EA008DB463 /* JFHomeTableViewController.swift */; };
+		A505597D1C63110E008DB463 /* JFHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505597C1C63110E008DB463 /* JFHomeCell.swift */; };
+		A505597F1C631156008DB463 /* JFDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505597E1C631156008DB463 /* JFDetailViewController.swift */; };
+		A50559831C6311D2008DB463 /* JFNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50559821C6311D2008DB463 /* JFNetworkTools.swift */; };
+		A50559851C6315E4008DB463 /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50559841C6315E4008DB463 /* api.swift */; };
+		A50559871C631A7C008DB463 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50559861C631A7C008DB463 /* Common.swift */; };
+		A50559991C63320B008DB463 /* VLDContextSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = A50559941C63320B008DB463 /* VLDContextSheet.m */; };
+		A505599A1C63320B008DB463 /* VLDContextSheetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A50559961C63320B008DB463 /* VLDContextSheetItem.m */; };
+		A505599B1C63320B008DB463 /* VLDContextSheetItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = A50559981C63320B008DB463 /* VLDContextSheetItemView.m */; };
 		A57901191C62E31700B89DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57901181C62E31700B89DB7 /* Assets.xcassets */; };
-		A579011C1C62E31700B89DB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A579011A1C62E31700B89DB7 /* LaunchScreen.storyboard */; };
+		A57901391C62E55D00B89DB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57901251C62E55D00B89DB7 /* AppDelegate.swift */; };
+		A579013B1C62EA2900B89DB7 /* JFNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579013A1C62EA2900B89DB7 /* JFNavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		79CFC176D4BB96F10B74A093 /* Pods-JianSan Wallpaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JianSan Wallpaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-JianSan Wallpaper/Pods-JianSan Wallpaper.release.xcconfig"; sourceTree = "<group>"; };
+		8F3A1C8C1A7668E40465CAFE /* Pods-JianSan Wallpaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JianSan Wallpaper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JianSan Wallpaper/Pods-JianSan Wallpaper.debug.xcconfig"; sourceTree = "<group>"; };
+		A505597A1C6310EA008DB463 /* JFHomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFHomeTableViewController.swift; sourceTree = "<group>"; };
+		A505597C1C63110E008DB463 /* JFHomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFHomeCell.swift; sourceTree = "<group>"; };
+		A505597E1C631156008DB463 /* JFDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFDetailViewController.swift; sourceTree = "<group>"; };
+		A50559821C6311D2008DB463 /* JFNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFNetworkTools.swift; sourceTree = "<group>"; };
+		A50559841C6315E4008DB463 /* api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
+		A50559861C631A7C008DB463 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		A50559931C63320B008DB463 /* VLDContextSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLDContextSheet.h; sourceTree = "<group>"; };
+		A50559941C63320B008DB463 /* VLDContextSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLDContextSheet.m; sourceTree = "<group>"; };
+		A50559951C63320B008DB463 /* VLDContextSheetItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLDContextSheetItem.h; sourceTree = "<group>"; };
+		A50559961C63320B008DB463 /* VLDContextSheetItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLDContextSheetItem.m; sourceTree = "<group>"; };
+		A50559971C63320B008DB463 /* VLDContextSheetItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLDContextSheetItemView.h; sourceTree = "<group>"; };
+		A50559981C63320B008DB463 /* VLDContextSheetItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLDContextSheetItemView.m; sourceTree = "<group>"; };
+		A50559A41C6334CE008DB463 /* JianSan-Wallpaper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JianSan-Wallpaper-Bridging-Header.h"; sourceTree = "<group>"; };
 		A579010E1C62E31700B89DB7 /* JianSan Wallpaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JianSan Wallpaper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A57901111C62E31700B89DB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A57901131C62E31700B89DB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A57901161C62E31700B89DB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A57901181C62E31700B89DB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A579011B1C62E31700B89DB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A57901181C62E31700B89DB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		A579011D1C62E31700B89DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A57901251C62E55D00B89DB7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A579013A1C62EA2900B89DB7 /* JFNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFNavigationController.swift; sourceTree = "<group>"; };
+		F750E282254FD16A770D836D /* Pods_JianSan_Wallpaper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JianSan_Wallpaper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +51,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CAE6F39219E550FA6FED092 /* Pods_JianSan_Wallpaper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A50559921C63320B008DB463 /* VLDContextSheet */ = {
+			isa = PBXGroup;
+			children = (
+				A50559931C63320B008DB463 /* VLDContextSheet.h */,
+				A50559941C63320B008DB463 /* VLDContextSheet.m */,
+				A50559951C63320B008DB463 /* VLDContextSheetItem.h */,
+				A50559961C63320B008DB463 /* VLDContextSheetItem.m */,
+				A50559971C63320B008DB463 /* VLDContextSheetItemView.h */,
+				A50559981C63320B008DB463 /* VLDContextSheetItemView.m */,
+			);
+			path = VLDContextSheet;
+			sourceTree = "<group>";
+		};
 		A57901051C62E31600B89DB7 = {
 			isa = PBXGroup;
 			children = (
 				A57901101C62E31700B89DB7 /* JianSan Wallpaper */,
 				A579010F1C62E31700B89DB7 /* Products */,
+				B41015C618EC22AE7E466DE4 /* Pods */,
+				EC8ECE63E49030240D9789D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +92,205 @@
 		A57901101C62E31700B89DB7 /* JianSan Wallpaper */ = {
 			isa = PBXGroup;
 			children = (
-				A57901111C62E31700B89DB7 /* AppDelegate.swift */,
-				A57901131C62E31700B89DB7 /* ViewController.swift */,
-				A57901151C62E31700B89DB7 /* Main.storyboard */,
-				A57901181C62E31700B89DB7 /* Assets.xcassets */,
-				A579011A1C62E31700B89DB7 /* LaunchScreen.storyboard */,
+				A57901381C62E55D00B89DB7 /* Resource */,
+				A57901371C62E55D00B89DB7 /* Other */,
+				A57901231C62E55D00B89DB7 /* Classes */,
 				A579011D1C62E31700B89DB7 /* Info.plist */,
+				A50559A41C6334CE008DB463 /* JianSan-Wallpaper-Bridging-Header.h */,
 			);
 			path = "JianSan Wallpaper";
+			sourceTree = "<group>";
+		};
+		A57901231C62E55D00B89DB7 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A57901241C62E55D00B89DB7 /* Application */,
+				A57901261C62E55D00B89DB7 /* Categories */,
+				A57901361C62E55D00B89DB7 /* Vender */,
+				A57901351C62E55D00B89DB7 /* Utils */,
+				A57901271C62E55D00B89DB7 /* Model */,
+				A57901281C62E55D00B89DB7 /* Module */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A57901241C62E55D00B89DB7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				A57901251C62E55D00B89DB7 /* AppDelegate.swift */,
+				A50559861C631A7C008DB463 /* Common.swift */,
+				A50559841C6315E4008DB463 /* api.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		A57901261C62E55D00B89DB7 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		A57901271C62E55D00B89DB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A57901281C62E55D00B89DB7 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				A579012D1C62E55D00B89DB7 /* Main */,
+				A57901291C62E55D00B89DB7 /* Home */,
+				A57901311C62E55D00B89DB7 /* Profile */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		A57901291C62E55D00B89DB7 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				A579012A1C62E55D00B89DB7 /* Controller */,
+				A579012B1C62E55D00B89DB7 /* Model */,
+				A579012C1C62E55D00B89DB7 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		A579012A1C62E55D00B89DB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A505597A1C6310EA008DB463 /* JFHomeTableViewController.swift */,
+				A505597E1C631156008DB463 /* JFDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A579012B1C62E55D00B89DB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A579012C1C62E55D00B89DB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A505597C1C63110E008DB463 /* JFHomeCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A579012D1C62E55D00B89DB7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				A579012E1C62E55D00B89DB7 /* Controller */,
+				A579012F1C62E55D00B89DB7 /* Model */,
+				A57901301C62E55D00B89DB7 /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A579012E1C62E55D00B89DB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A579013A1C62EA2900B89DB7 /* JFNavigationController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A579012F1C62E55D00B89DB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A57901301C62E55D00B89DB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A57901311C62E55D00B89DB7 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				A57901321C62E55D00B89DB7 /* Controller */,
+				A57901331C62E55D00B89DB7 /* Model */,
+				A57901341C62E55D00B89DB7 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A57901321C62E55D00B89DB7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A57901331C62E55D00B89DB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A57901341C62E55D00B89DB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A57901351C62E55D00B89DB7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A50559821C6311D2008DB463 /* JFNetworkTools.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A57901361C62E55D00B89DB7 /* Vender */ = {
+			isa = PBXGroup;
+			children = (
+				A50559921C63320B008DB463 /* VLDContextSheet */,
+			);
+			path = Vender;
+			sourceTree = "<group>";
+		};
+		A57901371C62E55D00B89DB7 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		A57901381C62E55D00B89DB7 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				A57901181C62E31700B89DB7 /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		B41015C618EC22AE7E466DE4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8F3A1C8C1A7668E40465CAFE /* Pods-JianSan Wallpaper.debug.xcconfig */,
+				79CFC176D4BB96F10B74A093 /* Pods-JianSan Wallpaper.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		EC8ECE63E49030240D9789D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F750E282254FD16A770D836D /* Pods_JianSan_Wallpaper.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +300,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A57901201C62E31700B89DB7 /* Build configuration list for PBXNativeTarget "JianSan Wallpaper" */;
 			buildPhases = (
+				094BBAA56964731DAE889B53 /* Check Pods Manifest.lock */,
 				A579010A1C62E31600B89DB7 /* Sources */,
 				A579010B1C62E31600B89DB7 /* Frameworks */,
 				A579010C1C62E31600B89DB7 /* Resources */,
+				CAAE62798F9F8DDA6672F298 /* Embed Pods Frameworks */,
+				1B6929E6C48D665250C371B7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -90,6 +322,7 @@
 		A57901061C62E31600B89DB7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = JF;
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "六阿哥";
@@ -122,44 +355,80 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A579011C1C62E31700B89DB7 /* LaunchScreen.storyboard in Resources */,
 				A57901191C62E31700B89DB7 /* Assets.xcassets in Resources */,
-				A57901171C62E31700B89DB7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		094BBAA56964731DAE889B53 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		1B6929E6C48D665250C371B7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JianSan Wallpaper/Pods-JianSan Wallpaper-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CAAE62798F9F8DDA6672F298 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-JianSan Wallpaper/Pods-JianSan Wallpaper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A579010A1C62E31600B89DB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A57901141C62E31700B89DB7 /* ViewController.swift in Sources */,
-				A57901121C62E31700B89DB7 /* AppDelegate.swift in Sources */,
+				A505597D1C63110E008DB463 /* JFHomeCell.swift in Sources */,
+				A50559831C6311D2008DB463 /* JFNetworkTools.swift in Sources */,
+				A505597F1C631156008DB463 /* JFDetailViewController.swift in Sources */,
+				A50559871C631A7C008DB463 /* Common.swift in Sources */,
+				A57901391C62E55D00B89DB7 /* AppDelegate.swift in Sources */,
+				A505599B1C63320B008DB463 /* VLDContextSheetItemView.m in Sources */,
+				A579013B1C62EA2900B89DB7 /* JFNavigationController.swift in Sources */,
+				A50559851C6315E4008DB463 /* api.swift in Sources */,
+				A505599A1C63320B008DB463 /* VLDContextSheetItem.m in Sources */,
+				A50559991C63320B008DB463 /* VLDContextSheet.m in Sources */,
+				A505597B1C6310EA008DB463 /* JFHomeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		A57901151C62E31700B89DB7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A57901161C62E31700B89DB7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A579011A1C62E31700B89DB7 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A579011B1C62E31700B89DB7 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A579011E1C62E31700B89DB7 /* Debug */ = {
@@ -245,23 +514,31 @@
 		};
 		A57901211C62E31700B89DB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F3A1C8C1A7668E40465CAFE /* Pods-JianSan Wallpaper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = "JianSan Wallpaper/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.6ag.JianSan-Wallpaper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JianSan Wallpaper/JianSan-Wallpaper-Bridging-Header.h";
 			};
 			name = Debug;
 		};
 		A57901221C62E31700B89DB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79CFC176D4BB96F10B74A093 /* Pods-JianSan Wallpaper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				INFOPLIST_FILE = "JianSan Wallpaper/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.6ag.JianSan-Wallpaper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JianSan Wallpaper/JianSan-Wallpaper-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -284,6 +561,7 @@
 				A57901221C62E31700B89DB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
