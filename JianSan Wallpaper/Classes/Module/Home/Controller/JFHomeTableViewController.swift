@@ -21,6 +21,8 @@ class JFHomeTableViewController: UITableViewController {
         title = "天策 共28张"
         loadData(tc_category)
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "navigation_category")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), style: UIBarButtonItemStyle.Plain, target: self, action: "didTappedLeftMenuItem")
+        
         tableView.backgroundColor = UIColor.blackColor()
         tableView.rowHeight = 250;
         tableView.registerClass(JFHomeCell.self, forCellReuseIdentifier: identifier)
@@ -29,6 +31,10 @@ class JFHomeTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.sharedApplication().statusBarHidden = false
+    }
+    
+    @objc private func didTappedLeftMenuItem() {
+        print("点击了菜单")
     }
     
     private func loadData(url: String) {
