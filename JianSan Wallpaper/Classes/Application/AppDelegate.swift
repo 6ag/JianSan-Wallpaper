@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,9 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        setupGlobalStyle()
         loadViewController()
         
         return true
+    }
+    
+    func setupGlobalStyle() {
+        SVProgressHUD.setForegroundColor(UIColor.whiteColor())
+        SVProgressHUD.setBackgroundColor(UIColor(white: 0.1, alpha: 0.8))
+        SVProgressHUD.setFont(UIFont.boldSystemFontOfSize(16))
     }
     
     func loadViewController() {

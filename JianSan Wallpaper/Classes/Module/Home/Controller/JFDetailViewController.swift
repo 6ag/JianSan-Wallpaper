@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class JFDetailViewController: UIViewController,VLDContextSheetDelegate {
     
@@ -50,10 +51,18 @@ class JFDetailViewController: UIViewController,VLDContextSheetDelegate {
             }
             break
         case "下载":
-            
+            UIImageWriteToSavedPhotosAlbum(image!, self, "image:didFinishSavingWithError:contextInfo:", UnsafeMutablePointer())
             break
         default:
             break
+        }
+    }
+    
+    func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: AnyObject) {
+        if error != nil {
+            SVProgressHUD.showErrorWithStatus("保存失败")
+        } else {
+            SVProgressHUD.showSuccessWithStatus("保存成功")
         }
     }
     

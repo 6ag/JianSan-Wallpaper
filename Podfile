@@ -8,5 +8,6 @@ pod 'MJRefresh'
 pod 'SnapKit'
 pod 'Alamofire'
 pod 'YYWebImage'
+pod 'SVProgressHUD'
 end
 

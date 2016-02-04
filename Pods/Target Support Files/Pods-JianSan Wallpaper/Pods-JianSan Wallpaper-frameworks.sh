@@ -86,12 +86,14 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-JianSan Wallpaper/Alamofire.framework"
   install_framework "Pods-JianSan Wallpaper/MJRefresh.framework"
+  install_framework "Pods-JianSan Wallpaper/SVProgressHUD.framework"
   install_framework "Pods-JianSan Wallpaper/SnapKit.framework"
   install_framework "Pods-JianSan Wallpaper/YYWebImage.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-JianSan Wallpaper/Alamofire.framework"
   install_framework "Pods-JianSan Wallpaper/MJRefresh.framework"
+  install_framework "Pods-JianSan Wallpaper/SVProgressHUD.framework"
   install_framework "Pods-JianSan Wallpaper/SnapKit.framework"
   install_framework "Pods-JianSan Wallpaper/YYWebImage.framework"
 fi
