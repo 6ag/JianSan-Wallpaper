@@ -24,9 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setupGlobalStyle() {
+        
+        UIApplication.sharedApplication().statusBarHidden = false
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
         SVProgressHUD.setForegroundColor(UIColor.whiteColor())
         SVProgressHUD.setBackgroundColor(UIColor(white: 0.1, alpha: 0.8))
         SVProgressHUD.setFont(UIFont.boldSystemFontOfSize(16))
+        
     }
     
     func loadViewController() {

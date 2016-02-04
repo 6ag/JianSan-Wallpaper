@@ -26,6 +26,11 @@ class JFDetailViewController: UIViewController,VLDContextSheetDelegate {
         view.addGestureRecognizer(gestureRecognizer)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.sharedApplication().statusBarHidden = true
+    }
+    
     @objc private func longPressed(gestureRecognizer: UILongPressGestureRecognizer) {
         
         if gestureRecognizer.state == .Began {

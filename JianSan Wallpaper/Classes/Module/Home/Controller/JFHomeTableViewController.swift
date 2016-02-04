@@ -26,6 +26,11 @@ class JFHomeTableViewController: UITableViewController {
         tableView.registerClass(JFHomeCell.self, forCellReuseIdentifier: identifier)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.sharedApplication().statusBarHidden = false
+    }
+    
     private func loadData(url: String) {
         JFNetworkTools.shareNetworkTools.get(url) { (success, result, error) -> () in
             if success {
