@@ -86,7 +86,6 @@ class JFHomeTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("xxxxxx")
         let detailVc = JFDetailViewController()
         detailVc.image = (tableView.cellForRowAtIndexPath(indexPath) as? JFHomeCell)?.imageView?.image
         dispatch_async(dispatch_get_main_queue()) { () -> Void in
