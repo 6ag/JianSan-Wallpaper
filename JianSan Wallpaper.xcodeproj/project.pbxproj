@@ -14,12 +14,11 @@
 		A50559831C6311D2008DB463 /* JFNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50559821C6311D2008DB463 /* JFNetworkTools.swift */; };
 		A50559851C6315E4008DB463 /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50559841C6315E4008DB463 /* api.swift */; };
 		A50559871C631A7C008DB463 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50559861C631A7C008DB463 /* Common.swift */; };
-		A50559991C63320B008DB463 /* VLDContextSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = A50559941C63320B008DB463 /* VLDContextSheet.m */; };
-		A505599A1C63320B008DB463 /* VLDContextSheetItem.m in Sources */ = {isa = PBXBuildFile; fileRef = A50559961C63320B008DB463 /* VLDContextSheetItem.m */; };
-		A505599B1C63320B008DB463 /* VLDContextSheetItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = A50559981C63320B008DB463 /* VLDContextSheetItemView.m */; };
-		A57901191C62E31700B89DB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A57901181C62E31700B89DB7 /* Assets.xcassets */; };
 		A57901391C62E55D00B89DB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57901251C62E55D00B89DB7 /* AppDelegate.swift */; };
 		A579013B1C62EA2900B89DB7 /* JFNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A579013A1C62EA2900B89DB7 /* JFNavigationController.swift */; };
+		B2015D0E1CCA0F34000BC6A0 /* JFContextSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2015D0D1CCA0F34000BC6A0 /* JFContextSheet.swift */; };
+		B2015D101CCA0F4F000BC6A0 /* JFContextItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2015D0F1CCA0F4F000BC6A0 /* JFContextItem.swift */; };
+		B2015D121CCA131D000BC6A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2015D111CCA131D000BC6A0 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,18 +30,14 @@
 		A50559821C6311D2008DB463 /* JFNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFNetworkTools.swift; sourceTree = "<group>"; };
 		A50559841C6315E4008DB463 /* api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
 		A50559861C631A7C008DB463 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		A50559931C63320B008DB463 /* VLDContextSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLDContextSheet.h; sourceTree = "<group>"; };
-		A50559941C63320B008DB463 /* VLDContextSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLDContextSheet.m; sourceTree = "<group>"; };
-		A50559951C63320B008DB463 /* VLDContextSheetItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLDContextSheetItem.h; sourceTree = "<group>"; };
-		A50559961C63320B008DB463 /* VLDContextSheetItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLDContextSheetItem.m; sourceTree = "<group>"; };
-		A50559971C63320B008DB463 /* VLDContextSheetItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VLDContextSheetItemView.h; sourceTree = "<group>"; };
-		A50559981C63320B008DB463 /* VLDContextSheetItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VLDContextSheetItemView.m; sourceTree = "<group>"; };
 		A50559A41C6334CE008DB463 /* JianSan-Wallpaper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JianSan-Wallpaper-Bridging-Header.h"; sourceTree = "<group>"; };
 		A579010E1C62E31700B89DB7 /* JianSan Wallpaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JianSan Wallpaper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A57901181C62E31700B89DB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
 		A579011D1C62E31700B89DB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A57901251C62E55D00B89DB7 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A579013A1C62EA2900B89DB7 /* JFNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFNavigationController.swift; sourceTree = "<group>"; };
+		B2015D0D1CCA0F34000BC6A0 /* JFContextSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFContextSheet.swift; sourceTree = "<group>"; };
+		B2015D0F1CCA0F4F000BC6A0 /* JFContextItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFContextItem.swift; sourceTree = "<group>"; };
+		B2015D111CCA131D000BC6A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F750E282254FD16A770D836D /* Pods_JianSan_Wallpaper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JianSan_Wallpaper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -58,19 +53,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A50559921C63320B008DB463 /* VLDContextSheet */ = {
-			isa = PBXGroup;
-			children = (
-				A50559931C63320B008DB463 /* VLDContextSheet.h */,
-				A50559941C63320B008DB463 /* VLDContextSheet.m */,
-				A50559951C63320B008DB463 /* VLDContextSheetItem.h */,
-				A50559961C63320B008DB463 /* VLDContextSheetItem.m */,
-				A50559971C63320B008DB463 /* VLDContextSheetItemView.h */,
-				A50559981C63320B008DB463 /* VLDContextSheetItemView.m */,
-			);
-			path = VLDContextSheet;
-			sourceTree = "<group>";
-		};
 		A57901051C62E31600B89DB7 = {
 			isa = PBXGroup;
 			children = (
@@ -92,11 +74,10 @@
 		A57901101C62E31700B89DB7 /* JianSan Wallpaper */ = {
 			isa = PBXGroup;
 			children = (
-				A57901381C62E55D00B89DB7 /* Resource */,
-				A57901371C62E55D00B89DB7 /* Other */,
-				A57901231C62E55D00B89DB7 /* Classes */,
 				A579011D1C62E31700B89DB7 /* Info.plist */,
 				A50559A41C6334CE008DB463 /* JianSan-Wallpaper-Bridging-Header.h */,
+				B2015D111CCA131D000BC6A0 /* Assets.xcassets */,
+				A57901231C62E55D00B89DB7 /* Classes */,
 			);
 			path = "JianSan Wallpaper";
 			sourceTree = "<group>";
@@ -256,24 +237,18 @@
 		A57901361C62E55D00B89DB7 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				A50559921C63320B008DB463 /* VLDContextSheet */,
+				B2015D0C1CCA0F0F000BC6A0 /* JFContextSheet */,
 			);
 			path = Vender;
 			sourceTree = "<group>";
 		};
-		A57901371C62E55D00B89DB7 /* Other */ = {
+		B2015D0C1CCA0F0F000BC6A0 /* JFContextSheet */ = {
 			isa = PBXGroup;
 			children = (
+				B2015D0D1CCA0F34000BC6A0 /* JFContextSheet.swift */,
+				B2015D0F1CCA0F4F000BC6A0 /* JFContextItem.swift */,
 			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		A57901381C62E55D00B89DB7 /* Resource */ = {
-			isa = PBXGroup;
-			children = (
-				A57901181C62E31700B89DB7 /* Assets.xcassets */,
-			);
-			path = Resource;
+			path = JFContextSheet;
 			sourceTree = "<group>";
 		};
 		B41015C618EC22AE7E466DE4 /* Pods */ = {
@@ -355,7 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A57901191C62E31700B89DB7 /* Assets.xcassets in Resources */,
+				B2015D121CCA131D000BC6A0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,14 +391,13 @@
 			files = (
 				A505597D1C63110E008DB463 /* JFHomeCell.swift in Sources */,
 				A50559831C6311D2008DB463 /* JFNetworkTools.swift in Sources */,
+				B2015D0E1CCA0F34000BC6A0 /* JFContextSheet.swift in Sources */,
 				A505597F1C631156008DB463 /* JFDetailViewController.swift in Sources */,
+				B2015D101CCA0F4F000BC6A0 /* JFContextItem.swift in Sources */,
 				A50559871C631A7C008DB463 /* Common.swift in Sources */,
 				A57901391C62E55D00B89DB7 /* AppDelegate.swift in Sources */,
-				A505599B1C63320B008DB463 /* VLDContextSheetItemView.m in Sources */,
 				A579013B1C62EA2900B89DB7 /* JFNavigationController.swift in Sources */,
 				A50559851C6315E4008DB463 /* api.swift in Sources */,
-				A505599A1C63320B008DB463 /* VLDContextSheetItem.m in Sources */,
-				A50559991C63320B008DB463 /* VLDContextSheet.m in Sources */,
 				A505597B1C6310EA008DB463 /* JFHomeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

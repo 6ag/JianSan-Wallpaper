@@ -9,6 +9,4 @@
 #ifndef JianSan_Wallpaper_Bridging_Header_h
 #define JianSan_Wallpaper_Bridging_Header_h
 
-#import "VLDContextSheet.h"
-
 #endif /* JianSan_Wallpaper_Bridging_Header_h */

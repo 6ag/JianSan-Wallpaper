@@ -21,7 +21,7 @@ class JFHomeTableViewController: UITableViewController {
         title = "天策 共28张"
         loadData(tc_category)
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "navigation_category")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), style: UIBarButtonItemStyle.Plain, target: self, action: "didTappedLeftMenuItem")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "navigation_category")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(didTappedLeftMenuItem))
         
         tableView.backgroundColor = UIColor.blackColor()
         tableView.rowHeight = 250;
@@ -30,7 +30,7 @@ class JFHomeTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        UIApplication.sharedApplication().statusBarHidden = false
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
     }
     
     @objc private func didTappedLeftMenuItem() {
@@ -88,9 +88,7 @@ class JFHomeTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let detailVc = JFDetailViewController()
         detailVc.image = (tableView.cellForRowAtIndexPath(indexPath) as? JFHomeCell)?.imageView?.image
-        dispatch_async(dispatch_get_main_queue()) { () -> Void in
-            self.presentViewController(detailVc, animated: true, completion: nil)
-        }
+        presentViewController(detailVc, animated: true, completion: nil)
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
