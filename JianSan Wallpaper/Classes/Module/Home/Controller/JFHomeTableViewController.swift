@@ -19,7 +19,8 @@ class JFHomeTableViewController: UITableViewController, JFCategoriesMenuViewDele
     /// 当前分类
     var currentItem: JFCategoryModel? {
         didSet {
-            tableView.mj_header.beginRefreshing()
+//            tableView.mj_header.beginRefreshing()
+            updateData()
         }
     }
     
@@ -33,11 +34,11 @@ class JFHomeTableViewController: UITableViewController, JFCategoriesMenuViewDele
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "navigation_category")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(didTappedLeftMenuItem))
         
-        tableView.backgroundColor = UIColor.blackColor()
+        tableView.backgroundColor = UIColor(red:0.063,  green:0.063,  blue:0.063, alpha:1)
         tableView.rowHeight = 250;
         tableView.registerClass(JFHomeCell.self, forCellReuseIdentifier: identifier)
         
-        tableView.mj_header = MJRefreshHeader(refreshingTarget: self, refreshingAction: #selector(updateData))
+//        tableView.mj_header = MJRefreshHeader(refreshingTarget: self, refreshingAction: #selector(JFHomeTableViewController.updateData))
         currentItem = JFCategoryModel(dict: ["iconName" : itemIcons[0], "title" : itemTitles[0], "url" : itemUrls[0]])
     }
     
@@ -93,7 +94,7 @@ class JFHomeTableViewController: UITableViewController, JFCategoriesMenuViewDele
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! JFHomeCell
-        cell.layer.borderColor = UIColor.blackColor().CGColor
+        cell.layer.borderColor = UIColor(red:0.063,  green:0.063,  blue:0.063, alpha:1).CGColor
         cell.layer.borderWidth = 5
         cell.imageView?.yy_setImageWithURL(NSURL(string: "\(imageURL)\(array![indexPath.row]).png"), placeholder: UIImage(named: "temp_image"))
         print("\(imageURL)\(array![indexPath.row]).png")

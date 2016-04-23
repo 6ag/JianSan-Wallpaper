@@ -1,9 +1,15 @@
 PODS:
-  - Alamofire (3.1.5)
+  - Alamofire (3.3.1)
   - MJRefresh (3.1.0)
-  - SnapKit (0.19.1)
-  - SVProgressHUD (1.1.3)
-  - YYWebImage (0.9.13)
+  - SnapKit (0.20.0)
+  - SVProgressHUD (2.0.3)
+  - YYCache (1.0.3)
+  - YYImage (1.0.1):
+    - YYImage/Core (= 1.0.1)
+  - YYImage/Core (1.0.1)
+  - YYWebImage (1.0.3):
+    - YYCache
+    - YYImage
 
 DEPENDENCIES:
   - Alamofire
@@ -13,10 +19,12 @@ DEPENDENCIES:
   - YYWebImage
 
 SPEC CHECKSUMS:
-  Alamofire: 5f730ba29fd113b7ddd71c1e65d0c630acf5d7b0
+  Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
-  SnapKit: eff58d6e3451bf2f482db2eccf86aecf371dc62d
-  SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
-  YYWebImage: c0825e5595bac2e972cdce0f305a7cd04f3185f7
+  SnapKit: 5fce3c1bbbf1fbd31de9aa92f33eb9fa03f15650
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  YYCache: 282f35b5b0990833d0b7a06d864a87141a021da2
+  YYImage: b41b45bc5f32bfcdf67bdfb9c09da9e9832357c0
+  YYWebImage: 8da75a611fd0d2e0f58a273f9ca0bc731614cb0d
 
 COCOAPODS: 0.39.0
