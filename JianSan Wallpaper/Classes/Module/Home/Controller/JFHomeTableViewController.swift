@@ -132,6 +132,7 @@ class JFHomeTableViewController: UITableViewController, JFCategoriesMenuViewDele
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         let detailVc = JFDetailViewController()
         detailVc.image = (tableView.cellForRowAtIndexPath(indexPath) as? JFHomeCell)?.imageView?.image
         presentViewController(detailVc, animated: true, completion: nil)

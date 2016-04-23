@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A7DEBF0F70C038C813E395FE'
+               BlueprintIdentifier = 'D118CDA444FA0DB0608B3F15'
                BlueprintName = 'Pods-JianSan Wallpaper'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_JianSan_Wallpaper.framework'>

@@ -30,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SVProgressHUD.setForegroundColor(UIColor.whiteColor())
         SVProgressHUD.setBackgroundColor(UIColor(white: 0.1, alpha: 0.8))
         SVProgressHUD.setFont(UIFont.boldSystemFontOfSize(16))
+        SVProgressHUD.setDefaultStyle(SVProgressHUDStyle.Custom)
+        SVProgressHUD.setMinimumDismissTimeInterval(1.0)
         
     }
     
