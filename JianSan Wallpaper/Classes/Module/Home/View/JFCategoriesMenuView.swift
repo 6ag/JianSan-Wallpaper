@@ -8,12 +8,52 @@
 
 import UIKit
 
+protocol JFCategoriesMenuViewDelegate {
+    func didTappedItem(item: JFCategoryModel)
+}
+
 class JFCategoriesMenuView: UIView {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    var delegate: JFCategoriesMenuViewDelegate?
+    
+    /// 分类模型
+    var items: Array<JFCategoryModel>!
+    
+    // MARK: - 初始化
+    init(items: Array<JFCategoryModel>) {
+        super.init(frame: SCREEN_BOUNDS)
+        self.items = items
+        self.alpha = 0.02
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedShadowView(_:))))
+        UIApplication.sharedApplication().keyWindow?.addSubview(self)
         
-        prepareUI()
+        let width: CGFloat = 50
+        let height: CGFloat = 50
+        let margin: CGFloat = 20
+        
+        menuScrollView.contentSize = CGSize(width: 0, height: CGFloat(items.count) * (height + margin) + margin)
+        
+        let blur = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let effectView = UIVisualEffectView(effect: blur)
+        effectView.frame = CGRect(x: 0, y: -500, width: 95, height: menuScrollView.contentSize.height + 1000)
+        menuScrollView.addSubview(effectView)
+        
+        for (index, item) in items.enumerate() {
+            let itemButton = JFCategoryButton(type: UIButtonType.Custom)
+            itemButton.setImage(UIImage(named: item.iconName!), forState: UIControlState.Normal)
+            itemButton.title = item.title
+            itemButton.url = item.url
+            itemButton.tag = index + 10
+            itemButton.alpha = 0.0
+            itemButton.layer.cornerRadius = 25
+            itemButton.layer.masksToBounds = true
+            itemButton.addTarget(self, action: #selector(didTappedItemButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+            itemButton.backgroundColor = UIColor(white: 0.4, alpha: 0.95)
+            itemButton.frame = CGRect(x: 22.5, y: CGFloat(index) * (height + margin) + margin, width: width, height: height)
+            menuScrollView.addSubview(itemButton)
+        }
+        
+        UIApplication.sharedApplication().keyWindow?.addSubview(menuScrollView)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -21,24 +61,27 @@ class JFCategoriesMenuView: UIView {
     }
     
     /**
-     布局视图
+     分类按钮点击事件、回调被点击的分类模型
      */
-    func prepareUI() -> Void {
-        self.alpha = 0.02
-        UIApplication.sharedApplication().keyWindow?.addSubview(shadowView)
-        UIApplication.sharedApplication().keyWindow?.addSubview(menuScrollView)
-        UIApplication.sharedApplication().keyWindow?.addSubview(self)
+    func didTappedItemButton(button: JFCategoryButton) -> Void {
+        delegate?.didTappedItem(items[button.tag - 10])
+        dismiss()
     }
     
     /**
      显示
      */
     func show() -> Void {
-        UIView.animateWithDuration(0.25, animations: { 
+        UIView.animateWithDuration(0.25, animations: {
             self.menuScrollView.transform = CGAffineTransformTranslate(self.menuScrollView.transform, self.menuScrollView.frame.width, 0)
-            }) { (_) in
-                // 动画弹出分类按钮
-                
+        }) { (_) in
+            for index in 0..<self.items.count {
+                UIView.animateWithDuration(0.25, animations: {
+                    let button = self.menuScrollView.viewWithTag(index + 10) as? JFCategoryButton
+                    button?.alpha = 1.0
+                })
+            }
+            
         }
     }
     
@@ -46,12 +89,11 @@ class JFCategoriesMenuView: UIView {
      隐藏
      */
     func dismiss() -> Void {
-        UIView.animateWithDuration(0.25, animations: { 
+        UIView.animateWithDuration(0.25, animations: {
             self.menuScrollView.transform = CGAffineTransformTranslate(self.menuScrollView.transform, -self.menuScrollView.frame.width, 0)
-            }) { (_) in
-                self.removeFromSuperview()
-                self.menuScrollView.removeFromSuperview()
-                self.shadowView.removeFromSuperview()
+        }) { (_) in
+            self.removeFromSuperview()
+            self.menuScrollView.removeFromSuperview()
         }
     }
     
@@ -63,24 +105,9 @@ class JFCategoriesMenuView: UIView {
     }
     
     // MARK: - 懒加载
-    /// 透明背景遮罩
-    lazy var shadowView: UIView = {
-        let shadowView = UIView(frame: SCREEN_BOUNDS)
-        shadowView.backgroundColor = UIColor(white: 0.0, alpha: 0.02)
-        shadowView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedShadowView(_:))))
-        return shadowView
-    }()
-    
     /// 菜单滚动条
-    lazy var menuScrollView: UIView = {
+    lazy var menuScrollView: UIScrollView = {
         let menuScrollView = UIScrollView(frame: CGRect(x: -95, y: 0, width: 95, height: SCREEN_HEIGHT))
-        
-        // 添加毛玻璃效果
-        let blur = UIBlurEffect(style: UIBlurEffectStyle.Light)
-        let effectView = UIVisualEffectView(effect: blur)
-        effectView.frame = CGRect(x: 0, y: 0, width: 95, height: SCREEN_HEIGHT)
-        menuScrollView.addSubview(effectView)
-        
         menuScrollView.showsVerticalScrollIndicator = false
         return menuScrollView
     }()

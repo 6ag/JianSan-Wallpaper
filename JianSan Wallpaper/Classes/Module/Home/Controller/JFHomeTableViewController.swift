@@ -8,24 +8,37 @@
 
 import UIKit
 import YYWebImage
+import MJRefresh
 
-class JFHomeTableViewController: UITableViewController {
+class JFHomeTableViewController: UITableViewController, JFCategoriesMenuViewDelegate {
     
     let identifier = "homeCell"
     
     var array: [String]?
     
+    /// 当前分类
+    var currentItem: JFCategoryModel? {
+        didSet {
+            tableView.mj_header.beginRefreshing()
+        }
+    }
+    
+    // 写死的数据
+    let itemIcons = ["category_icon_tc", "category_icon_cy", "category_icon_wh", "category_icon_cj", "category_icon_tm", "category_icon_qx", "category_icon_sl", "category_icon_wd", "category_icon_mj", "category_icon_gb", "category_icon_cyun", "category_icon_cg"]
+    let itemTitles = ["天策", "纯阳", "万花", "藏剑", "唐门", "七秀", "少林", "五毒", "明教", "丐帮", "苍云", "长歌"]
+    let itemUrls = [tc_category, cy_category, wh_category, cj_category, tm_category, qx_category, sl_category, wd_category, mj_category, gb_category, cyun_category, cg_category]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "天策 共28张"
-        loadData(tc_category)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "navigation_category")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(didTappedLeftMenuItem))
         
         tableView.backgroundColor = UIColor.blackColor()
         tableView.rowHeight = 250;
         tableView.registerClass(JFHomeCell.self, forCellReuseIdentifier: identifier)
+        
+        tableView.mj_header = MJRefreshHeader(refreshingTarget: self, refreshingAction: #selector(updateData))
+        currentItem = JFCategoryModel(dict: ["iconName" : itemIcons[0], "title" : itemTitles[0], "url" : itemUrls[0]])
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -33,16 +46,37 @@ class JFHomeTableViewController: UITableViewController {
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
     }
     
+    /**
+     左上角按钮事件
+     */
     @objc private func didTappedLeftMenuItem() {
-        print("点击了菜单")
-        let categoriesMenuView = JFCategoriesMenuView()
+        
+        // 转模型
+        var items: [JFCategoryModel] = []
+        for index in 0..<itemIcons.count {
+            let item = JFCategoryModel(dict: ["iconName" : itemIcons[index], "title" : itemTitles[index], "url" : itemUrls[index]])
+            items.append(item)
+        }
+        
+        // 创建分类视图、并显示
+        let categoriesMenuView = JFCategoriesMenuView(items: items)
+        categoriesMenuView.delegate = self
         categoriesMenuView.show()
     }
     
-    private func loadData(url: String) {
-        JFNetworkTools.shareNetworkTools.get(url) { (success, result, error) -> () in
+    // MARK: - JFCategoriesMenuViewDelegate
+    func didTappedItem(item: JFCategoryModel) {
+        currentItem = item
+    }
+    
+    /**
+     加载数据
+     */
+    @objc private func updateData() {
+        JFNetworkTools.shareNetworkTools.get(currentItem!.url!) { (success, result, error) -> () in
             if success {
                 self.array = result
+                self.title = "\(self.currentItem!.title!) \(result!.count) 张"
                 self.tableView.reloadData()
             }
         }

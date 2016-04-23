@@ -20,6 +20,8 @@
 		B2015D101CCA0F4F000BC6A0 /* JFContextItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2015D0F1CCA0F4F000BC6A0 /* JFContextItem.swift */; };
 		B2015D121CCA131D000BC6A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2015D111CCA131D000BC6A0 /* Assets.xcassets */; };
 		B23923CE1CCB403500D232F1 /* JFCategoriesMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23923CD1CCB403500D232F1 /* JFCategoriesMenuView.swift */; };
+		B23923D01CCB758800D232F1 /* JFCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23923CF1CCB758800D232F1 /* JFCategoryButton.swift */; };
+		B23923D21CCB75DC00D232F1 /* JFCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23923D11CCB75DC00D232F1 /* JFCategoryModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		B2015D0F1CCA0F4F000BC6A0 /* JFContextItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFContextItem.swift; sourceTree = "<group>"; };
 		B2015D111CCA131D000BC6A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B23923CD1CCB403500D232F1 /* JFCategoriesMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCategoriesMenuView.swift; sourceTree = "<group>"; };
+		B23923CF1CCB758800D232F1 /* JFCategoryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCategoryButton.swift; sourceTree = "<group>"; };
+		B23923D11CCB75DC00D232F1 /* JFCategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JFCategoryModel.swift; path = "JianSan Wallpaper/Classes/Module/Home/View/JFCategoryModel.swift"; sourceTree = SOURCE_ROOT; };
 		F750E282254FD16A770D836D /* Pods_JianSan_Wallpaper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JianSan_Wallpaper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,6 +157,7 @@
 		A579012B1C62E55D00B89DB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B23923D11CCB75DC00D232F1 /* JFCategoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			children = (
 				A505597C1C63110E008DB463 /* JFHomeCell.swift */,
 				B23923CD1CCB403500D232F1 /* JFCategoriesMenuView.swift */,
+				B23923CF1CCB758800D232F1 /* JFCategoryButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -394,7 +400,9 @@
 			files = (
 				A505597D1C63110E008DB463 /* JFHomeCell.swift in Sources */,
 				A50559831C6311D2008DB463 /* JFNetworkTools.swift in Sources */,
+				B23923D21CCB75DC00D232F1 /* JFCategoryModel.swift in Sources */,
 				B23923CE1CCB403500D232F1 /* JFCategoriesMenuView.swift in Sources */,
+				B23923D01CCB758800D232F1 /* JFCategoryButton.swift in Sources */,
 				B2015D0E1CCA0F34000BC6A0 /* JFContextSheet.swift in Sources */,
 				A505597F1C631156008DB463 /* JFDetailViewController.swift in Sources */,
 				B2015D101CCA0F4F000BC6A0 /* JFContextItem.swift in Sources */,
