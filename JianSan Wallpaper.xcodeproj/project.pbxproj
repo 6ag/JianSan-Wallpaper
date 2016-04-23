@@ -19,6 +19,7 @@
 		B2015D0E1CCA0F34000BC6A0 /* JFContextSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2015D0D1CCA0F34000BC6A0 /* JFContextSheet.swift */; };
 		B2015D101CCA0F4F000BC6A0 /* JFContextItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2015D0F1CCA0F4F000BC6A0 /* JFContextItem.swift */; };
 		B2015D121CCA131D000BC6A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2015D111CCA131D000BC6A0 /* Assets.xcassets */; };
+		B23923CE1CCB403500D232F1 /* JFCategoriesMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23923CD1CCB403500D232F1 /* JFCategoriesMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		B2015D0D1CCA0F34000BC6A0 /* JFContextSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFContextSheet.swift; sourceTree = "<group>"; };
 		B2015D0F1CCA0F4F000BC6A0 /* JFContextItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFContextItem.swift; sourceTree = "<group>"; };
 		B2015D111CCA131D000BC6A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B23923CD1CCB403500D232F1 /* JFCategoriesMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCategoriesMenuView.swift; sourceTree = "<group>"; };
 		F750E282254FD16A770D836D /* Pods_JianSan_Wallpaper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JianSan_Wallpaper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				A505597C1C63110E008DB463 /* JFHomeCell.swift */,
+				B23923CD1CCB403500D232F1 /* JFCategoriesMenuView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 			files = (
 				A505597D1C63110E008DB463 /* JFHomeCell.swift in Sources */,
 				A50559831C6311D2008DB463 /* JFNetworkTools.swift in Sources */,
+				B23923CE1CCB403500D232F1 /* JFCategoriesMenuView.swift in Sources */,
 				B2015D0E1CCA0F34000BC6A0 /* JFContextSheet.swift in Sources */,
 				A505597F1C631156008DB463 /* JFDetailViewController.swift in Sources */,
 				B2015D101CCA0F4F000BC6A0 /* JFContextItem.swift in Sources */,

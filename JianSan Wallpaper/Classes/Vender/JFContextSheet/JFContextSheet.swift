@@ -16,8 +16,12 @@ class JFContextSheet: UIView {
     
     var delegate: JFContextSheetDelegate?
     
-    /// 圆的半径
+    /// 圆的半径 触摸点到选项的直线距离
     var pathRadius: CGFloat = 100
+    
+    // 横纵边界区域 可以想象成contentInset
+    var insetX: CGFloat = 80
+    var insetY: CGFloat = 120
     
     // MARK: - 初始化
     init(items: Array<JFContextItem>) {
@@ -105,13 +109,13 @@ class JFContextSheet: UIView {
             var endAngle: CGFloat = 0
             
             // 左上
-            if centerPoint.x <= 70 && centerPoint.y <= 150 {
+            if centerPoint.x <= insetX && centerPoint.y <= insetY {
                 startAngle = 0
                 endAngle = 90
             }
             
             // 上
-            if centerPoint.x > 70 && centerPoint.x <= SCREEN_WIDTH - 70 && centerPoint.y <= 150 {
+            if centerPoint.x > insetX && centerPoint.x <= SCREEN_WIDTH - insetX && centerPoint.y <= insetY {
                 switch subviews.count {
                 case 1:
                     startAngle = 90
@@ -135,13 +139,13 @@ class JFContextSheet: UIView {
             }
             
             // 右上角
-            if centerPoint.x > SCREEN_WIDTH - 70 && centerPoint.y <= 150 {
+            if centerPoint.x > SCREEN_WIDTH - insetX && centerPoint.y <= insetY {
                 startAngle = 180
                 endAngle = 90
             }
             
             // 左
-            if centerPoint.x <= 70 && centerPoint.y > 150 && centerPoint.y <= SCREEN_HEIGHT - 150 {
+            if centerPoint.x <= insetX && centerPoint.y > 150 && centerPoint.y <= SCREEN_HEIGHT - insetY {
                 switch subviews.count {
                 case 1:
                     startAngle = 90
@@ -165,13 +169,13 @@ class JFContextSheet: UIView {
             }
             
             // 左下
-            if centerPoint.x <= 70 && centerPoint.y > SCREEN_HEIGHT - 150 {
+            if centerPoint.x <= insetX && centerPoint.y > SCREEN_HEIGHT - insetY {
                 startAngle = -90
                 endAngle = 0
             }
             
             // 中间区域/下
-            if centerPoint.x > 70 && centerPoint.x < SCREEN_WIDTH - 70 && centerPoint.y > 150 {
+            if centerPoint.x > insetX && centerPoint.x < SCREEN_WIDTH - insetX && centerPoint.y > insetY {
                 switch subviews.count {
                 case 1:
                     startAngle = -90
@@ -195,7 +199,7 @@ class JFContextSheet: UIView {
             }
             
             // 右
-            if centerPoint.x > SCREEN_WIDTH - 70 && centerPoint.y > 150 && centerPoint.y <= SCREEN_HEIGHT - 150 {
+            if centerPoint.x > SCREEN_WIDTH - insetX && centerPoint.y > insetY && centerPoint.y <= SCREEN_HEIGHT - insetY {
                 switch subviews.count {
                 case 1:
                     startAngle = 180
@@ -219,7 +223,7 @@ class JFContextSheet: UIView {
             }
             
             // 右下
-            if centerPoint.x > SCREEN_WIDTH - 70 && centerPoint.y > SCREEN_HEIGHT - 150 {
+            if centerPoint.x > SCREEN_WIDTH - insetX && centerPoint.y > SCREEN_HEIGHT - insetY {
                 startAngle = 270
                 endAngle = 180
             }

@@ -35,6 +35,8 @@ class JFHomeTableViewController: UITableViewController {
     
     @objc private func didTappedLeftMenuItem() {
         print("点击了菜单")
+        let categoriesMenuView = JFCategoriesMenuView()
+        categoriesMenuView.show()
     }
     
     private func loadData(url: String) {
