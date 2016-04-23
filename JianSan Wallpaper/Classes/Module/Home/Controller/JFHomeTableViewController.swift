@@ -16,6 +16,15 @@ class JFHomeTableViewController: UITableViewController, JFCategoriesMenuViewDele
     
     var array: [String]?
     
+    /// 标题按钮
+    lazy var titleButton: UIButton! = {
+        let titleButton = UIButton(type: UIButtonType.Custom)
+        titleButton.setTitleColor(UIColor(red:0.667,  green:0.667,  blue:0.667, alpha:1), forState: UIControlState.Normal)
+        titleButton.adjustsImageWhenHighlighted = false
+        self.navigationItem.titleView = titleButton
+        return titleButton
+    }()
+    
     /// 当前分类
     var currentItem: JFCategoryModel? {
         didSet {
@@ -39,11 +48,9 @@ class JFHomeTableViewController: UITableViewController, JFCategoriesMenuViewDele
         
         currentItem = JFCategoryModel(dict: ["iconName" : itemIcons[0], "title" : itemTitles[0], "url" : itemUrls[0]])
         
-        // Initialize tableView
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()
         loadingView.tintColor = UIColor(red:0.122,  green:0.729,  blue:0.949, alpha:1)
         tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
-            // 更新数据
             self!.updateData()
             self?.tableView.dg_stopLoading()
             }, loadingView: loadingView)
@@ -86,7 +93,9 @@ class JFHomeTableViewController: UITableViewController, JFCategoriesMenuViewDele
         JFNetworkTools.shareNetworkTools.get(currentItem!.url!) { (success, result, error) -> () in
             if success {
                 self.array = result
-                self.title = "\(self.currentItem!.title!) \(result!.count) 张"
+                self.titleButton.setImage(UIImage(named: self.currentItem!.iconName!), forState: UIControlState.Normal)
+                self.titleButton.setTitle("\(self.currentItem!.title!) \(result!.count) 张", forState: UIControlState.Normal)
+                self.titleButton.sizeToFit()
                 self.tableView.reloadData()
             }
         }

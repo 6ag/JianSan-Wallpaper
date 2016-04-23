@@ -69,6 +69,7 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
      保存图片到相册回调
      */
     func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: AnyObject) {
+        print(NSThread.currentThread())
         if error != nil {
             SVProgressHUD.showErrorWithStatus("保存失败")
         } else {
