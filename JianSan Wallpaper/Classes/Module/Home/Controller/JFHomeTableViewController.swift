@@ -8,7 +8,7 @@
 
 import UIKit
 import YYWebImage
-import MJRefresh
+import DGElasticPullToRefresh
 
 class JFHomeTableViewController: UITableViewController, JFCategoriesMenuViewDelegate {
     
@@ -19,7 +19,6 @@ class JFHomeTableViewController: UITableViewController, JFCategoriesMenuViewDele
     /// 当前分类
     var currentItem: JFCategoryModel? {
         didSet {
-//            tableView.mj_header.beginRefreshing()
             updateData()
         }
     }
@@ -38,8 +37,18 @@ class JFHomeTableViewController: UITableViewController, JFCategoriesMenuViewDele
         tableView.rowHeight = 250;
         tableView.registerClass(JFHomeCell.self, forCellReuseIdentifier: identifier)
         
-//        tableView.mj_header = MJRefreshHeader(refreshingTarget: self, refreshingAction: #selector(JFHomeTableViewController.updateData))
         currentItem = JFCategoryModel(dict: ["iconName" : itemIcons[0], "title" : itemTitles[0], "url" : itemUrls[0]])
+        
+        // Initialize tableView
+        let loadingView = DGElasticPullToRefreshLoadingViewCircle()
+        loadingView.tintColor = UIColor(red:0.122,  green:0.729,  blue:0.949, alpha:1)
+        tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
+            // 更新数据
+            self!.updateData()
+            self?.tableView.dg_stopLoading()
+            }, loadingView: loadingView)
+        tableView.dg_setPullToRefreshFillColor(UIColor(red:0.102,  green:0.102,  blue:0.102, alpha:1))
+        tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -94,26 +103,19 @@ class JFHomeTableViewController: UITableViewController, JFCategoriesMenuViewDele
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! JFHomeCell
-        cell.layer.borderColor = UIColor(red:0.063,  green:0.063,  blue:0.063, alpha:1).CGColor
-        cell.layer.borderWidth = 5
-        print("\(imageURL)\(array![indexPath.row]).png")
         return cell
     }
     
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        var rotation = CATransform3DMakeTranslation(0, 50, 20)
-        rotation.m34 = 1.0 / -600
-        
-        cell.layer.shadowColor = UIColor(red:0.063,  green:0.063,  blue:0.063, alpha:1).CGColor
+        cell.layer.transform = CATransform3DMakeTranslation(0, 50, 20)
         cell.layer.shadowOffset = CGSize(width: 10, height: 10)
         cell.alpha = 0
-        cell.layer.transform = rotation
         
-        UIView.animateWithDuration(0.6) { () -> Void in
+        UIView.animateWithDuration(0.75) { () -> Void in
             cell.layer.transform = CATransform3DIdentity
-            cell.alpha = 1
             cell.layer.shadowOffset = CGSizeMake(0, 0)
+            cell.alpha = 1
         }
         
         (cell as! JFHomeCell).cellOffset()
@@ -129,8 +131,13 @@ class JFHomeTableViewController: UITableViewController, JFCategoriesMenuViewDele
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         let array = tableView.visibleCells
         for cell in array {
+            // 里面的图片跟随移动
             (cell as! JFHomeCell).cellOffset()
         }
+    }
+    
+    deinit {
+        tableView.dg_removePullToRefresh()
     }
     
 }

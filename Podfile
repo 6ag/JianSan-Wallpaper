@@ -4,7 +4,7 @@
 use_frameworks!
 
 target 'JianSan Wallpaper' do
-pod 'MJRefresh'
+pod 'DGElasticPullToRefresh'
 pod 'SnapKit'
 pod 'Alamofire'
 pod 'YYWebImage'

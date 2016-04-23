@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (3.3.1)
-  - MJRefresh (3.1.0)
+  - DGElasticPullToRefresh (1.0.3)
   - SnapKit (0.20.0)
   - SVProgressHUD (2.0.3)
   - YYCache (1.0.3)
@@ -13,14 +13,14 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - MJRefresh
+  - DGElasticPullToRefresh
   - SnapKit
   - SVProgressHUD
   - YYWebImage
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
-  MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
+  DGElasticPullToRefresh: 040f39ae69840b3261d163fe6735c5901bf851e9
   SnapKit: 5fce3c1bbbf1fbd31de9aa92f33eb9fa03f15650
   SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
   YYCache: 282f35b5b0990833d0b7a06d864a87141a021da2
