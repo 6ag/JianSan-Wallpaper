@@ -15,7 +15,7 @@ DEPENDENCIES:
   - Alamofire
   - DGElasticPullToRefresh
   - SnapKit
-  - SVProgressHUD (~> 2.0.2)
+  - SVProgressHUD
   - YYWebImage
 
 SPEC CHECKSUMS:
