@@ -16,6 +16,9 @@ class JFContextSheet: UIView {
     
     var delegate: JFContextSheetDelegate?
     
+    /// 圆的半径
+    var pathRadius: CGFloat = 100
+    
     // MARK: - 初始化
     init(items: Array<JFContextItem>) {
         super.init(frame: SCREEN_BOUNDS)
@@ -44,6 +47,190 @@ class JFContextSheet: UIView {
     }
     
     /**
+     根据圆心、角度、半径，计算圆上的点坐标
+     
+     - parameter center: 圆心
+     - parameter angle:  角度
+     - parameter radius: 半径
+     
+     - returns: 返回点坐标
+     */
+    func getCircleCoordinate(center: CGPoint, angle: CGFloat, radius: CGFloat) -> CGPoint {
+        let x = radius * CGFloat(cosf(Float(angle) * Float(M_PI) / 180))
+        let y = radius * CGFloat(sinf(Float(angle) * Float(M_PI) / 180))
+        return CGPoint(x: center.x + x, y: center.y + y)
+    }
+    
+    /**
+     制造弹簧动画
+     
+     - parameter startAngle:  开始角度
+     - parameter endAngle:    结束角度
+     - parameter centerPoint: 圆心点
+     - parameter index:       角标
+     - parameter itemView:    选项
+     */
+    func makeSpringAnimation(startAngle: CGFloat, endAngle: CGFloat, centerPoint: CGPoint, index: Int, itemView: JFContextItem) -> Void {
+        // 每个选项之间的角度间距
+        let angleDistance = (endAngle - startAngle) / CGFloat(subviews.count - 1)
+        let angle = startAngle + CGFloat(index) * angleDistance
+        let destinationPoint = getCircleCoordinate(centerPoint, angle: angle, radius: pathRadius)
+        
+        UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            let tx = destinationPoint.x - centerPoint.x
+            let ty = destinationPoint.y - centerPoint.y
+            itemView.transform = CGAffineTransformTranslate(itemView.transform, tx, ty)
+            }, completion: { (_) in
+                
+        })
+    }
+    
+    /**
+     开始弹簧动画
+     
+     - parameter centerPoint: 中心点
+     */
+    func startSpringAnimation(centerPoint: CGPoint) -> Void {
+        // item布局
+        let itemWidth: CGFloat = 40
+        let itemHeight: CGFloat = 50
+        
+        // 把所有item都以触摸点为原点
+        for (index, item) in subviews.enumerate() {
+            let itemView = item as! JFContextItem
+            itemView.frame = CGRect(x: centerPoint.x - itemWidth * 0.5, y: centerPoint.y - itemHeight * 0.5, width: itemWidth, height: itemHeight)
+            
+            // 布局角度范围
+            var startAngle: CGFloat = 0
+            var endAngle: CGFloat = 0
+            
+            // 左上
+            if centerPoint.x <= 70 && centerPoint.y <= 150 {
+                startAngle = 0
+                endAngle = 90
+            }
+            
+            // 上
+            if centerPoint.x > 70 && centerPoint.x <= SCREEN_WIDTH - 70 && centerPoint.y <= 150 {
+                switch subviews.count {
+                case 1:
+                    startAngle = 90
+                    endAngle = 90
+                    break
+                case 2, 3:
+                    startAngle = 135
+                    endAngle = 45
+                    break
+                case 4:
+                    startAngle = 150
+                    endAngle = 30
+                    break
+                case 5:
+                    startAngle = 180
+                    endAngle = 0
+                    break
+                default:
+                    break
+                }
+            }
+            
+            // 右上角
+            if centerPoint.x > SCREEN_WIDTH - 70 && centerPoint.y <= 150 {
+                startAngle = 180
+                endAngle = 90
+            }
+            
+            // 左
+            if centerPoint.x <= 70 && centerPoint.y > 150 && centerPoint.y <= SCREEN_HEIGHT - 150 {
+                switch subviews.count {
+                case 1:
+                    startAngle = 90
+                    endAngle = 90
+                    break
+                case 2, 3:
+                    startAngle = -45
+                    endAngle = 45
+                    break
+                case 4:
+                    startAngle = -60
+                    endAngle = 60
+                    break
+                case 5:
+                    startAngle = -90
+                    endAngle = 90
+                    break
+                default:
+                    break
+                }
+            }
+            
+            // 左下
+            if centerPoint.x <= 70 && centerPoint.y > SCREEN_HEIGHT - 150 {
+                startAngle = -90
+                endAngle = 0
+            }
+            
+            // 中间区域/下
+            if centerPoint.x > 70 && centerPoint.x < SCREEN_WIDTH - 70 && centerPoint.y > 150 {
+                switch subviews.count {
+                case 1:
+                    startAngle = -90
+                    endAngle = -90
+                    break
+                case 2, 3:
+                    startAngle = -135
+                    endAngle = -45
+                    break
+                case 4:
+                    startAngle = -150
+                    endAngle = -30
+                    break
+                case 5:
+                    startAngle = -180
+                    endAngle = 0
+                    break
+                default:
+                    break
+                }
+            }
+            
+            // 右
+            if centerPoint.x > SCREEN_WIDTH - 70 && centerPoint.y > 150 && centerPoint.y <= SCREEN_HEIGHT - 150 {
+                switch subviews.count {
+                case 1:
+                    startAngle = 180
+                    endAngle = 180
+                    break
+                case 2, 3:
+                    startAngle = 225
+                    endAngle = 135
+                    break
+                case 4:
+                    startAngle = 130
+                    endAngle = 240
+                    break
+                case 5:
+                    startAngle = 270
+                    endAngle = 90
+                    break
+                default:
+                    break
+                }
+            }
+            
+            // 右下
+            if centerPoint.x > SCREEN_WIDTH - 70 && centerPoint.y > SCREEN_HEIGHT - 150 {
+                startAngle = 270
+                endAngle = 180
+            }
+            
+            // 制造动画
+            makeSpringAnimation(startAngle, endAngle: endAngle, centerPoint: centerPoint, index: index, itemView: itemView)
+            
+        }
+    }
+    
+    /**
      根据手势弹出sheet
      
      - parameter gestureRecognizer: 手势
@@ -58,148 +245,14 @@ class JFContextSheet: UIView {
         backgroundColor = UIColor(white: 0.0, alpha: 0.5)
         
         // 触摸圆点
-        let center = gestureRecognizer.locationInView(inView)
+        let centerPoint = gestureRecognizer.locationInView(inView)
+        
+        // 开始弹簧动画
+        startSpringAnimation(centerPoint)
         
         // 圆点视图
-        centerView.frame = CGRect(x: center.x - 20, y: center.y - 20, width: 40, height: 40)
+        centerView.frame = CGRect(x: centerPoint.x - 20, y: centerPoint.y - 20, width: 40, height: 40)
         inView.addSubview(centerView)
-        
-        // item布局
-        let itemWidth: CGFloat = 40
-        let itemHeight: CGFloat = 50
-        
-        // 把所有item都以触摸点为原点
-        for (index, item) in subviews.enumerate() {
-            let itemView = item as! JFContextItem
-            itemView.frame = CGRect(x: center.x - itemWidth * 0.5, y: center.y - itemHeight * 0.5, width: itemWidth, height: itemHeight)
-            
-            // 左上
-            if center.x <= 70 && center.y <= 150 {
-                UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                    switch index {
-                    case 0:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, 80, 0)
-                        break
-                    case 1:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, 60, 60)
-                        break
-                    case 2:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, 0, 80)
-                        break
-                    default:
-                        break
-                    }
-                    }, completion: { (_) in
-                        
-                })
-            }
-            
-            // 上
-            if center.x > 70 && center.x <= SCREEN_WIDTH - 70 && center.y <= 150 {
-                UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                    switch index {
-                    case 0:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, 50, 80)
-                        break
-                    case 1:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, 0, 100)
-                        break
-                    case 2:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, -50, 80)
-                        break
-                    default:
-                        break
-                    }
-                    }, completion: { (_) in
-                        
-                })
-            }
-            
-            // 右上角
-            if center.x > SCREEN_WIDTH - 70 && center.y <= 150 {
-                UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                    switch index {
-                    case 0:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, -10, 80)
-                        break
-                    case 1:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, -60, 60)
-                        break
-                    case 2:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, -80, 0)
-                        break
-                    default:
-                        break
-                    }
-                    }, completion: { (_) in
-                        
-                })
-            }
-            
-            // 左/左下
-            if center.x <= 70 && center.y > 150{
-                UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                    switch index {
-                    case 0:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, 0, -80)
-                        break
-                    case 1:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, 60, -60)
-                        break
-                    case 2:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, 80, 0)
-                        break
-                    default:
-                        break
-                    }
-                    }, completion: { (_) in
-                        
-                })
-            }
-            
-            // 中间区域/下
-            if center.x > 70 && center.x < SCREEN_WIDTH - 70 && center.y > 150 {
-                UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                    switch index {
-                    case 0:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, -50, -80)
-                        break
-                    case 1:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, 0, -100)
-                        break
-                    case 2:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, 50, -80)
-                        break
-                    default:
-                        break
-                    }
-                    }, completion: { (_) in
-                        
-                })
-            }
-            
-            // 右/右下
-            if center.x > SCREEN_WIDTH - 70 && center.y > 150 {
-                UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                    switch index {
-                    case 0:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, -80, 0)
-                        break
-                    case 1:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, -60, -60)
-                        break
-                    case 2:
-                        itemView.transform = CGAffineTransformTranslate(itemView.transform, 0, -80)
-                        break
-                    default:
-                        break
-                    }
-                    }, completion: { (_) in
-                        
-                })
-            }
-            
-        }
         
     }
     
