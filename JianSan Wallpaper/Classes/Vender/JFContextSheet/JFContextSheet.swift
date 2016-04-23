@@ -71,10 +71,10 @@ class JFContextSheet: UIView {
         // 把所有item都以触摸点为原点
         for (index, item) in subviews.enumerate() {
             let itemView = item as! JFContextItem
+            itemView.frame = CGRect(x: center.x - itemWidth * 0.5, y: center.y - itemHeight * 0.5, width: itemWidth, height: itemHeight)
             
             // 左上
             if center.x <= 70 && center.y <= 150 {
-                itemView.frame = CGRect(x: center.x - itemWidth * 0.5, y: center.y - itemHeight * 0.5, width: itemWidth, height: itemHeight)
                 UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                     switch index {
                     case 0:
@@ -96,7 +96,6 @@ class JFContextSheet: UIView {
             
             // 上
             if center.x > 70 && center.x <= SCREEN_WIDTH - 70 && center.y <= 150 {
-                itemView.frame = CGRect(x: center.x - itemWidth * 0.5, y: center.y - itemHeight * 0.5, width: itemWidth, height: itemHeight)
                 UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                     switch index {
                     case 0:
@@ -118,7 +117,6 @@ class JFContextSheet: UIView {
             
             // 右上角
             if center.x > SCREEN_WIDTH - 70 && center.y <= 150 {
-                itemView.frame = CGRect(x: center.x - itemWidth * 0.5, y: center.y - itemHeight * 0.5, width: itemWidth, height: itemHeight)
                 UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                     switch index {
                     case 0:
@@ -140,7 +138,6 @@ class JFContextSheet: UIView {
             
             // 左/左下
             if center.x <= 70 && center.y > 150{
-                itemView.frame = CGRect(x: center.x - itemWidth * 0.5, y: center.y - itemHeight * 0.5, width: itemWidth, height: itemHeight)
                 UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                     switch index {
                     case 0:
@@ -162,7 +159,6 @@ class JFContextSheet: UIView {
             
             // 中间区域/下
             if center.x > 70 && center.x < SCREEN_WIDTH - 70 && center.y > 150 {
-                itemView.frame = CGRect(x: center.x - itemWidth * 0.5, y: center.y - itemHeight * 0.5, width: itemWidth, height: itemHeight)
                 UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                     switch index {
                     case 0:
@@ -184,7 +180,6 @@ class JFContextSheet: UIView {
             
             // 右/右下
             if center.x > SCREEN_WIDTH - 70 && center.y > 150 {
-                itemView.frame = CGRect(x: center.x - itemWidth * 0.5, y: center.y - itemHeight * 0.5, width: itemWidth, height: itemHeight)
                 UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                     switch index {
                     case 0:
