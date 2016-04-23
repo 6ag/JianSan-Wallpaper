@@ -96,7 +96,6 @@ class JFHomeTableViewController: UITableViewController, JFCategoriesMenuViewDele
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! JFHomeCell
         cell.layer.borderColor = UIColor(red:0.063,  green:0.063,  blue:0.063, alpha:1).CGColor
         cell.layer.borderWidth = 5
-        cell.imageView?.yy_setImageWithURL(NSURL(string: "\(imageURL)\(array![indexPath.row]).png"), placeholder: UIImage(named: "temp_image"))
         print("\(imageURL)\(array![indexPath.row]).png")
         return cell
     }
@@ -104,10 +103,9 @@ class JFHomeTableViewController: UITableViewController, JFCategoriesMenuViewDele
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
         
         var rotation = CATransform3DMakeTranslation(0, 50, 20)
-        rotation = CATransform3DScale(rotation, 0.9, 0.9, 1)
         rotation.m34 = 1.0 / -600
         
-        cell.layer.shadowColor = UIColor.blackColor().CGColor
+        cell.layer.shadowColor = UIColor(red:0.063,  green:0.063,  blue:0.063, alpha:1).CGColor
         cell.layer.shadowOffset = CGSize(width: 10, height: 10)
         cell.alpha = 0
         cell.layer.transform = rotation
