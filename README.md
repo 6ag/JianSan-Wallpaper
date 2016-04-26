@@ -5,7 +5,7 @@
 ![image](https://github.com/6ag/JianSan-Wallpaper/blob/master/1.gif)
 
 ## 可抽取框架
-### **JFContextSheet**
+### **一、JFContextSheet**
 
 这是一个自适应的弹出选项封装，可以适用于各种功能菜单。
 
@@ -45,7 +45,7 @@ func contextSheet(contextSheet: JFContextSheet, didSelectItemWithItemName itemNa
 }
 ```
 
-### **WallPaperTool** 一键设置壁纸
+### **二、WallPaperTool** 一键设置壁纸
 
 总所周知，iPhone设置壁纸非常的坑爹！！！这是一个利用 `私有API` 和 `运行时` 一键设置iPhone壁纸的分类，可以实现一键设置锁屏壁纸、一键设置主屏幕壁纸、一键设置锁屏和主屏幕壁纸的功能。不过上架 `AppStore` 需要一些手段，我也发现有几个壁纸类的应用里有这个功能。
 
