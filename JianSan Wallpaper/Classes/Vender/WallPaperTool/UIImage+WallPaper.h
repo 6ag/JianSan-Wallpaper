@@ -25,9 +25,4 @@
  */
 - (BOOL)saveAsLockScreen;
 
-/*
- *  保存到照片库
- */
-- (void)saveToPhotos;
-
 @end

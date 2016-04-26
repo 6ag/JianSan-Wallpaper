@@ -80,12 +80,12 @@
 #pragma clang diagnostic pop
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
-- (id)wallPaperVC {
+- (id)wallPaperVC
+{
     Class wallPaperClass = NSClassFromString(@"PLStaticWallpaperImageViewController");
     id wallPaperInstance = [[wallPaperClass alloc] performSelector:NSSelectorFromString(@"initWithUIImage:") withObject:self];
     [wallPaperInstance setValue:@(YES) forKeyPath:@"allowsEditing"];
     [wallPaperInstance  setValue:@(YES) forKeyPath:@"saveWallpaperData"];
-    NSLog(@"wallPaperInstance = %@", wallPaperInstance);
     return wallPaperInstance;
 }
 #pragma clang diagnostic pop
