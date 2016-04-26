@@ -1,8 +1,18 @@
 # JianSan-Wallpaper
 
-### swift写的一个剑网三壁纸app
+采用swift编写的一个壁纸类app，PHP后台源码地址: [源码地址](https://github.com/6ag/JianSan-Wallpaper-php) 。项目持续更新完善中，如果您有啥建议请提交 `issues` 给我。
+
+#### 控制器切换
 
 ![image](https://github.com/6ag/JianSan-Wallpaper/blob/master/1.gif)
+
+#### 一键设置壁纸
+
+![image](https://github.com/6ag/JianSan-Wallpaper/blob/master/2.gif)
+
+#### 自适应操作选项
+
+![image](https://github.com/6ag/JianSan-Wallpaper/blob/master/3.gif)
 
 ## 可抽取框架
 ### **一、JFContextSheet**
