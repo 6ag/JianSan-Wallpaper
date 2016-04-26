@@ -16,8 +16,8 @@ class JFCategoryModel: NSObject {
     /// 分别标题
     var title: String?
     
-    /// 分类url
-    var url: String?
+    /// 分类
+    var category: String?
     
     init(dict: [String : String]) {
         super.init()

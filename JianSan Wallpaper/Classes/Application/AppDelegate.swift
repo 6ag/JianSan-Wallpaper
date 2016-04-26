@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func loadViewController() {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window?.rootViewController = JFNavigationController(rootViewController: JFHomeTableViewController())
+        window?.rootViewController = JFNavigationController(rootViewController: JFHomeViewController())
         window?.makeKeyAndVisible()
     }
 

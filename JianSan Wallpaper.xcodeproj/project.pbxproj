@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3CAE6F39219E550FA6FED092 /* Pods_JianSan_Wallpaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F750E282254FD16A770D836D /* Pods_JianSan_Wallpaper.framework */; };
-		A505597B1C6310EA008DB463 /* JFHomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505597A1C6310EA008DB463 /* JFHomeTableViewController.swift */; };
-		A505597D1C63110E008DB463 /* JFHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505597C1C63110E008DB463 /* JFHomeCell.swift */; };
+		A505597B1C6310EA008DB463 /* JFTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505597A1C6310EA008DB463 /* JFTableViewController.swift */; };
+		A505597D1C63110E008DB463 /* JFTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505597C1C63110E008DB463 /* JFTableViewCell.swift */; };
 		A505597F1C631156008DB463 /* JFDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A505597E1C631156008DB463 /* JFDetailViewController.swift */; };
 		A50559831C6311D2008DB463 /* JFNetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50559821C6311D2008DB463 /* JFNetworkTools.swift */; };
 		A50559851C6315E4008DB463 /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = A50559841C6315E4008DB463 /* api.swift */; };
@@ -21,14 +21,16 @@
 		B2015D121CCA131D000BC6A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2015D111CCA131D000BC6A0 /* Assets.xcassets */; };
 		B23923CE1CCB403500D232F1 /* JFCategoriesMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23923CD1CCB403500D232F1 /* JFCategoriesMenuView.swift */; };
 		B23923D01CCB758800D232F1 /* JFCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23923CF1CCB758800D232F1 /* JFCategoryButton.swift */; };
-		B23923D21CCB75DC00D232F1 /* JFCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23923D11CCB75DC00D232F1 /* JFCategoryModel.swift */; };
+		B2F780041CCE7FD6008E3257 /* JFCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F780021CCE7FD6008E3257 /* JFCategoryModel.swift */; };
+		B2F780051CCE7FD6008E3257 /* JFWallPaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F780031CCE7FD6008E3257 /* JFWallPaperModel.swift */; };
+		B2FF2AF11CCF127300FEC10A /* JFHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FF2AF01CCF127300FEC10A /* JFHomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		79CFC176D4BB96F10B74A093 /* Pods-JianSan Wallpaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JianSan Wallpaper.release.xcconfig"; path = "Pods/Target Support Files/Pods-JianSan Wallpaper/Pods-JianSan Wallpaper.release.xcconfig"; sourceTree = "<group>"; };
 		8F3A1C8C1A7668E40465CAFE /* Pods-JianSan Wallpaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JianSan Wallpaper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JianSan Wallpaper/Pods-JianSan Wallpaper.debug.xcconfig"; sourceTree = "<group>"; };
-		A505597A1C6310EA008DB463 /* JFHomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFHomeTableViewController.swift; sourceTree = "<group>"; };
-		A505597C1C63110E008DB463 /* JFHomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFHomeCell.swift; sourceTree = "<group>"; };
+		A505597A1C6310EA008DB463 /* JFTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFTableViewController.swift; sourceTree = "<group>"; };
+		A505597C1C63110E008DB463 /* JFTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFTableViewCell.swift; sourceTree = "<group>"; };
 		A505597E1C631156008DB463 /* JFDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFDetailViewController.swift; sourceTree = "<group>"; };
 		A50559821C6311D2008DB463 /* JFNetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFNetworkTools.swift; sourceTree = "<group>"; };
 		A50559841C6315E4008DB463 /* api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
@@ -43,7 +45,9 @@
 		B2015D111CCA131D000BC6A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B23923CD1CCB403500D232F1 /* JFCategoriesMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCategoriesMenuView.swift; sourceTree = "<group>"; };
 		B23923CF1CCB758800D232F1 /* JFCategoryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCategoryButton.swift; sourceTree = "<group>"; };
-		B23923D11CCB75DC00D232F1 /* JFCategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JFCategoryModel.swift; path = "JianSan Wallpaper/Classes/Module/Home/View/JFCategoryModel.swift"; sourceTree = SOURCE_ROOT; };
+		B2F780021CCE7FD6008E3257 /* JFCategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCategoryModel.swift; sourceTree = "<group>"; };
+		B2F780031CCE7FD6008E3257 /* JFWallPaperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFWallPaperModel.swift; sourceTree = "<group>"; };
+		B2FF2AF01CCF127300FEC10A /* JFHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFHomeViewController.swift; sourceTree = "<group>"; };
 		F750E282254FD16A770D836D /* Pods_JianSan_Wallpaper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JianSan_Wallpaper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -138,8 +142,8 @@
 		A57901291C62E55D00B89DB7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B2F780011CCE7FD6008E3257 /* Model */,
 				A579012A1C62E55D00B89DB7 /* Controller */,
-				A579012B1C62E55D00B89DB7 /* Model */,
 				A579012C1C62E55D00B89DB7 /* View */,
 			);
 			path = Home;
@@ -148,24 +152,17 @@
 		A579012A1C62E55D00B89DB7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A505597A1C6310EA008DB463 /* JFHomeTableViewController.swift */,
+				B2FF2AF01CCF127300FEC10A /* JFHomeViewController.swift */,
+				A505597A1C6310EA008DB463 /* JFTableViewController.swift */,
 				A505597E1C631156008DB463 /* JFDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		A579012B1C62E55D00B89DB7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B23923D11CCB75DC00D232F1 /* JFCategoryModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		A579012C1C62E55D00B89DB7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A505597C1C63110E008DB463 /* JFHomeCell.swift */,
+				A505597C1C63110E008DB463 /* JFTableViewCell.swift */,
 				B23923CD1CCB403500D232F1 /* JFCategoriesMenuView.swift */,
 				B23923CF1CCB758800D232F1 /* JFCategoryButton.swift */,
 			);
@@ -258,6 +255,15 @@
 				B2015D0F1CCA0F4F000BC6A0 /* JFContextItem.swift */,
 			);
 			path = JFContextSheet;
+			sourceTree = "<group>";
+		};
+		B2F780011CCE7FD6008E3257 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B2F780021CCE7FD6008E3257 /* JFCategoryModel.swift */,
+				B2F780031CCE7FD6008E3257 /* JFWallPaperModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B41015C618EC22AE7E466DE4 /* Pods */ = {
@@ -398,10 +404,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A505597D1C63110E008DB463 /* JFHomeCell.swift in Sources */,
+				A505597D1C63110E008DB463 /* JFTableViewCell.swift in Sources */,
 				A50559831C6311D2008DB463 /* JFNetworkTools.swift in Sources */,
-				B23923D21CCB75DC00D232F1 /* JFCategoryModel.swift in Sources */,
+				B2F780041CCE7FD6008E3257 /* JFCategoryModel.swift in Sources */,
 				B23923CE1CCB403500D232F1 /* JFCategoriesMenuView.swift in Sources */,
+				B2FF2AF11CCF127300FEC10A /* JFHomeViewController.swift in Sources */,
+				B2F780051CCE7FD6008E3257 /* JFWallPaperModel.swift in Sources */,
 				B23923D01CCB758800D232F1 /* JFCategoryButton.swift in Sources */,
 				B2015D0E1CCA0F34000BC6A0 /* JFContextSheet.swift in Sources */,
 				A505597F1C631156008DB463 /* JFDetailViewController.swift in Sources */,
@@ -410,7 +418,7 @@
 				A57901391C62E55D00B89DB7 /* AppDelegate.swift in Sources */,
 				A579013B1C62EA2900B89DB7 /* JFNavigationController.swift in Sources */,
 				A50559851C6315E4008DB463 /* api.swift in Sources */,
-				A505597B1C6310EA008DB463 /* JFHomeTableViewController.swift in Sources */,
+				A505597B1C6310EA008DB463 /* JFTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

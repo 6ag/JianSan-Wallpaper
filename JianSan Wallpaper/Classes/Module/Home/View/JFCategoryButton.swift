@@ -13,6 +13,6 @@ class JFCategoryButton: UIButton {
     /// 分类标题
     var title: String?
     
-    /// 分类url
-    var url: String?
+    /// 分类
+    var category: String?
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class JFHomeCell: UITableViewCell {
+class JFTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

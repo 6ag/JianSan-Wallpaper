@@ -25,7 +25,6 @@ class JFCategoriesMenuView: UIView {
         self.items = items
         self.alpha = 0.02
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTappedShadowView(_:))))
-        UIApplication.sharedApplication().keyWindow?.addSubview(self)
         
         let width: CGFloat = 50
         let height: CGFloat = 50
@@ -42,9 +41,8 @@ class JFCategoriesMenuView: UIView {
             let itemButton = JFCategoryButton(type: UIButtonType.Custom)
             itemButton.setImage(UIImage(named: item.iconName!), forState: UIControlState.Normal)
             itemButton.title = item.title
-            itemButton.url = item.url
+            itemButton.category = item.category
             itemButton.tag = index + 10
-            itemButton.alpha = 0.0
             itemButton.layer.cornerRadius = 25
             itemButton.layer.masksToBounds = true
             itemButton.addTarget(self, action: #selector(didTappedItemButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
@@ -52,8 +50,6 @@ class JFCategoriesMenuView: UIView {
             itemButton.frame = CGRect(x: 22.5, y: CGFloat(index) * (height + margin) + margin, width: width, height: height)
             menuScrollView.addSubview(itemButton)
         }
-        
-        UIApplication.sharedApplication().keyWindow?.addSubview(menuScrollView)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -72,6 +68,13 @@ class JFCategoriesMenuView: UIView {
      显示
      */
     func show() -> Void {
+        UIApplication.sharedApplication().keyWindow?.addSubview(self)
+        UIApplication.sharedApplication().keyWindow?.addSubview(menuScrollView)
+        for index in 0..<self.items.count {
+            let button = self.menuScrollView.viewWithTag(index + 10) as? JFCategoryButton
+            button?.alpha = 0.0
+        }
+        
         UIView.animateWithDuration(0.25, animations: {
             self.menuScrollView.transform = CGAffineTransformTranslate(self.menuScrollView.transform, self.menuScrollView.frame.width, 0)
         }) { (_) in
