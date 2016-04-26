@@ -34,7 +34,7 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
         
         // 下滑手势
         let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(didDownSwipeView(_:)))
-        swipeGesture.direction = UISwipeGestureRecognizerDirection.Down
+        swipeGesture.direction = .Down
         view.addGestureRecognizer(swipeGesture)
         
         // 别日狗

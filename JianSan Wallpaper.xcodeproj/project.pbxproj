@@ -23,6 +23,7 @@
 		B23923CE1CCB403500D232F1 /* JFCategoriesMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23923CD1CCB403500D232F1 /* JFCategoriesMenuView.swift */; };
 		B23923D01CCB758800D232F1 /* JFCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23923CF1CCB758800D232F1 /* JFCategoryButton.swift */; };
 		B24816AD1CCFD4290056D66E /* UIImage+WallPaper.m in Sources */ = {isa = PBXBuildFile; fileRef = B24816AC1CCFD4290056D66E /* UIImage+WallPaper.m */; };
+		B24D17D51CCFEEB800BBC4CC /* JFProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D17D41CCFEEB800BBC4CC /* JFProfileViewController.swift */; };
 		B2F780041CCE7FD6008E3257 /* JFCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F780021CCE7FD6008E3257 /* JFCategoryModel.swift */; };
 		B2F780051CCE7FD6008E3257 /* JFWallPaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F780031CCE7FD6008E3257 /* JFWallPaperModel.swift */; };
 		B2FF2AF11CCF127300FEC10A /* JFHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FF2AF01CCF127300FEC10A /* JFHomeViewController.swift */; };
@@ -51,6 +52,7 @@
 		B24816651CCFD0BB0056D66E /* PhotoLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotoLibrary.framework; path = ../../../../Applications/Xcode6.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework; sourceTree = "<group>"; };
 		B24816AB1CCFD4290056D66E /* UIImage+WallPaper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WallPaper.h"; sourceTree = "<group>"; };
 		B24816AC1CCFD4290056D66E /* UIImage+WallPaper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WallPaper.m"; sourceTree = "<group>"; };
+		B24D17D41CCFEEB800BBC4CC /* JFProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFProfileViewController.swift; sourceTree = "<group>"; };
 		B2F780021CCE7FD6008E3257 /* JFCategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCategoryModel.swift; sourceTree = "<group>"; };
 		B2F780031CCE7FD6008E3257 /* JFWallPaperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFWallPaperModel.swift; sourceTree = "<group>"; };
 		B2FF2AF01CCF127300FEC10A /* JFHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFHomeViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +143,7 @@
 			children = (
 				A579012D1C62E55D00B89DB7 /* Main */,
 				A57901291C62E55D00B89DB7 /* Home */,
-				A57901311C62E55D00B89DB7 /* Profile */,
+				B24D17D01CCFEE9D00BBC4CC /* Profile */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -149,8 +151,8 @@
 		A57901291C62E55D00B89DB7 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B2F780011CCE7FD6008E3257 /* Model */,
 				A579012A1C62E55D00B89DB7 /* Controller */,
+				B2F780011CCE7FD6008E3257 /* Model */,
 				A579012C1C62E55D00B89DB7 /* View */,
 			);
 			path = Home;
@@ -209,37 +211,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		A57901311C62E55D00B89DB7 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				A57901321C62E55D00B89DB7 /* Controller */,
-				A57901331C62E55D00B89DB7 /* Model */,
-				A57901341C62E55D00B89DB7 /* View */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		A57901321C62E55D00B89DB7 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		A57901331C62E55D00B89DB7 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		A57901341C62E55D00B89DB7 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		A57901351C62E55D00B89DB7 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +244,38 @@
 				B24816AC1CCFD4290056D66E /* UIImage+WallPaper.m */,
 			);
 			path = WallPaperTool;
+			sourceTree = "<group>";
+		};
+		B24D17D01CCFEE9D00BBC4CC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B24D17D11CCFEE9D00BBC4CC /* Controller */,
+				B24D17D21CCFEE9D00BBC4CC /* Model */,
+				B24D17D31CCFEE9D00BBC4CC /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		B24D17D11CCFEE9D00BBC4CC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B24D17D41CCFEEB800BBC4CC /* JFProfileViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B24D17D21CCFEE9D00BBC4CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B24D17D31CCFEE9D00BBC4CC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B2F780011CCE7FD6008E3257 /* Model */ = {
@@ -426,6 +429,7 @@
 			files = (
 				A505597D1C63110E008DB463 /* JFTableViewCell.swift in Sources */,
 				A50559831C6311D2008DB463 /* JFNetworkTools.swift in Sources */,
+				B24D17D51CCFEEB800BBC4CC /* JFProfileViewController.swift in Sources */,
 				B24816AD1CCFD4290056D66E /* UIImage+WallPaper.m in Sources */,
 				B2F780041CCE7FD6008E3257 /* JFCategoryModel.swift in Sources */,
 				B23923CE1CCB403500D232F1 /* JFCategoriesMenuView.swift in Sources */,

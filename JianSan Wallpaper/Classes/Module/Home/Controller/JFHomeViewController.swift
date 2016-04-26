@@ -49,8 +49,8 @@ class JFHomeViewController: UIViewController, JFCategoriesMenuViewDelegate {
                 // 切换控制器动画
                 let animation = CATransition()
                 animation.type = kCATransitionPush
-                animation.subtype = currentIndex > preIndex ? kCATransitionFromTop : kCATransitionFromBottom
-                animation.duration = 0.75
+                animation.subtype = currentIndex > preIndex ? kCATransitionFromRight : kCATransitionFromLeft
+                animation.duration = 0.5
                 view.layer.addAnimation(animation, forKey: nil)
             }
             
@@ -73,15 +73,44 @@ class JFHomeViewController: UIViewController, JFCategoriesMenuViewDelegate {
 
         // 导航栏
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "navigation_category")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(didTappedLeftMenuItem))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "navigation_setting")!.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(didTappedRightSettingItem))
         
         // 准备数据
         prepareData()
+        
+        // 左滑手势
+        let leftSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeView(_:)))
+        leftSwipeGesture.direction = .Left
+        view.addGestureRecognizer(leftSwipeGesture)
+        
+        // 右滑手势
+        let rightSwipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeView(_:)))
+        rightSwipeGesture.direction = .Right
+        view.addGestureRecognizer(rightSwipeGesture)
         
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
+    }
+    
+    /**
+     滑动手势
+     */
+    func swipeView(gestureRecognizer: UISwipeGestureRecognizer) -> Void {
+        
+        preIndex = categoriesModels.indexOf(currentCategoryModel!)!
+        
+        if gestureRecognizer.direction == .Right {
+            if preIndex > 0 {
+                currentCategoryModel = categoriesModels[preIndex - 1]
+            }
+        } else {
+            if preIndex < categoriesModels.count - 1 {
+                currentCategoryModel = categoriesModels[preIndex + 1]
+            }
+        }
     }
     
     /**
@@ -110,6 +139,13 @@ class JFHomeViewController: UIViewController, JFCategoriesMenuViewDelegate {
      */
     @objc private func didTappedLeftMenuItem() {
         categoriesMenuView.show()
+    }
+    
+    /**
+     右上角按钮事件
+     */
+    @objc private func didTappedRightSettingItem() {
+        navigationController?.pushViewController(JFProfileViewController(), animated: true)
     }
     
     // MARK: - JFCategoriesMenuViewDelegate
