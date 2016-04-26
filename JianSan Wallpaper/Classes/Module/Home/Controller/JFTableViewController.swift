@@ -153,7 +153,7 @@ class JFTableViewController: UITableViewController {
         progressView.radius = radius
         progressView.backgroundColor = UIColor.whiteColor()
         
-        cell.imageView?.yy_setImageWithURL(NSURL(string: "\(baseURL)\(array[indexPath.row].path!)"), placeholder: UIImage(named: "temp_image"), options: YYWebImageOptions.IgnoreDiskCache, progress: { (receivedSize, expectedSize) in
+        cell.imageView?.yy_setImageWithURL(NSURL(string: "\(baseURL)\(array[indexPath.row].path!)"), placeholder: UIImage(named: "temp_image"), options: YYWebImageOptions.SetImageWithFadeAnimation, progress: { (receivedSize, expectedSize) in
             
             cell.contentView.addSubview(progressView)
             progressView.progress = CGFloat(receivedSize) / CGFloat(expectedSize)
