@@ -11,6 +11,13 @@ import SVProgressHUD
 
 class JFDetailViewController: UIViewController, JFContextSheetDelegate {
     
+    enum ImageAction {
+        case homeScreen // 主屏幕
+        case lockScreen // 锁屏
+        case both       // 壁纸和锁屏
+        case photo      // 相册
+    }
+    
     var image: UIImage? {
         didSet {
             imageView.image = image!
@@ -20,8 +27,15 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.whiteColor()
+        
+        // 轻敲手势
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTappedView(_:)))
         view.addGestureRecognizer(tapGesture)
+        
+        // 下滑手势
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(didDownSwipeView(_:)))
+        swipeGesture.direction = UISwipeGestureRecognizerDirection.Down
+        view.addGestureRecognizer(swipeGesture)
         
         // 别日狗
         performSelectorOnMainThread(#selector(dontSleep), withObject: nil, waitUntilDone: false)
@@ -55,6 +69,13 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
         
     }
     
+    /**
+     下滑手势
+     */
+    @objc private func didDownSwipeView(gestureRecognizer: UISwipeGestureRecognizer) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     // MARK: - JFContextSheetDelegate
     func contextSheet(contextSheet: JFContextSheet, didSelectItemWithItemName itemName: String) {
         switch (itemName) {
@@ -67,7 +88,50 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
             }
             break
         case "设定":
-            print("设定")
+            let alertController = UIAlertController()
+            
+            let lockScreen = UIAlertAction(title: "设为锁屏壁纸", style: UIAlertActionStyle.Default, handler: { (action) in
+                
+                if self.image?.saveAsLockScreen() == true {
+                    SVProgressHUD.showSuccessWithStatus("设置成功")
+                } else {
+                    SVProgressHUD.showInfoWithStatus("设置失败")
+                }
+            })
+            
+            let homeScreen = UIAlertAction(title: "设为桌面壁纸", style: UIAlertActionStyle.Default, handler: { (action) in
+                
+                if self.image?.saveAsHomeScreen() == true {
+                    SVProgressHUD.showSuccessWithStatus("设置成功")
+                } else {
+                    SVProgressHUD.showInfoWithStatus("设置失败")
+                }
+            })
+            
+            let homeScreenAndLockScreen = UIAlertAction(title: "设为锁屏和桌面壁纸", style: UIAlertActionStyle.Default, handler: { (action) in
+                
+                if self.image?.saveAsHomeScreenAndLockScreen() == true {
+                    SVProgressHUD.showSuccessWithStatus("设置成功")
+                } else {
+                    SVProgressHUD.showInfoWithStatus("设置失败")
+                }
+            })
+            
+            let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: { (action) in
+                
+            })
+            
+            // 添加动作
+            alertController.addAction(lockScreen)
+            alertController.addAction(homeScreen)
+            alertController.addAction(homeScreenAndLockScreen)
+            alertController.addAction(cancel)
+            
+            // 弹出选项
+            presentViewController(alertController, animated: true, completion: { 
+                
+            })
+            
             break
         case "下载":
             UIImageWriteToSavedPhotosAlbum(image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)

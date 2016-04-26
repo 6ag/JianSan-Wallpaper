@@ -123,7 +123,7 @@ class JFContextSheet: UIView {
             // 布局角度范围
             var startAngle: CGFloat = 0
             var endAngle: CGFloat = 0
-            print("center = \(centerPoint)")
+            
             // 左上
             if centerPoint.x <= insetX && centerPoint.y <= insetY {
                 startAngle = 0

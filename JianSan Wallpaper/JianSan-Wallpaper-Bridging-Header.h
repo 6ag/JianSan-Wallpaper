@@ -9,4 +9,6 @@
 #ifndef JianSan_Wallpaper_Bridging_Header_h
 #define JianSan_Wallpaper_Bridging_Header_h
 
+#import "UIImage+WallPaper.h"
+
 #endif /* JianSan_Wallpaper_Bridging_Header_h */

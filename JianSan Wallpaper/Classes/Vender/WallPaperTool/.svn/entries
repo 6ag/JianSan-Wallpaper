@@ -1,0 +1,98 @@
+10
+
+dir
+0
+https://github.com/yoimhere/ZJWallPaperDemo.git/trunk/ZJWallPaperDemo/ZJWallPaperDemo/ZJWallPaperTool
+https://github.com/yoimhere/ZJWallPaperDemo.git
+add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4b047115-e380-e75d-fc29-ce57b7db7bff
+
+1.jpg
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+ZJWallPaperVC.m
+file
+
+
+
+add
+
+2.jpg
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+
+UIImage+ZJWallPaper.m
+file
+
+
+
+add
+
+PLStaticWallpaperImageViewController.h
+file
+
+
+
+add
+
+ZJWallPaperVC.h
+file
+
+
+
+add
+
+PLWallpaperImageViewController.h
+file
+
+
+
+add
+
+UIImage+ZJWallPaper.h
+file
+
+
+
+add
+
