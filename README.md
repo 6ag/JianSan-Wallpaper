@@ -47,7 +47,7 @@ func contextSheet(contextSheet: JFContextSheet, didSelectItemWithItemName itemNa
 
 ### **二、WallPaperTool** 一键设置壁纸
 
-总所周知，iPhone设置壁纸非常的坑爹！！！这是一个利用 `私有API` 和 `运行时` 一键设置iPhone壁纸的分类，可以实现一键设置锁屏壁纸、一键设置主屏幕壁纸、一键设置锁屏和主屏幕壁纸的功能。不过上架 `AppStore` 需要一些手段，我也发现有几个壁纸类的应用里有这个功能。
+总所周知，iPhone设置壁纸非常的坑爹！！！这是一个利用 `运行时` 一键设置iPhone壁纸的分类，可以实现一键设置锁屏壁纸、一键设置主屏幕壁纸、一键设置锁屏和主屏幕壁纸的功能。`运行时` 创建的对象原先属于 `私有api` ，但现在不需要导入私有框架 `PhotoLibrary` 都能成功设置了。我今天下载了几十个壁纸app，发现有几个app里也有这个功能，不知道上架 `AppStore` 需不需要做一些手段。
 
 #### 导入框架
 
