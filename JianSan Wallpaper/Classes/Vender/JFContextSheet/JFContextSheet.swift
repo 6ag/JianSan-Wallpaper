@@ -19,9 +19,12 @@ class JFContextSheet: UIView {
     /// 圆的半径 触摸点到选项的直线距离
     var pathRadius: CGFloat = 100
     
-    // 横纵边界区域 可以想象成contentInset
-    var insetX: CGFloat = 80
+    /// 横纵边界区域 可以想象成contentInset
+    var insetX: CGFloat = 100
     var insetY: CGFloat = 120
+    
+    /// 是否正在显示
+    var isShow = false
     
     // MARK: - 初始化
     init(items: Array<JFContextItem>) {
@@ -45,6 +48,17 @@ class JFContextSheet: UIView {
         
         // 回调触摸itemName
         delegate?.contextSheet(self, didSelectItemWithItemName: itemView.itemLabel.text!)
+        
+        // 移除视图
+        dismiss()
+    }
+    
+    /**
+     隐藏视图
+     */
+    func dismiss() -> Void {
+        
+        isShow = false
         
         self.removeFromSuperview()
         centerView.removeFromSuperview()
@@ -81,6 +95,7 @@ class JFContextSheet: UIView {
         let destinationPoint = getCircleCoordinate(centerPoint, angle: angle, radius: pathRadius)
         
         UIView.animateWithDuration(0.75, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 10, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            itemView.alpha = 1.0
             let tx = destinationPoint.x - centerPoint.x
             let ty = destinationPoint.y - centerPoint.y
             itemView.transform = CGAffineTransformTranslate(itemView.transform, tx, ty)
@@ -103,11 +118,12 @@ class JFContextSheet: UIView {
         for (index, item) in subviews.enumerate() {
             let itemView = item as! JFContextItem
             itemView.frame = CGRect(x: centerPoint.x - itemWidth * 0.5, y: centerPoint.y - itemHeight * 0.5, width: itemWidth, height: itemHeight)
+            itemView.alpha = 0.0
             
             // 布局角度范围
             var startAngle: CGFloat = 0
             var endAngle: CGFloat = 0
-            
+            print("center = \(centerPoint)")
             // 左上
             if centerPoint.x <= insetX && centerPoint.y <= insetY {
                 startAngle = 0
@@ -145,7 +161,7 @@ class JFContextSheet: UIView {
             }
             
             // 左
-            if centerPoint.x <= insetX && centerPoint.y > 150 && centerPoint.y <= SCREEN_HEIGHT - insetY {
+            if centerPoint.x <= insetX && centerPoint.y > insetY && centerPoint.y <= SCREEN_HEIGHT - insetY {
                 switch subviews.count {
                 case 1:
                     startAngle = 90
@@ -241,6 +257,8 @@ class JFContextSheet: UIView {
      - parameter inView:            手势所在视图
      */
     func startWithGestureRecognizer(gestureRecognizer: UIGestureRecognizer, inView: UIView) -> Void {
+        
+        isShow = true
         
         // 添加弹出视图
         inView.addSubview(self)

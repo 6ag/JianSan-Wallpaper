@@ -27,7 +27,7 @@ class JFProgressView: UIView {
     var trackColor = UIColor(red:0.843,  green:0.843,  blue:0.843, alpha:1)
     
     /// 进度条颜色
-    var progressColor = UIColor(red:0.667,  green:0.149,  blue:0.208, alpha:1)
+    var progressColor = UIColor(red:0.122,  green:0.729,  blue:0.949, alpha:0.8)
     
     override func drawRect(rect: CGRect) {
         

@@ -59,12 +59,12 @@ class JFTableViewController: UITableViewController {
      */
     func setupRefreshView() -> Void {
         let loadingView = DGElasticPullToRefreshLoadingViewCircle()
-        loadingView.tintColor = UIColor(red:0.122,  green:0.729,  blue:0.949, alpha:1)
+        loadingView.tintColor = UIColor(red:0.122,  green:0.729,  blue:0.949, alpha:0.8)
         tableView.dg_addPullToRefreshWithActionHandler({ [weak self] () -> Void in
             self!.pullDownRefresh()
             self?.tableView.dg_stopLoading()
             }, loadingView: loadingView)
-        tableView.dg_setPullToRefreshFillColor(UIColor(red:0.102,  green:0.102,  blue:0.102, alpha:1))
+        tableView.dg_setPullToRefreshFillColor(UIColor(red:0.102,  green:0.102,  blue:0.102, alpha:0.8))
         tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
     }
     

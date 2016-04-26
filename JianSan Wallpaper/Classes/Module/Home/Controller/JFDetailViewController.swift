@@ -43,7 +43,16 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
      view触摸事件
      */
     @objc private func didTappedView(gestureRecognizer: UITapGestureRecognizer) {
-        contextSheet.startWithGestureRecognizer(gestureRecognizer, inView: view)
+        if contextSheet.isShow {
+            contextSheet.dismiss()
+        } else {
+            if (scrollView.superview != nil) {
+                scrollView.removeFromSuperview()
+            } else {
+                contextSheet.startWithGestureRecognizer(gestureRecognizer, inView: view)
+            }
+        }
+        
     }
     
     // MARK: - JFContextSheetDelegate
@@ -56,6 +65,9 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
             if (scrollView.superview == nil) {
                 view.addSubview(scrollView)
             }
+            break
+        case "设定":
+            print("设定")
             break
         case "下载":
             UIImageWriteToSavedPhotosAlbum(image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
@@ -89,9 +101,10 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
     private lazy var contextSheet: JFContextSheet = {
         let contextItem1 = JFContextItem(itemName: "返回", itemIcon: "content_icon_back")
         let contextItem2 = JFContextItem(itemName: "预览", itemIcon: "content_icon_preview")
-        let contextItem3 = JFContextItem(itemName: "下载", itemIcon: "content_icon_download")
+        let contextItem3 = JFContextItem(itemName: "设定", itemIcon: "content_icon_set")
+        let contextItem4 = JFContextItem(itemName: "下载", itemIcon: "content_icon_download")
         
-        let contextSheet = JFContextSheet(items: [contextItem1, contextItem2, contextItem3])
+        let contextSheet = JFContextSheet(items: [contextItem1, contextItem2, contextItem3, contextItem4])
         contextSheet.delegate = self
         return contextSheet
     }()
