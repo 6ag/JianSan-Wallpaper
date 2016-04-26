@@ -146,7 +146,23 @@ class JFTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! JFTableViewCell
-        cell.imageView?.yy_setImageWithURL(NSURL(string: "\(baseURL)\(array[indexPath.row].path!)"), placeholder: UIImage(named: "temp_image"))
+        
+        // 进度圈半径
+        let radius: CGFloat = 30.0
+        let progressView = JFProgressView(frame: CGRect(x: SCREEN_WIDTH / 2 - radius, y: 250 / 2 - radius, width: radius * 2, height: radius * 2))
+        progressView.radius = radius
+        progressView.backgroundColor = UIColor.whiteColor()
+        
+        cell.imageView?.yy_setImageWithURL(NSURL(string: "\(baseURL)\(array[indexPath.row].path!)"), placeholder: UIImage(named: "temp_image"), options: YYWebImageOptions.IgnoreDiskCache, progress: { (receivedSize, expectedSize) in
+            
+            cell.contentView.addSubview(progressView)
+            progressView.progress = CGFloat(receivedSize) / CGFloat(expectedSize)
+            
+            }, transform: { (image, url) -> UIImage? in
+                return image
+            }, completion: { (image, url, type, stage, error) in
+                progressView.removeFromSuperview()
+        })
         
         // 如果菊花正在显示,就表示正在加载数据,就不加载数据
         if indexPath.row == array.count - 1 && !pullUpView.isAnimating() {
