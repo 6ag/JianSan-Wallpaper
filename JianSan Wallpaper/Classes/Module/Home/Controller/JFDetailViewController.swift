@@ -60,11 +60,12 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
         if contextSheet.isShow {
             contextSheet.dismiss()
         } else {
-            if (scrollView.superview != nil) {
-                scrollView.removeFromSuperview()
-            } else {
+            // 如果预览视图已经加载，则再次触摸是取消预览 感觉这个用户体验不好 注释掉
+//            if (scrollView.superview != nil) {
+//                scrollView.removeFromSuperview()
+//            } else {
                 contextSheet.startWithGestureRecognizer(gestureRecognizer, inView: view)
-            }
+//            }
         }
         
     }
