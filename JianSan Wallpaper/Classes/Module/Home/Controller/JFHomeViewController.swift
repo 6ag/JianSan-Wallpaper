@@ -14,9 +14,9 @@ class JFHomeViewController: UIViewController, JFCategoriesMenuViewDelegate {
     var preIndex: Int = 0
 
     // 写死的数据
-    let itemIcons = ["category_icon_tc", "category_icon_cy", "category_icon_wh", "category_icon_cj", "category_icon_tm", "category_icon_qx", "category_icon_sl", "category_icon_wd", "category_icon_mj", "category_icon_gb", "category_icon_cyun", "category_icon_cg"]
-    let itemTitles = ["天策", "纯阳", "万花", "藏剑", "唐门", "七秀", "少林", "五毒", "明教", "丐帮", "苍云", "长歌"]
-    let itemCategories = [tc_category, cy_category, wh_category, cj_category, tm_category, qx_category, sl_category, wd_category, mj_category, gb_category, cyun_category, cg_category]
+    let itemIcons = ["category_icon_dx", "category_icon_tc", "category_icon_cy", "category_icon_wh", "category_icon_cj", "category_icon_tm", "category_icon_qx", "category_icon_sl", "category_icon_wd", "category_icon_mj", "category_icon_gb", "category_icon_cyun", "category_icon_cg"]
+    let itemTitles = ["大侠", "天策", "纯阳", "万花", "藏剑", "唐门", "七秀", "少林", "五毒", "明教", "丐帮", "苍云", "长歌"]
+    let itemCategories = ["dx", "tc", "cy", "wh", "cj", "tm", "qx", "sl", "wd", "mj", "gb", "cyun", "cg"]
     
     /// 分类视图
     lazy var categoriesMenuView: JFCategoriesMenuView = {
@@ -49,7 +49,7 @@ class JFHomeViewController: UIViewController, JFCategoriesMenuViewDelegate {
                 // 切换控制器动画
                 let animation = CATransition()
                 animation.type = kCATransitionPush
-                animation.subtype = currentIndex > preIndex ? kCATransitionFromBottom : kCATransitionFromTop
+                animation.subtype = currentIndex > preIndex ? kCATransitionFromTop : kCATransitionFromBottom
                 animation.duration = 0.75
                 view.layer.addAnimation(animation, forKey: nil)
             }
