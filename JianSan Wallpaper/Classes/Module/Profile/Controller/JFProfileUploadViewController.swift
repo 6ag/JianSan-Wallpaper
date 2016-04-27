@@ -21,7 +21,6 @@ class JFProfileUploadViewController: JFBaseTableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 

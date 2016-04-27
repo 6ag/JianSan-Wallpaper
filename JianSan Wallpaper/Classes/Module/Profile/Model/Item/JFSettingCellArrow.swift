@@ -18,6 +18,10 @@ class JFSettingCellArrow: JFSettingCellModel {
         self.destinationVc = destinationVc
     }
     
+    override init(title: String, icon: String) {
+        super.init(title: title, icon: icon)
+    }
+    
     init(title: String, icon: String, destinationVc: AnyClass) {
         super.init(title: title, icon: icon)
         self.destinationVc = destinationVc

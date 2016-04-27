@@ -19,6 +19,9 @@ class JFWallPaperModel: NSObject {
     /// 壁纸路径 baseURL/path 获取壁纸url
     var path: String?
     
+    /// 存储形变改变的偏移量
+    var offsetY: CGFloat = 0
+    
     // 快速构造模型
     init(dict: [String : AnyObject]) {
         super.init()

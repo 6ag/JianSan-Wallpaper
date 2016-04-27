@@ -7,31 +7,65 @@
 //
 
 import UIKit
-import SnapKit
+import YYWebImage
 
 class JFTableViewCell: UITableViewCell {
     
-    var offset: CGFloat = 0
+    /// 壁纸模型
+    var wallPaperModel: JFWallPaperModel? {
+        didSet {
+            // 进度圈半径
+            let radius: CGFloat = 30.0
+            let progressView = JFProgressView(frame: CGRect(x: SCREEN_WIDTH / 2 - radius, y: 250 / 2 - radius, width: radius * 2, height: radius * 2))
+            progressView.radius = radius
+            progressView.backgroundColor = UIColor.whiteColor()
+            
+            wallPaperImageView.yy_setImageWithURL(NSURL(string: "\(baseURL)\(wallPaperModel!.path!)"), placeholder: UIImage(named: "temp_image"), options: YYWebImageOptions.SetImageWithFadeAnimation, progress: { (receivedSize, expectedSize) in
+                
+                self.contentView.addSubview(progressView)
+                progressView.progress = CGFloat(receivedSize) / CGFloat(expectedSize)
+                
+                }, transform: { (image, url) -> UIImage? in
+                    return image
+                }, completion: { (image, url, type, stage, error) in
+                    progressView.removeFromSuperview()
+            })
+            
+        }
+    }
+    
+    /// 壁纸
+    lazy var wallPaperImageView: UIImageView = {
+        let wallPaperImageView = UIImageView()
+        wallPaperImageView.contentMode = .ScaleAspectFill
+        return wallPaperImageView
+    }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        imageView?.contentMode = UIViewContentMode.ScaleAspectFill
-        layer.borderColor = UIColor(red:0.063,  green:0.063,  blue:0.063, alpha:1).CGColor
-        layer.borderWidth = 5
-        layer.masksToBounds = true
+        prepareUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func prepareUI() {
+        contentView.addSubview(wallPaperImageView)
+        layer.borderColor = UIColor(red:0.063,  green:0.063,  blue:0.063, alpha:1).CGColor
+        layer.borderWidth = 3
+        layer.masksToBounds = true
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
         
         var rect = bounds
-        rect.origin.y += offset
-        imageView?.frame = rect
+        rect.origin.y += wallPaperModel!.offsetY
+        wallPaperImageView.frame = rect
+        
+//        print("id = \(wallPaperModel!.id) offsetY = \(wallPaperModel!.offsetY)")
     }
     
     func cellOffset() -> CGFloat {
@@ -39,10 +73,10 @@ class JFTableViewCell: UITableViewCell {
         let centerY = CGRectGetMidY(centerToWindow)
         let windowCenter = superview!.center
         let cellOffsetY = centerY - windowCenter.y
-        let offsetDig = cellOffsetY / superview!.frame.size.height * 2
-        offset = -offsetDig * (SCREEN_HEIGHT/1.7 - 250) / 2
-        imageView!.transform = CGAffineTransformMakeTranslation(0, offset)
-        return offset
+        let offsetDig = cellOffsetY / superview!.frame.size.height * 3
+        wallPaperModel!.offsetY = -offsetDig * (SCREEN_HEIGHT/1.7 - 250) / 2
+        wallPaperImageView.transform = CGAffineTransformMakeTranslation(0, wallPaperModel!.offsetY)
+        return wallPaperModel!.offsetY
     }
 
 }

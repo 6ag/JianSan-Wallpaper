@@ -30,7 +30,10 @@ class JFProfileTableViewController: JFBaseTableViewController {
         let group2 = JFSettingGroup(cells: [group2CellModel1, group2CellModel2, group2CellModel3])
         
         // 第三组
-        let group3CellModel1 = JFSettingCellArrow(title: "推荐给好友", icon: "setting_share_icon", destinationVc: JFProfileRecommendViewController.self)
+        let group3CellModel1 = JFSettingCellArrow(title: "推荐给好友", icon: "setting_share_icon")
+        group3CellModel1.operation = { () -> Void in
+            print("推荐给好友")
+        }
         let group3CellModel2 = JFSettingCellArrow(title: "关于我们", icon: "setting_about_icon", destinationVc: JFProfileAboutViewController.self)
         let group3 = JFSettingGroup(cells: [group3CellModel1, group3CellModel2])
         

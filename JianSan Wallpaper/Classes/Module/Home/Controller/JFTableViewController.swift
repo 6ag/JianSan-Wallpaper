@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import YYWebImage
 import SVProgressHUD
 import DGElasticPullToRefresh
 
@@ -64,7 +63,7 @@ class JFTableViewController: UITableViewController {
             self!.pullDownRefresh()
             self?.tableView.dg_stopLoading()
             }, loadingView: loadingView)
-        tableView.dg_setPullToRefreshFillColor(UIColor(red:0.102,  green:0.102,  blue:0.102, alpha:0.8))
+        tableView.dg_setPullToRefreshFillColor(NAVBAR_TINT_COLOR)
         tableView.dg_setPullToRefreshBackgroundColor(tableView.backgroundColor!)
     }
     
@@ -147,25 +146,9 @@ class JFTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(identifier, forIndexPath: indexPath) as! JFTableViewCell
+        cell.wallPaperModel = array[indexPath.row]
         
-        // 进度圈半径
-        let radius: CGFloat = 30.0
-        let progressView = JFProgressView(frame: CGRect(x: SCREEN_WIDTH / 2 - radius, y: 250 / 2 - radius, width: radius * 2, height: radius * 2))
-        progressView.radius = radius
-        progressView.backgroundColor = UIColor.whiteColor()
-        
-        cell.imageView?.yy_setImageWithURL(NSURL(string: "\(baseURL)\(array[indexPath.row].path!)"), placeholder: UIImage(named: "temp_image"), options: YYWebImageOptions.SetImageWithFadeAnimation, progress: { (receivedSize, expectedSize) in
-            
-            cell.contentView.addSubview(progressView)
-            progressView.progress = CGFloat(receivedSize) / CGFloat(expectedSize)
-            
-            }, transform: { (image, url) -> UIImage? in
-                return image
-            }, completion: { (image, url, type, stage, error) in
-                progressView.removeFromSuperview()
-        })
-        
-        // 如果菊花正在显示,就表示正在加载数据,就不加载数据
+        // 正在加载数据 就不加载数据
         if indexPath.row == array.count - 1 && !pullUpView.isAnimating() {
             // 菊花转起来
             pullUpView.startAnimating()
@@ -180,7 +163,7 @@ class JFTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let detailVc = JFDetailViewController()
-        detailVc.image = (tableView.cellForRowAtIndexPath(indexPath) as? JFTableViewCell)?.imageView?.image
+        detailVc.image = (tableView.cellForRowAtIndexPath(indexPath) as? JFTableViewCell)?.wallPaperImageView.image
         presentViewController(detailVc, animated: true, completion: nil)
     }
     
@@ -204,7 +187,7 @@ class JFTableViewController: UITableViewController {
     /// 上拉加载更多数据显示的菊花
     private lazy var pullUpView: UIActivityIndicatorView = {
         let indicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
-        indicator.color = UIColor.magentaColor()
+        indicator.color = UIColor.darkGrayColor()
         return indicator
     }()
     
