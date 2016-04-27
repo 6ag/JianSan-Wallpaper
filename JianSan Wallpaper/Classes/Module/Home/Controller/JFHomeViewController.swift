@@ -62,7 +62,8 @@ class JFHomeViewController: UIViewController, JFCategoriesMenuViewDelegate {
     /// 标题按钮
     lazy var titleButton: UIButton! = {
         let titleButton = UIButton(type: UIButtonType.Custom)
-        titleButton.setTitleColor(UIColor(red:0.667,  green:0.667,  blue:0.667, alpha:1), forState: UIControlState.Normal)
+        titleButton.setTitleColor(TITLE_COLOR, forState: UIControlState.Normal)
+        titleButton.titleLabel?.font = TITLE_FONT
         titleButton.adjustsImageWhenHighlighted = false
         self.navigationItem.titleView = titleButton
         return titleButton

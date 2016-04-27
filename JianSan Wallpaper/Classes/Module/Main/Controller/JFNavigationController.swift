@@ -21,9 +21,10 @@ class JFNavigationController: UINavigationController {
         navBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         navBar.shadowImage = UIImage()
         navBar.titleTextAttributes = [
-            "NSForegroundColorAttributeName" : UIColor.grayColor(),
-            "NSFontAttributeName" : UIFont.systemFontOfSize(18)
+            NSForegroundColorAttributeName : TITLE_COLOR,
+            NSFontAttributeName : TITLE_FONT
         ]
+        
     }
 
 }

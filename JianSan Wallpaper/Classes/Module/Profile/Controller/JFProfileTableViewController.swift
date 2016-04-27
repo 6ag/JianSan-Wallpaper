@@ -13,7 +13,7 @@ class JFProfileTableViewController: JFBaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "设置"
+        self.title = "设置"
         
         // 第一组
         let group1CellModel1 = JFSettingCellArrow(title: "我的收藏", icon: "setting_star_icon", destinationVc: JFProfileStarViewController.self)
@@ -36,7 +36,5 @@ class JFProfileTableViewController: JFBaseTableViewController {
         
         groupModels = [group1, group2, group3]
     }
-    
-    
     
 }

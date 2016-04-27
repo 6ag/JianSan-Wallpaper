@@ -7,14 +7,19 @@
 //
 
 import UIKit
+import SnapKit
 
 class JFTableViewCell: UITableViewCell {
+    
+    var offset: CGFloat = 0
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        imageView?.contentMode = UIViewContentMode.ScaleAspectFill
         layer.borderColor = UIColor(red:0.063,  green:0.063,  blue:0.063, alpha:1).CGColor
         layer.borderWidth = 5
+        layer.masksToBounds = true
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,9 +29,9 @@ class JFTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        imageView?.frame = self.bounds
-        imageView?.contentMode = UIViewContentMode.ScaleAspectFill
-        layer.masksToBounds = true
+        var rect = bounds
+        rect.origin.y += offset
+        imageView?.frame = rect
     }
     
     func cellOffset() -> CGFloat {
@@ -35,7 +40,7 @@ class JFTableViewCell: UITableViewCell {
         let windowCenter = superview!.center
         let cellOffsetY = centerY - windowCenter.y
         let offsetDig = cellOffsetY / superview!.frame.size.height * 2
-        let offset = -offsetDig * (SCREEN_HEIGHT/1.7 - 250)/2
+        offset = -offsetDig * (SCREEN_HEIGHT/1.7 - 250) / 2
         imageView!.transform = CGAffineTransformMakeTranslation(0, offset)
         return offset
     }
