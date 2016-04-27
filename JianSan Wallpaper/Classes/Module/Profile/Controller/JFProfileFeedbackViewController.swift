@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class JFProfileFeedbackViewController: JFBaseTableViewController {
     
@@ -57,8 +58,33 @@ class JFProfileFeedbackViewController: JFBaseTableViewController {
      提交按钮点击事件
      */
     @objc private func didTappedCommitButton(commitButton: UIButton) {
-        print("textView = \(contentTextView.text)")
-        print("textField = \(contactTextField.text!)")
+        
+        tableView.userInteractionEnabled = false
+        
+        SVProgressHUD.showWithStatus("正在提交")
+        
+        let parameters = [
+            "content" : contentTextView.text,
+            "contact" : contactTextField.text!
+        ]
+        
+        JFNetworkTools.shareNetworkTools.post(commitFeebback, parameters: parameters) { (success, result, error) in
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW,Int64(2 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+                
+                self.tableView.userInteractionEnabled = true
+                if success == true {
+                    SVProgressHUD.showSuccessWithStatus("谢谢支持")
+                } else {
+                    SVProgressHUD.showErrorWithStatus("您的网络不给力哦")
+                }
+                
+                // 返回上一级控制器
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW,Int64(1 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+                    self.navigationController?.popViewControllerAnimated(true)
+                }
+                
+            }
+        }
     }
     
     /**
