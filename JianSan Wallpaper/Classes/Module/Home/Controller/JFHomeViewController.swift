@@ -145,7 +145,7 @@ class JFHomeViewController: UIViewController, JFCategoriesMenuViewDelegate {
      右上角按钮事件
      */
     @objc private func didTappedRightSettingItem() {
-        navigationController?.pushViewController(JFProfileViewController(), animated: true)
+        navigationController?.pushViewController(JFProfileTableViewController(), animated: true)
     }
     
     // MARK: - JFCategoriesMenuViewDelegate

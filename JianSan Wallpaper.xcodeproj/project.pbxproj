@@ -19,11 +19,24 @@
 		B2015D0E1CCA0F34000BC6A0 /* JFContextSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2015D0D1CCA0F34000BC6A0 /* JFContextSheet.swift */; };
 		B2015D101CCA0F4F000BC6A0 /* JFContextItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2015D0F1CCA0F4F000BC6A0 /* JFContextItem.swift */; };
 		B2015D121CCA131D000BC6A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2015D111CCA131D000BC6A0 /* Assets.xcassets */; };
+		B211B4461CD07A130003F789 /* JFBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211B4451CD07A130003F789 /* JFBaseTableViewController.swift */; };
+		B211B4481CD07B190003F789 /* JFSettingGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211B4471CD07B190003F789 /* JFSettingGroup.swift */; };
+		B211B44A1CD07B270003F789 /* JFSettingCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211B4491CD07B270003F789 /* JFSettingCellModel.swift */; };
+		B211B44C1CD07B3C0003F789 /* JFSettingCellArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211B44B1CD07B3C0003F789 /* JFSettingCellArrow.swift */; };
+		B211B44E1CD07B530003F789 /* JFSettingCellSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211B44D1CD07B530003F789 /* JFSettingCellSwitch.swift */; };
+		B211B4501CD07B680003F789 /* JFSettingCellLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211B44F1CD07B680003F789 /* JFSettingCellLabel.swift */; };
+		B211B4521CD0853E0003F789 /* JFSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211B4511CD0853E0003F789 /* JFSettingCell.swift */; };
+		B211B4541CD09AAB0003F789 /* JFProfileStarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211B4531CD09AAB0003F789 /* JFProfileStarViewController.swift */; };
+		B211B4561CD09AC40003F789 /* JFProfileUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211B4551CD09AC40003F789 /* JFProfileUploadViewController.swift */; };
+		B211B4581CD09ACF0003F789 /* JFProfileHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211B4571CD09ACF0003F789 /* JFProfileHelpViewController.swift */; };
+		B211B45A1CD09AE90003F789 /* JFProfileFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211B4591CD09AE90003F789 /* JFProfileFeedbackViewController.swift */; };
+		B211B45C1CD09AFD0003F789 /* JFProfileAboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211B45B1CD09AFD0003F789 /* JFProfileAboutViewController.swift */; };
+		B211B45E1CD09BE00003F789 /* JFProfileRecommendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B211B45D1CD09BE00003F789 /* JFProfileRecommendViewController.swift */; };
 		B21D0D331CCF720600E02B32 /* JFProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21D0D321CCF720600E02B32 /* JFProgressView.swift */; };
 		B23923CE1CCB403500D232F1 /* JFCategoriesMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23923CD1CCB403500D232F1 /* JFCategoriesMenuView.swift */; };
 		B23923D01CCB758800D232F1 /* JFCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23923CF1CCB758800D232F1 /* JFCategoryButton.swift */; };
 		B24816AD1CCFD4290056D66E /* UIImage+WallPaper.m in Sources */ = {isa = PBXBuildFile; fileRef = B24816AC1CCFD4290056D66E /* UIImage+WallPaper.m */; };
-		B24D17D51CCFEEB800BBC4CC /* JFProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D17D41CCFEEB800BBC4CC /* JFProfileViewController.swift */; };
+		B24D17D51CCFEEB800BBC4CC /* JFProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24D17D41CCFEEB800BBC4CC /* JFProfileTableViewController.swift */; };
 		B2F780041CCE7FD6008E3257 /* JFCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F780021CCE7FD6008E3257 /* JFCategoryModel.swift */; };
 		B2F780051CCE7FD6008E3257 /* JFWallPaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F780031CCE7FD6008E3257 /* JFWallPaperModel.swift */; };
 		B2FF2AF11CCF127300FEC10A /* JFHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FF2AF01CCF127300FEC10A /* JFHomeViewController.swift */; };
@@ -46,13 +59,26 @@
 		B2015D0D1CCA0F34000BC6A0 /* JFContextSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFContextSheet.swift; sourceTree = "<group>"; };
 		B2015D0F1CCA0F4F000BC6A0 /* JFContextItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFContextItem.swift; sourceTree = "<group>"; };
 		B2015D111CCA131D000BC6A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B211B4451CD07A130003F789 /* JFBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFBaseTableViewController.swift; sourceTree = "<group>"; };
+		B211B4471CD07B190003F789 /* JFSettingGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFSettingGroup.swift; sourceTree = "<group>"; };
+		B211B4491CD07B270003F789 /* JFSettingCellModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFSettingCellModel.swift; sourceTree = "<group>"; };
+		B211B44B1CD07B3C0003F789 /* JFSettingCellArrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFSettingCellArrow.swift; sourceTree = "<group>"; };
+		B211B44D1CD07B530003F789 /* JFSettingCellSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFSettingCellSwitch.swift; sourceTree = "<group>"; };
+		B211B44F1CD07B680003F789 /* JFSettingCellLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFSettingCellLabel.swift; sourceTree = "<group>"; };
+		B211B4511CD0853E0003F789 /* JFSettingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFSettingCell.swift; sourceTree = "<group>"; };
+		B211B4531CD09AAB0003F789 /* JFProfileStarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFProfileStarViewController.swift; sourceTree = "<group>"; };
+		B211B4551CD09AC40003F789 /* JFProfileUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFProfileUploadViewController.swift; sourceTree = "<group>"; };
+		B211B4571CD09ACF0003F789 /* JFProfileHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFProfileHelpViewController.swift; sourceTree = "<group>"; };
+		B211B4591CD09AE90003F789 /* JFProfileFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFProfileFeedbackViewController.swift; sourceTree = "<group>"; };
+		B211B45B1CD09AFD0003F789 /* JFProfileAboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFProfileAboutViewController.swift; sourceTree = "<group>"; };
+		B211B45D1CD09BE00003F789 /* JFProfileRecommendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFProfileRecommendViewController.swift; sourceTree = "<group>"; };
 		B21D0D321CCF720600E02B32 /* JFProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFProgressView.swift; sourceTree = "<group>"; };
 		B23923CD1CCB403500D232F1 /* JFCategoriesMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCategoriesMenuView.swift; sourceTree = "<group>"; };
 		B23923CF1CCB758800D232F1 /* JFCategoryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCategoryButton.swift; sourceTree = "<group>"; };
 		B24816651CCFD0BB0056D66E /* PhotoLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotoLibrary.framework; path = ../../../../Applications/Xcode6.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework; sourceTree = "<group>"; };
 		B24816AB1CCFD4290056D66E /* UIImage+WallPaper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WallPaper.h"; sourceTree = "<group>"; };
 		B24816AC1CCFD4290056D66E /* UIImage+WallPaper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WallPaper.m"; sourceTree = "<group>"; };
-		B24D17D41CCFEEB800BBC4CC /* JFProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFProfileViewController.swift; sourceTree = "<group>"; };
+		B24D17D41CCFEEB800BBC4CC /* JFProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFProfileTableViewController.swift; sourceTree = "<group>"; };
 		B2F780021CCE7FD6008E3257 /* JFCategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCategoryModel.swift; sourceTree = "<group>"; };
 		B2F780031CCE7FD6008E3257 /* JFWallPaperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFWallPaperModel.swift; sourceTree = "<group>"; };
 		B2FF2AF01CCF127300FEC10A /* JFHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFHomeViewController.swift; sourceTree = "<group>"; };
@@ -237,6 +263,18 @@
 			path = JFContextSheet;
 			sourceTree = "<group>";
 		};
+		B211B4441CD079DB0003F789 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				B211B4471CD07B190003F789 /* JFSettingGroup.swift */,
+				B211B4491CD07B270003F789 /* JFSettingCellModel.swift */,
+				B211B44B1CD07B3C0003F789 /* JFSettingCellArrow.swift */,
+				B211B44D1CD07B530003F789 /* JFSettingCellSwitch.swift */,
+				B211B44F1CD07B680003F789 /* JFSettingCellLabel.swift */,
+			);
+			path = Item;
+			sourceTree = "<group>";
+		};
 		B24816AA1CCFD4290056D66E /* WallPaperTool */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,7 +297,14 @@
 		B24D17D11CCFEE9D00BBC4CC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B24D17D41CCFEEB800BBC4CC /* JFProfileViewController.swift */,
+				B211B4451CD07A130003F789 /* JFBaseTableViewController.swift */,
+				B24D17D41CCFEEB800BBC4CC /* JFProfileTableViewController.swift */,
+				B211B45B1CD09AFD0003F789 /* JFProfileAboutViewController.swift */,
+				B211B4591CD09AE90003F789 /* JFProfileFeedbackViewController.swift */,
+				B211B4571CD09ACF0003F789 /* JFProfileHelpViewController.swift */,
+				B211B4551CD09AC40003F789 /* JFProfileUploadViewController.swift */,
+				B211B4531CD09AAB0003F789 /* JFProfileStarViewController.swift */,
+				B211B45D1CD09BE00003F789 /* JFProfileRecommendViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -267,6 +312,7 @@
 		B24D17D21CCFEE9D00BBC4CC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B211B4441CD079DB0003F789 /* Item */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -274,6 +320,7 @@
 		B24D17D31CCFEE9D00BBC4CC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B211B4511CD0853E0003F789 /* JFSettingCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -428,22 +475,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				A505597D1C63110E008DB463 /* JFTableViewCell.swift in Sources */,
+				B211B44E1CD07B530003F789 /* JFSettingCellSwitch.swift in Sources */,
 				A50559831C6311D2008DB463 /* JFNetworkTools.swift in Sources */,
-				B24D17D51CCFEEB800BBC4CC /* JFProfileViewController.swift in Sources */,
+				B24D17D51CCFEEB800BBC4CC /* JFProfileTableViewController.swift in Sources */,
+				B211B4461CD07A130003F789 /* JFBaseTableViewController.swift in Sources */,
+				B211B4581CD09ACF0003F789 /* JFProfileHelpViewController.swift in Sources */,
 				B24816AD1CCFD4290056D66E /* UIImage+WallPaper.m in Sources */,
 				B2F780041CCE7FD6008E3257 /* JFCategoryModel.swift in Sources */,
 				B23923CE1CCB403500D232F1 /* JFCategoriesMenuView.swift in Sources */,
+				B211B4501CD07B680003F789 /* JFSettingCellLabel.swift in Sources */,
+				B211B45C1CD09AFD0003F789 /* JFProfileAboutViewController.swift in Sources */,
 				B2FF2AF11CCF127300FEC10A /* JFHomeViewController.swift in Sources */,
 				B2F780051CCE7FD6008E3257 /* JFWallPaperModel.swift in Sources */,
 				B23923D01CCB758800D232F1 /* JFCategoryButton.swift in Sources */,
 				B2015D0E1CCA0F34000BC6A0 /* JFContextSheet.swift in Sources */,
+				B211B44A1CD07B270003F789 /* JFSettingCellModel.swift in Sources */,
 				A505597F1C631156008DB463 /* JFDetailViewController.swift in Sources */,
 				B2015D101CCA0F4F000BC6A0 /* JFContextItem.swift in Sources */,
+				B211B45E1CD09BE00003F789 /* JFProfileRecommendViewController.swift in Sources */,
+				B211B4561CD09AC40003F789 /* JFProfileUploadViewController.swift in Sources */,
+				B211B44C1CD07B3C0003F789 /* JFSettingCellArrow.swift in Sources */,
+				B211B4521CD0853E0003F789 /* JFSettingCell.swift in Sources */,
 				A50559871C631A7C008DB463 /* Common.swift in Sources */,
 				A57901391C62E55D00B89DB7 /* AppDelegate.swift in Sources */,
+				B211B4541CD09AAB0003F789 /* JFProfileStarViewController.swift in Sources */,
 				A579013B1C62EA2900B89DB7 /* JFNavigationController.swift in Sources */,
+				B211B45A1CD09AE90003F789 /* JFProfileFeedbackViewController.swift in Sources */,
 				A50559851C6315E4008DB463 /* api.swift in Sources */,
 				A505597B1C6310EA008DB463 /* JFTableViewController.swift in Sources */,
+				B211B4481CD07B190003F789 /* JFSettingGroup.swift in Sources */,
 				B21D0D331CCF720600E02B32 /* JFProgressView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

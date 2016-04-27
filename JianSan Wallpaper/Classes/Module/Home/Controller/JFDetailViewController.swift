@@ -91,7 +91,7 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
         case "设定":
             let alertController = UIAlertController()
             
-            let lockScreen = UIAlertAction(title: "设为锁屏壁纸", style: UIAlertActionStyle.Default, handler: { (action) in
+            let lockScreen = UIAlertAction(title: "设定锁定屏幕", style: UIAlertActionStyle.Default, handler: { (action) in
                 
                 if self.image?.saveAsLockScreen() == true {
                     SVProgressHUD.showSuccessWithStatus("设置成功")
@@ -100,7 +100,7 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
                 }
             })
             
-            let homeScreen = UIAlertAction(title: "设为桌面壁纸", style: UIAlertActionStyle.Default, handler: { (action) in
+            let homeScreen = UIAlertAction(title: "设定主屏幕", style: UIAlertActionStyle.Default, handler: { (action) in
                 
                 if self.image?.saveAsHomeScreen() == true {
                     SVProgressHUD.showSuccessWithStatus("设置成功")
@@ -109,7 +109,7 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
                 }
             })
             
-            let homeScreenAndLockScreen = UIAlertAction(title: "设为锁屏和桌面壁纸", style: UIAlertActionStyle.Default, handler: { (action) in
+            let homeScreenAndLockScreen = UIAlertAction(title: "同时设定", style: UIAlertActionStyle.Default, handler: { (action) in
                 
                 if self.image?.saveAsHomeScreenAndLockScreen() == true {
                     SVProgressHUD.showSuccessWithStatus("设置成功")
