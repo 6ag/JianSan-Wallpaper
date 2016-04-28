@@ -65,16 +65,15 @@ class JFTableViewCell: UITableViewCell {
         rect.origin.y += wallPaperModel!.offsetY
         wallPaperImageView.frame = rect
         
-//        print("id = \(wallPaperModel!.id) offsetY = \(wallPaperModel!.offsetY)")
     }
     
     func cellOffset() -> CGFloat {
         let centerToWindow = convertRect(bounds, toView: window)
         let centerY = CGRectGetMidY(centerToWindow)
-        let windowCenter = superview!.center
+        let windowCenter = window!.center
         let cellOffsetY = centerY - windowCenter.y
-        let offsetDig = cellOffsetY / superview!.frame.size.height * 3
-        wallPaperModel!.offsetY = -offsetDig * (SCREEN_HEIGHT/1.7 - 250) / 2
+        let offsetDig = cellOffsetY / SCREEN_HEIGHT * 3
+        wallPaperModel!.offsetY = -offsetDig * (SCREEN_HEIGHT / 1.7 - 250) / 2
         wallPaperImageView.transform = CGAffineTransformMakeTranslation(0, wallPaperModel!.offsetY)
         return wallPaperModel!.offsetY
     }
