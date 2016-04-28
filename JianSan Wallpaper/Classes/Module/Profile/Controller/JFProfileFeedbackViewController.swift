@@ -14,7 +14,11 @@ class JFProfileFeedbackViewController: JFBaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        prepareUI()
+        dispatch_async(dispatch_get_global_queue(0, 0)) { 
+            dispatch_async(dispatch_get_main_queue(), { 
+                self.prepareUI()
+            })
+        }
     }
     
     deinit {

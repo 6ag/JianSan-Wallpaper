@@ -30,4 +30,19 @@ let MARGIN: CGFloat = 12
 /// 全局圆角
 let CORNER_RADIUS: CGFloat = 5
 
+/// 友盟APPKEY
+let UM_APP_KEY = "57219e40e0f55a1599001df7"
+
+ /// 微信
+let WX_APP_ID = "wxdc1e388c3822c80b"
+let WX_APP_SECRET = "a393c1527aaccb95f3a4c88d6d1455f6"
+
+ /// QQ
+let QQ_APP_ID = "1105365512"
+let QQ_APP_KEY = "krvt0zS22qWqaiKW"
+
+ /// 微博
+let WB_APP_KEY = "522277068"
+let WB_APP_SECRET = "2be1eacdf94fb4c17a99de0f6913eab9"
+let WB_REDIRECT_URL = "https://blog.6ag.cn"
         

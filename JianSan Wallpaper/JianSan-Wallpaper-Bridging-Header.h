@@ -11,4 +11,9 @@
 
 #import "UIImage+WallPaper.h"
 
+#import "UMSocial.h"
+#import "UMSocialSinaSSOHandler.h"
+#import "UMSocialWechatHandler.h"
+#import "UMSocialQQHandler.h"
+
 #endif /* JianSan_Wallpaper_Bridging_Header_h */

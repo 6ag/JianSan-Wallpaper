@@ -38,12 +38,13 @@ class JFProfileTableViewController: JFBaseTableViewController {
         
         let group3CellModel1 = JFSettingCellArrow(title: "推荐给好友", icon: "setting_share_icon")
         group3CellModel1.operation = { () -> Void in
-            print("推荐给好友")
+            UMSocialSnsService.presentSnsIconSheetView(self, appKey: nil, shareText: "这是一款神奇的剑网三壁纸APP https://blog.6ag.cn", shareImage: nil, shareToSnsNames: [UMShareToSina, UMShareToQQ, UMShareToWechatSession, UMShareToWechatTimeline], delegate: nil)
         }
         let group3CellModel2 = JFSettingCellArrow(title: "关于我们", icon: "setting_about_icon", destinationVc: JFProfileAboutViewController.self)
         let group3 = JFSettingGroup(cells: [group3CellModel1, group3CellModel2])
         
         groupModels = [group1, group2, group3]
+        
     }
     
 }
