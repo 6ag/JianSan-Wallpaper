@@ -3,7 +3,7 @@
 # Uncomment this line if you're using Swift
 use_frameworks!
 
-target 'JianSan Wallpaper' do
+target 'JianSanWallpaper' do
 pod 'DGElasticPullToRefresh'
 pod 'SnapKit'
 pod 'Alamofire'

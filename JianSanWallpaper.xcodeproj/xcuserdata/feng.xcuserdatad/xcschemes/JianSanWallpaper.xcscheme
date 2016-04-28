@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A579010D1C62E31600B89DB7"
-               BuildableName = "JianSan Wallpaper.app"
-               BlueprintName = "JianSan Wallpaper"
-               ReferencedContainer = "container:JianSan Wallpaper.xcodeproj">
+               BuildableName = "JianSanWallpaper.app"
+               BlueprintName = "JianSanWallpaper"
+               ReferencedContainer = "container:JianSanWallpaper.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A579010D1C62E31600B89DB7"
-            BuildableName = "JianSan Wallpaper.app"
-            BlueprintName = "JianSan Wallpaper"
-            ReferencedContainer = "container:JianSan Wallpaper.xcodeproj">
+            BuildableName = "JianSanWallpaper.app"
+            BlueprintName = "JianSanWallpaper"
+            ReferencedContainer = "container:JianSanWallpaper.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A579010D1C62E31600B89DB7"
-            BuildableName = "JianSan Wallpaper.app"
-            BlueprintName = "JianSan Wallpaper"
-            ReferencedContainer = "container:JianSan Wallpaper.xcodeproj">
+            BuildableName = "JianSanWallpaper.app"
+            BlueprintName = "JianSanWallpaper"
+            ReferencedContainer = "container:JianSanWallpaper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A579010D1C62E31600B89DB7"
-            BuildableName = "JianSan Wallpaper.app"
-            BlueprintName = "JianSan Wallpaper"
-            ReferencedContainer = "container:JianSan Wallpaper.xcodeproj">
+            BuildableName = "JianSanWallpaper.app"
+            BlueprintName = "JianSanWallpaper"
+            ReferencedContainer = "container:JianSanWallpaper.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

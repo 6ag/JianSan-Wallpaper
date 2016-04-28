@@ -84,20 +84,20 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-JianSan Wallpaper/Alamofire.framework"
-  install_framework "Pods-JianSan Wallpaper/DGElasticPullToRefresh.framework"
-  install_framework "Pods-JianSan Wallpaper/SVProgressHUD.framework"
-  install_framework "Pods-JianSan Wallpaper/SnapKit.framework"
-  install_framework "Pods-JianSan Wallpaper/YYCache.framework"
-  install_framework "Pods-JianSan Wallpaper/YYImage.framework"
-  install_framework "Pods-JianSan Wallpaper/YYWebImage.framework"
+  install_framework "Pods-JianSanWallpaper/Alamofire.framework"
+  install_framework "Pods-JianSanWallpaper/DGElasticPullToRefresh.framework"
+  install_framework "Pods-JianSanWallpaper/SVProgressHUD.framework"
+  install_framework "Pods-JianSanWallpaper/SnapKit.framework"
+  install_framework "Pods-JianSanWallpaper/YYCache.framework"
+  install_framework "Pods-JianSanWallpaper/YYImage.framework"
+  install_framework "Pods-JianSanWallpaper/YYWebImage.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-JianSan Wallpaper/Alamofire.framework"
-  install_framework "Pods-JianSan Wallpaper/DGElasticPullToRefresh.framework"
-  install_framework "Pods-JianSan Wallpaper/SVProgressHUD.framework"
-  install_framework "Pods-JianSan Wallpaper/SnapKit.framework"
-  install_framework "Pods-JianSan Wallpaper/YYCache.framework"
-  install_framework "Pods-JianSan Wallpaper/YYImage.framework"
-  install_framework "Pods-JianSan Wallpaper/YYWebImage.framework"
+  install_framework "Pods-JianSanWallpaper/Alamofire.framework"
+  install_framework "Pods-JianSanWallpaper/DGElasticPullToRefresh.framework"
+  install_framework "Pods-JianSanWallpaper/SVProgressHUD.framework"
+  install_framework "Pods-JianSanWallpaper/SnapKit.framework"
+  install_framework "Pods-JianSanWallpaper/YYCache.framework"
+  install_framework "Pods-JianSanWallpaper/YYImage.framework"
+  install_framework "Pods-JianSanWallpaper/YYWebImage.framework"
 fi

@@ -14,7 +14,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-JianSan Wallpaper.xcscheme</key>
+		<key>Pods-JianSanWallpaper.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,32 +47,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>091C38C6F5F92A7D995D43AF8D5DAEFA</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>115824B7CB2E76E5ACB836A251E79404</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>56A59C8FF3C5C84619F8B3A2C9EE7D14</key>
+		<key>139E420DBE22E396305FEA7D022EA274</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5D02B90017FA05D3AC4E9259123EE589</key>
+		<key>2C4372311BB0E9DB7CD7DA851A6D8446</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>77B87C885EF704F88BC768F8D337720A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>780E1E0CD511C8E0136B4CA5CB35D9DE</key>
+		<key>471EAB11F7CFE6733BF03E0BC1201199</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -82,7 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FCB46764826E126F9C7868B74136AB78</key>
+		<key>890932F32DD8FE540EA3BA42ECE60F7F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D92D62E9F5F3F54FB2FC59D78C451B4B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DFC86AE2D0B6A66F102655BBF0FFCD84</key>
 		<dict>
 			<key>primary</key>
 			<true/>
