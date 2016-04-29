@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 class JFDetailViewController: UIViewController, JFContextSheetDelegate {
     
@@ -94,27 +93,27 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
             let lockScreen = UIAlertAction(title: "设定锁定屏幕", style: UIAlertActionStyle.Default, handler: { (action) in
                 
                 if self.image?.saveAsLockScreen() == true {
-                    SVProgressHUD.showSuccessWithStatus("设置成功")
+                    JFProgressHUD.showSuccessWithStatus("设置成功")
                 } else {
-                    SVProgressHUD.showInfoWithStatus("设置失败")
+                    JFProgressHUD.showInfoWithStatus("设置失败")
                 }
             })
             
             let homeScreen = UIAlertAction(title: "设定主屏幕", style: UIAlertActionStyle.Default, handler: { (action) in
                 
                 if self.image?.saveAsHomeScreen() == true {
-                    SVProgressHUD.showSuccessWithStatus("设置成功")
+                    JFProgressHUD.showSuccessWithStatus("设置成功")
                 } else {
-                    SVProgressHUD.showInfoWithStatus("设置失败")
+                    JFProgressHUD.showInfoWithStatus("设置失败")
                 }
             })
             
             let homeScreenAndLockScreen = UIAlertAction(title: "同时设定", style: UIAlertActionStyle.Default, handler: { (action) in
                 
                 if self.image?.saveAsHomeScreenAndLockScreen() == true {
-                    SVProgressHUD.showSuccessWithStatus("设置成功")
+                    JFProgressHUD.showSuccessWithStatus("设置成功")
                 } else {
-                    SVProgressHUD.showInfoWithStatus("设置失败")
+                    JFProgressHUD.showInfoWithStatus("设置失败")
                 }
             })
             
@@ -147,9 +146,9 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
      */
     func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: AnyObject) {
         if error != nil {
-            SVProgressHUD.showErrorWithStatus("保存失败")
+            JFProgressHUD.showErrorWithStatus("保存失败")
         } else {
-            SVProgressHUD.showSuccessWithStatus("保存成功")
+            JFProgressHUD.showSuccessWithStatus("保存成功")
         }
     }
     
@@ -168,8 +167,9 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
         let contextItem2 = JFContextItem(itemName: "预览", itemIcon: "content_icon_preview")
         let contextItem3 = JFContextItem(itemName: "设定", itemIcon: "content_icon_set")
         let contextItem4 = JFContextItem(itemName: "下载", itemIcon: "content_icon_download")
+        let contextItem5 = JFContextItem(itemName: "收藏", itemIcon: "content_icon_star")
         
-        let contextSheet = JFContextSheet(items: [contextItem1, contextItem2, contextItem3, contextItem4])
+        let contextSheet = JFContextSheet(items: [contextItem1, contextItem2, contextItem3, contextItem4, contextItem5])
         contextSheet.delegate = self
         return contextSheet
     }()

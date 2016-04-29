@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SVProgressHUD
 import DGElasticPullToRefresh
 
 enum JFLoadMethod {
@@ -106,7 +105,7 @@ class JFTableViewController: UITableViewController {
                 let maxId = self.array.first?.id ?? 0
                 
                 if result == nil || result?.count == 0 {
-                    SVProgressHUD.showInfoWithStatus("没有更多数据")
+                    JFProgressHUD.showInfoWithStatus("没有更多数据")
                     return
                 }
                 
@@ -129,7 +128,7 @@ class JFTableViewController: UITableViewController {
                 
                 self.tableView.reloadData()
             } else {
-                SVProgressHUD.showInfoWithStatus("您的网络不给力")
+                JFProgressHUD.showInfoWithStatus("您的网络不给力")
             }
         }
     }

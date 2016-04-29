@@ -121,17 +121,22 @@ class JFContextSheet: UIView {
             itemView.alpha = 0.0
             
             // 布局角度范围
-            var startAngle: CGFloat = 0
-            var endAngle: CGFloat = 0
+            var startAngle: CGFloat = 0     // 开始角度
+            var endAngle: CGFloat = 0       // 结束角度
+            let extendAngle: CGFloat = 8    // 在四角的时候扩大角度
+            let cornerRadius: CGFloat = 120 // 在四角时半径
+            let sideRadius: CGFloat = 90    // 在四边时半径
             
             // 左上
             if centerPoint.x <= insetX && centerPoint.y <= insetY {
-                startAngle = 0
-                endAngle = 90
+                pathRadius = cornerRadius
+                startAngle = 0 - extendAngle
+                endAngle = 90 + extendAngle
             }
             
             // 上
             if centerPoint.x > insetX && centerPoint.x <= SCREEN_WIDTH - insetX && centerPoint.y <= insetY {
+                pathRadius = sideRadius
                 switch subviews.count {
                 case 1:
                     startAngle = 90
@@ -156,12 +161,14 @@ class JFContextSheet: UIView {
             
             // 右上角
             if centerPoint.x > SCREEN_WIDTH - insetX && centerPoint.y <= insetY {
-                startAngle = 180
-                endAngle = 90
+                pathRadius = cornerRadius
+                startAngle = 180 + extendAngle
+                endAngle = 90 - extendAngle
             }
             
             // 左
             if centerPoint.x <= insetX && centerPoint.y > insetY && centerPoint.y <= SCREEN_HEIGHT - insetY {
+                pathRadius = sideRadius
                 switch subviews.count {
                 case 1:
                     startAngle = 90
@@ -186,12 +193,14 @@ class JFContextSheet: UIView {
             
             // 左下
             if centerPoint.x <= insetX && centerPoint.y > SCREEN_HEIGHT - insetY {
-                startAngle = -90
-                endAngle = 0
+                pathRadius = cornerRadius
+                startAngle = -90 - extendAngle
+                endAngle = 0 + extendAngle
             }
             
             // 中间区域/下
             if centerPoint.x > insetX && centerPoint.x < SCREEN_WIDTH - insetX && centerPoint.y > insetY {
+                pathRadius = sideRadius
                 switch subviews.count {
                 case 1:
                     startAngle = -90
@@ -216,6 +225,7 @@ class JFContextSheet: UIView {
             
             // 右
             if centerPoint.x > SCREEN_WIDTH - insetX && centerPoint.y > insetY && centerPoint.y <= SCREEN_HEIGHT - insetY {
+                pathRadius = sideRadius
                 switch subviews.count {
                 case 1:
                     startAngle = 180
@@ -240,8 +250,9 @@ class JFContextSheet: UIView {
             
             // 右下
             if centerPoint.x > SCREEN_WIDTH - insetX && centerPoint.y > SCREEN_HEIGHT - insetY {
-                startAngle = 270
-                endAngle = 180
+                pathRadius = cornerRadius
+                startAngle = 270 + extendAngle
+                endAngle = 180 - extendAngle
             }
             
             // 制造动画

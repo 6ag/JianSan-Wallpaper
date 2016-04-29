@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 class JFProfileFeedbackViewController: JFBaseTableViewController {
     
@@ -65,7 +64,7 @@ class JFProfileFeedbackViewController: JFBaseTableViewController {
         
         tableView.userInteractionEnabled = false
         
-        SVProgressHUD.showWithStatus("正在提交")
+        JFProgressHUD.showWithStatus("正在提交")
         
         let parameters = [
             "content" : contentTextView.text,
@@ -77,9 +76,9 @@ class JFProfileFeedbackViewController: JFBaseTableViewController {
                 
                 self.tableView.userInteractionEnabled = true
                 if success == true {
-                    SVProgressHUD.showSuccessWithStatus("谢谢支持")
+                    JFProgressHUD.showSuccessWithStatus("谢谢支持")
                 } else {
-                    SVProgressHUD.showErrorWithStatus("您的网络不给力哦")
+                    JFProgressHUD.showErrorWithStatus("您的网络不给力哦")
                 }
                 
                 // 返回上一级控制器
