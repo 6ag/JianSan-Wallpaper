@@ -24,7 +24,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>weibo</string>
+			<string></string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>wb522277068</string>
@@ -38,6 +38,14 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>tencent1105365512</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>wx4c6093e754a93fb1</string>
 			</array>
 		</dict>
 	</array>

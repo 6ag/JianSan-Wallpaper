@@ -8,13 +8,11 @@
 
 import Foundation
 
-// api根路径
+/// api根路径
 let baseURL = "http://120.24.79.174/jiansan/"
 
-// 获取壁纸接口
+/// 获取壁纸接口
 let getWallpaper = "\(baseURL)getwallpaper.php"
 
 /// 意见反馈
 let commitFeebback = "\(baseURL)feedback.php"
-
-

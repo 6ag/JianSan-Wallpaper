@@ -67,6 +67,14 @@
 		B2FE2FD01CD31ADE0013FAEE /* JFDutyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FE2FCF1CD31ADE0013FAEE /* JFDutyViewController.swift */; };
 		B2FE2FD21CD33CDA0013FAEE /* JFProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FE2FD11CD33CDA0013FAEE /* JFProgressHUD.swift */; };
 		B2FE2FD41CD33CE60013FAEE /* JFFMDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FE2FD31CD33CE60013FAEE /* JFFMDBManager.swift */; };
+		B2FE2FE41CD33F3B0013FAEE /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FE2FD71CD33F3B0013FAEE /* FMDatabase.m */; };
+		B2FE2FE51CD33F3B0013FAEE /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FE2FD91CD33F3B0013FAEE /* FMDatabaseAdditions.m */; };
+		B2FE2FE61CD33F3B0013FAEE /* FMDatabaseAdditionsVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FE2FDA1CD33F3B0013FAEE /* FMDatabaseAdditionsVariadic.swift */; };
+		B2FE2FE71CD33F3B0013FAEE /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FE2FDC1CD33F3B0013FAEE /* FMDatabasePool.m */; };
+		B2FE2FE81CD33F3B0013FAEE /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FE2FDE1CD33F3B0013FAEE /* FMDatabaseQueue.m */; };
+		B2FE2FE91CD33F3B0013FAEE /* FMDatabaseVariadic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FE2FDF1CD33F3B0013FAEE /* FMDatabaseVariadic.swift */; };
+		B2FE2FEA1CD33F3B0013FAEE /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B2FE2FE21CD33F3B0013FAEE /* FMResultSet.m */; };
+		B2FE2FEB1CD33F3B0013FAEE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2FE2FE31CD33F3B0013FAEE /* Info.plist */; };
 		C26FECCE4D7E743654520B4F /* Pods_JianSanWallpaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F750E282254FD16A770D836D /* Pods_JianSanWallpaper.framework */; };
 /* End PBXBuildFile section */
 
@@ -168,6 +176,20 @@
 		B2FE2FCF1CD31ADE0013FAEE /* JFDutyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFDutyViewController.swift; sourceTree = "<group>"; };
 		B2FE2FD11CD33CDA0013FAEE /* JFProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFProgressHUD.swift; sourceTree = "<group>"; };
 		B2FE2FD31CD33CE60013FAEE /* JFFMDBManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFFMDBManager.swift; sourceTree = "<group>"; };
+		B2FE2FD61CD33F3B0013FAEE /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		B2FE2FD71CD33F3B0013FAEE /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		B2FE2FD81CD33F3B0013FAEE /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		B2FE2FD91CD33F3B0013FAEE /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		B2FE2FDA1CD33F3B0013FAEE /* FMDatabaseAdditionsVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseAdditionsVariadic.swift; sourceTree = "<group>"; };
+		B2FE2FDB1CD33F3B0013FAEE /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		B2FE2FDC1CD33F3B0013FAEE /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		B2FE2FDD1CD33F3B0013FAEE /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		B2FE2FDE1CD33F3B0013FAEE /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		B2FE2FDF1CD33F3B0013FAEE /* FMDatabaseVariadic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FMDatabaseVariadic.swift; sourceTree = "<group>"; };
+		B2FE2FE01CD33F3B0013FAEE /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		B2FE2FE11CD33F3B0013FAEE /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		B2FE2FE21CD33F3B0013FAEE /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		B2FE2FE31CD33F3B0013FAEE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2FF91B61CCFC84A0020C974 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		F750E282254FD16A770D836D /* Pods_JianSanWallpaper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JianSanWallpaper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -379,6 +401,7 @@
 		B20953011CD2132800036163 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				B2FE2FD51CD33F3B0013FAEE /* fmdb */,
 				B20953021CD2132800036163 /* JFContextSheet */,
 				B20953051CD2132800036163 /* UMSocial_Sdk_5.1 */,
 				B20953201CD2132800036163 /* UMSocial_Sdk_Extra_Frameworks */,
@@ -505,6 +528,27 @@
 			path = WallPaperTool;
 			sourceTree = "<group>";
 		};
+		B2FE2FD51CD33F3B0013FAEE /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				B2FE2FD61CD33F3B0013FAEE /* FMDatabase.h */,
+				B2FE2FD71CD33F3B0013FAEE /* FMDatabase.m */,
+				B2FE2FD81CD33F3B0013FAEE /* FMDatabaseAdditions.h */,
+				B2FE2FD91CD33F3B0013FAEE /* FMDatabaseAdditions.m */,
+				B2FE2FDA1CD33F3B0013FAEE /* FMDatabaseAdditionsVariadic.swift */,
+				B2FE2FDB1CD33F3B0013FAEE /* FMDatabasePool.h */,
+				B2FE2FDC1CD33F3B0013FAEE /* FMDatabasePool.m */,
+				B2FE2FDD1CD33F3B0013FAEE /* FMDatabaseQueue.h */,
+				B2FE2FDE1CD33F3B0013FAEE /* FMDatabaseQueue.m */,
+				B2FE2FDF1CD33F3B0013FAEE /* FMDatabaseVariadic.swift */,
+				B2FE2FE01CD33F3B0013FAEE /* FMDB.h */,
+				B2FE2FE11CD33F3B0013FAEE /* FMResultSet.h */,
+				B2FE2FE21CD33F3B0013FAEE /* FMResultSet.m */,
+				B2FE2FE31CD33F3B0013FAEE /* Info.plist */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
 		B41015C618EC22AE7E466DE4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -607,6 +651,7 @@
 				B20953681CD2132800036163 /* UMSShareListController.xib in Resources */,
 				B20953731CD2132800036163 /* Info.plist in Resources */,
 				B20953631CD2132800036163 /* UMSCommentInputControlleriPad.xib in Resources */,
+				B2FE2FEB1CD33F3B0013FAEE /* Info.plist in Resources */,
 				B20953691CD2132800036163 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				B209536F1CD2132800036163 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				B20953411CD2132800036163 /* Assets.xcassets in Resources */,
@@ -681,19 +726,24 @@
 				B209534E1CD2132800036163 /* JFNavigationController.swift in Sources */,
 				B20953511CD2132800036163 /* JFProfileFeedbackViewController.swift in Sources */,
 				B209534A1CD2132800036163 /* JFCategoriesMenuView.swift in Sources */,
+				B2FE2FE81CD33F3B0013FAEE /* FMDatabaseQueue.m in Sources */,
 				B209535A1CD2132800036163 /* JFSettingGroup.swift in Sources */,
 				B209534F1CD2132800036163 /* JFBaseTableViewController.swift in Sources */,
 				B2FE2FD41CD33CE60013FAEE /* JFFMDBManager.swift in Sources */,
 				B209535B1CD2132800036163 /* JFSettingCell.swift in Sources */,
 				B20953491CD2132800036163 /* JFWallPaperModel.swift in Sources */,
 				B209535C1CD2132800036163 /* JFNetworkTools.swift in Sources */,
+				B2FE2FEA1CD33F3B0013FAEE /* FMResultSet.m in Sources */,
 				B20953451CD2132800036163 /* JFDetailViewController.swift in Sources */,
 				B20953561CD2132800036163 /* JFSettingCellArrow.swift in Sources */,
 				B209535E1CD2132800036163 /* JFContextSheet.swift in Sources */,
 				B20953441CD2132800036163 /* Common.swift in Sources */,
+				B2FE2FE41CD33F3B0013FAEE /* FMDatabase.m in Sources */,
 				B2FE2FD01CD31ADE0013FAEE /* JFDutyViewController.swift in Sources */,
 				B20953421CD2132800036163 /* api.swift in Sources */,
+				B2FE2FE51CD33F3B0013FAEE /* FMDatabaseAdditions.m in Sources */,
 				B20953461CD2132800036163 /* JFHomeViewController.swift in Sources */,
+				B2FE2FE91CD33F3B0013FAEE /* FMDatabaseVariadic.swift in Sources */,
 				B20953541CD2132800036163 /* JFProfileTableViewController.swift in Sources */,
 				B209534C1CD2132800036163 /* JFProgressView.swift in Sources */,
 				B20953591CD2132800036163 /* JFSettingCellSwitch.swift in Sources */,
@@ -701,6 +751,8 @@
 				B20953581CD2132800036163 /* JFSettingCellModel.swift in Sources */,
 				B209535D1CD2132800036163 /* JFContextItem.swift in Sources */,
 				B20953471CD2132800036163 /* JFTableViewController.swift in Sources */,
+				B2FE2FE61CD33F3B0013FAEE /* FMDatabaseAdditionsVariadic.swift in Sources */,
+				B2FE2FE71CD33F3B0013FAEE /* FMDatabasePool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,8 @@
 
 #import "UIImage+WallPaper.h"
 
+#import "FMDB.h"
+
 #import "UMSocial.h"
 #import "UMSocialSinaSSOHandler.h"
 #import "UMSocialWechatHandler.h"
