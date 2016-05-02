@@ -17,11 +17,15 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
         case photo      // 相册
     }
     
+    /// 图片对象
     var image: UIImage? {
         didSet {
             imageView.image = image!
         }
     }
+    
+    /// 图片路径
+    var path: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,11 +64,11 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
             contextSheet.dismiss()
         } else {
             // 如果预览视图已经加载，则再次触摸是取消预览 感觉这个用户体验不好 注释掉
-//            if (scrollView.superview != nil) {
-//                scrollView.removeFromSuperview()
-//            } else {
-                contextSheet.startWithGestureRecognizer(gestureRecognizer, inView: view)
-//            }
+            //            if (scrollView.superview != nil) {
+            //                scrollView.removeFromSuperview()
+            //            } else {
+            contextSheet.startWithGestureRecognizer(gestureRecognizer, inView: view)
+            //            }
         }
         
     }
@@ -128,13 +132,17 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
             alertController.addAction(cancel)
             
             // 弹出选项
-            presentViewController(alertController, animated: true, completion: { 
+            presentViewController(alertController, animated: true, completion: {
                 
             })
             
             break
         case "下载":
             UIImageWriteToSavedPhotosAlbum(image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+            break
+        case "收藏":
+            JFFMDBManager.sharedManager.insertStar(path!)
+            JFProgressHUD.showSuccessWithStatus("收藏成功")
             break
         default:
             break

@@ -163,6 +163,7 @@ class JFTableViewController: UITableViewController {
         
         let detailVc = JFDetailViewController()
         detailVc.image = (tableView.cellForRowAtIndexPath(indexPath) as? JFTableViewCell)?.wallPaperImageView.image
+        detailVc.path = array[indexPath.row].path
         presentViewController(detailVc, animated: true, completion: nil)
     }
     

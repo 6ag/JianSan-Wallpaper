@@ -38,7 +38,7 @@ class JFFMDBManager: NSObject {
      */
     private func createStarTable() {
         let sql = "CREATE TABLE IF NOT EXISTS \(tbName) (" +
-        "id INTEGER NOT NULL AUTO_INCREMENT KEY," +
+        "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
         "path VARCHAR(80) NOT NULL" +
         ");"
         
@@ -58,11 +58,11 @@ class JFFMDBManager: NSObject {
      - parameter path:     收藏的壁纸路径
      */
     func insertStar(path: String) -> Void {
-        let sql = "INSERT INTO \(tbName) (path) VALUES (?);"
+        let sql = "INSERT INTO \(tbName) (path) VALUES (\"\(path)\");"
         
         dbQueue.inDatabase { (db) in
             do {
-                try db.executeUpdate(sql, path)
+                try db.executeUpdate(sql)
             } catch {
                 print("插入数据失败")
             }
