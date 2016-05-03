@@ -895,7 +895,7 @@
 					"\"YYWebImage\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "cn.6ag.JianSan-Wallpaper";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.6ag.JianSanWallpaper;
 				PRODUCT_NAME = JianSanWallpaper;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JianSanWallpaper/JianSan-Wallpaper-Bridging-Header.h";
 			};
@@ -940,7 +940,7 @@
 					"\"YYWebImage\"",
 					"-ObjC",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "cn.6ag.JianSan-Wallpaper";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.6ag.JianSanWallpaper;
 				PRODUCT_NAME = JianSanWallpaper;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JianSanWallpaper/JianSan-Wallpaper-Bridging-Header.h";
 			};

@@ -35,7 +35,7 @@ class JFProfileTableViewController: JFBaseTableViewController {
         let group3CellModel1 = JFSettingCellArrow(title: "意见反馈", icon: "setting_feedback_icon", destinationVc: JFProfileFeedbackViewController.self)
         let group3CellModel2 = JFSettingCellArrow(title: "推荐给好友", icon: "setting_share_icon")
         group3CellModel2.operation = { () -> Void in
-            UMSocialSnsService.presentSnsIconSheetView(self, appKey: nil, shareText: "这是一款神奇的剑网三壁纸APP https://blog.6ag.cn", shareImage: nil, shareToSnsNames: [UMShareToSina, UMShareToQQ, UMShareToWechatSession, UMShareToWechatTimeline], delegate: nil)
+            UMSocialSnsService.presentSnsIconSheetView(self, appKey: nil, shareText: "这是一款剑三福利app，十二大门派海量剑三壁纸一键切换！小伙伴们快来试试吧，https://blog.6ag.cn", shareImage: nil, shareToSnsNames: [UMShareToSina, UMShareToQQ, UMShareToWechatSession, UMShareToWechatTimeline], delegate: nil)
         }
         let group3CellModel3 = JFSettingCellArrow(title: "版权/责任声明", icon: "setting_help_icon", destinationVc: JFDutyViewController.self)
         let group4CellModel4 = JFSettingCellLabel(title: "当前版本", icon: "setting_upload_icon", text: (NSBundle.mainBundle().infoDictionary!["CFBundleShortVersionString"] as! String))

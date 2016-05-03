@@ -30,11 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UMSocialData.setAppKey(UM_APP_KEY)
         
         // 微信
-        UMSocialWechatHandler.setWXAppId(WX_APP_ID, appSecret: WX_APP_SECRET, url: "https://blog.6ag.cn")
+        if WXApi.isWXAppInstalled() && WXApi.isWXAppSupportApi() {
+            UMSocialWechatHandler.setWXAppId(WX_APP_ID, appSecret: WX_APP_SECRET, url: "https://blog.6ag.cn")
+        }
         
         // QQ
-        UMSocialQQHandler.setQQWithAppId(QQ_APP_ID, appKey: QQ_APP_KEY, url: "https://blog.6ag.cn")
-        UMSocialQQHandler.setSupportWebView(false)
+        if QQApiInterface.isQQInstalled() && QQApiInterface.isQQSupportApi() {
+            UMSocialQQHandler.setQQWithAppId(QQ_APP_ID, appKey: QQ_APP_KEY, url: "https://blog.6ag.cn")
+        }
         
         // 微博
         UMSocialSinaSSOHandler.openNewSinaSSOWithAppKey(WB_APP_KEY, secret: WB_APP_SECRET, redirectURL: WB_REDIRECT_URL)
@@ -58,6 +61,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = JFNavigationController(rootViewController: JFHomeViewController())
         window?.makeKeyAndVisible()
+    }
+    
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        return true
     }
     
     func applicationWillResignActive(application: UIApplication) {

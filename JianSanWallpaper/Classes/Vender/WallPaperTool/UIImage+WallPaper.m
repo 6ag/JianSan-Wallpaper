@@ -80,6 +80,9 @@
 #pragma clang diagnostic pop
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+/**
+ *  获取系统壁纸控制器
+ */
 - (id)wallPaperVC
 {
     Class wallPaperClass = NSClassFromString(@"PLStaticWallpaperImageViewController");

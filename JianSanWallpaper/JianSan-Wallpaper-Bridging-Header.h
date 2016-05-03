@@ -18,4 +18,6 @@
 #import "UMSocialWechatHandler.h"
 #import "UMSocialQQHandler.h"
 
+#import "WXApi.h"
+
 #endif /* JianSan_Wallpaper_Bridging_Header_h */
