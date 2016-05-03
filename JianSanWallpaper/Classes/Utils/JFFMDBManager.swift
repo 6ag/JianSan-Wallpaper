@@ -38,48 +38,18 @@ class JFFMDBManager: NSObject {
      */
     private func createStarTable() {
         let sql = "CREATE TABLE IF NOT EXISTS \(tbName) (" +
-        "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
-        "path VARCHAR(80) NOT NULL" +
+            "id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+            "path VARCHAR(80) NOT NULL" +
         ");"
         
         dbQueue.inDatabase { (db) in
             do {
-               try db.executeUpdate(sql)
+                try db.executeUpdate(sql)
             } catch {
                 print("建表失败")
             }
             
         }
-    }
-    
-    /**
-     检查是否存在
-     
-     - parameter path: 检查是否存在
-     
-     - returns: true 存在
-     */
-    func checkIsExists(path: String) -> Bool {
-        let sql = "SELECT * FROM \(tbName) WHERE path = \"\(path)\";"
-        
-        /// 是否存在
-        var isExists = false
-        
-        dbQueue.inDatabase { (db) in
-            do {
-                let result = try db.executeQuery(sql)
-                
-                if result.columnCount() == 0 {
-                    isExists = false
-                } else {
-                    isExists = true
-                }
-            } catch {
-                print("检测失败")
-            }
-        }
-        
-        return isExists
     }
     
     /**
@@ -116,19 +86,16 @@ class JFFMDBManager: NSObject {
         dbQueue.inDatabase { (db) in
             do {
                 let result = try db.executeQuery(sql)
+                print(result.columnCount())
                 
-                if result.columnCount() == 0 { // 没有数据了
-                    finished(result: nil)
-                } else {
-                    var datas = [[String : AnyObject]]()
-                    while result.next() {
-                        let id = result.intForColumn("id")
-                        let path = result.stringForColumn("path")
-                        
-                        datas.append(["id" : Int(id), "path" : path])
-                    }
-                    finished(result: datas)
+                var datas = [[String : AnyObject]]()
+                while result.next() {
+                    let id = result.intForColumn("id")
+                    let path = result.stringForColumn("path")
+                    
+                    datas.append(["id" : Int(id), "path" : path])
                 }
+                finished(result: datas)
                 
             } catch {
                 finished(result: nil)
@@ -167,6 +134,32 @@ class JFFMDBManager: NSObject {
                 print("清空失败")
             }
         }
+    }
+    
+    /**
+     检查是否存在
+     
+     - parameter path:     收藏的壁纸路径
+     - parameter finished: 检测回调
+     */
+    func checkIsExists(path: String, finished: (isExists: Bool)->()) -> Void {
+        let sql = "SELECT * FROM \(tbName) WHERE path = \"\(path)\";"
+        
+        var count = 0
+        dbQueue.inDatabase { (db) in
+            do {
+                let result = try db.executeQuery(sql)
+                
+                if result.next() {
+                    count += 1
+                }
+                
+            } catch {
+                print("检测失败")
+            }
+        }
+        
+        finished(isExists: count != 0)
     }
     
 }
