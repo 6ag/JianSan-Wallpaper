@@ -63,6 +63,7 @@
 		B2BB29121CD1D72400CE4DC1 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B2BB29111CD1D72400CE4DC1 /* libiconv.tbd */; };
 		B2BB29141CD1D73400CE4DC1 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2BB29131CD1D73400CE4DC1 /* CoreTelephony.framework */; };
 		B2BB29A01CD1E32000CE4DC1 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2BB28E11CD1C05C00CE4DC1 /* ImageIO.framework */; };
+		B2E3003F1CD882B100E4DCA1 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2FF91B61CCFC84A0020C974 /* Photos.framework */; };
 		B2FE2FD01CD31ADE0013FAEE /* JFDutyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FE2FCF1CD31ADE0013FAEE /* JFDutyViewController.swift */; };
 		B2FE2FD21CD33CDA0013FAEE /* JFProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FE2FD11CD33CDA0013FAEE /* JFProgressHUD.swift */; };
 		B2FE2FD41CD33CE60013FAEE /* JFFMDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FE2FD31CD33CE60013FAEE /* JFFMDBManager.swift */; };
@@ -197,6 +198,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2E3003F1CD882B100E4DCA1 /* Photos.framework in Frameworks */,
 				B2BB29A01CD1E32000CE4DC1 /* ImageIO.framework in Frameworks */,
 				B20953711CD2132800036163 /* libWeChatSDK.a in Frameworks */,
 				B2BB29141CD1D73400CE4DC1 /* CoreTelephony.framework in Frameworks */,

@@ -95,30 +95,33 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
             let alertController = UIAlertController()
             
             let lockScreen = UIAlertAction(title: "设定锁定屏幕", style: UIAlertActionStyle.Default, handler: { (action) in
-                
-                if self.image?.saveAsLockScreen() == true {
-                    JFProgressHUD.showSuccessWithStatus("设置成功")
-                } else {
-                    JFProgressHUD.showInfoWithStatus("设置失败")
-                }
+                self.image?.saveAndAsScreenPhotoWith(UIImageScreenLock, finished: { (success) in
+                    if success {
+                        JFProgressHUD.showSuccessWithStatus("设置成功")
+                    } else {
+                        JFProgressHUD.showInfoWithStatus("设置失败")
+                    }
+                })
             })
             
             let homeScreen = UIAlertAction(title: "设定主屏幕", style: UIAlertActionStyle.Default, handler: { (action) in
-                
-                if self.image?.saveAsHomeScreen() == true {
-                    JFProgressHUD.showSuccessWithStatus("设置成功")
-                } else {
-                    JFProgressHUD.showInfoWithStatus("设置失败")
-                }
+                self.image?.saveAndAsScreenPhotoWith(UIImageScreenHome, finished: { (success) in
+                    if success {
+                        JFProgressHUD.showSuccessWithStatus("设置成功")
+                    } else {
+                        JFProgressHUD.showInfoWithStatus("设置失败")
+                    }
+                })
             })
             
             let homeScreenAndLockScreen = UIAlertAction(title: "同时设定", style: UIAlertActionStyle.Default, handler: { (action) in
-                
-                if self.image?.saveAsHomeScreenAndLockScreen() == true {
-                    JFProgressHUD.showSuccessWithStatus("设置成功")
-                } else {
-                    JFProgressHUD.showInfoWithStatus("设置失败")
-                }
+                self.image?.saveAndAsScreenPhotoWith(UIImageScreenBoth, finished: { (success) in
+                    if success {
+                        JFProgressHUD.showSuccessWithStatus("设置成功")
+                    } else {
+                        JFProgressHUD.showInfoWithStatus("设置失败")
+                    }
+                })
             })
             
             let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: { (action) in

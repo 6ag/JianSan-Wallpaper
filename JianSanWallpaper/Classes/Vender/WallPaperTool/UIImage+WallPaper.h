@@ -8,21 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+typedef enum {
+    UIImageScreenHome,
+    UIImageScreenLock,
+    UIImageScreenBoth
+} UIImageScreen;
+
 @interface UIImage (WallPaper)
 
-/*
- *  保存为桌面壁纸和锁屏壁纸
+/**
+ *  一键保存到相册并设置为壁纸
  */
-- (BOOL)saveAsHomeScreenAndLockScreen;
-
-/*
- *  保存为桌面壁纸
- */
-- (BOOL)saveAsHomeScreen;
-
-/*
- *  保存为锁屏壁纸
- */
-- (BOOL)saveAsLockScreen;
+- (void)saveAndAsScreenPhotoWith:(UIImageScreen)imageScreen finished:(void (^)(BOOL success))finished;
 
 @end

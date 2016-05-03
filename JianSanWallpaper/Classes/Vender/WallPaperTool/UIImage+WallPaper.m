@@ -9,6 +9,9 @@
 #import "UIImage+WallPaper.h"
 #import <objc/runtime.h>
 #import <objc/message.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+
+#import <Photos/Photos.h>
 
 @interface UIImage ()
 
@@ -19,62 +22,39 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wundeclared-selector"
 
-/*
- *  保存为桌面壁纸和锁屏壁纸
- */
-- (BOOL)saveAsHomeScreenAndLockScreen
+- (void)saveAndAsScreenPhotoWith:(UIImageScreen)imageScreen finished:(void (^)(BOOL success))finished
 {
-    [self saveToPhotos];
-    
-    id wallPaperVc = self.wallPaperVC;
-    if (wallPaperVc) {
-        [wallPaperVc performSelector:@selector(setImageAsHomeScreenAndLockScreenClicked:) withObject:nil];
-        return YES;
-    } else {
-        return NO;
-    }
-    
-}
-
-/*
- *  保存为桌面壁纸
- */
-- (BOOL)saveAsHomeScreen
-{
-    [self saveToPhotos];
-    
-    id wallPaperVc = self.wallPaperVC;
-    if (wallPaperVc) {
-        [wallPaperVc performSelector:@selector(setImageAsHomeScreenClicked:) withObject:nil];
-        return YES;
-    } else {
-        return NO;
-    }
-    
-}
-
-/*
- *  保存为锁屏壁纸
- */
-- (BOOL)saveAsLockScreen
-{
-    [self saveToPhotos];
-    
-    id wallPaperVc = self.wallPaperVC;
-    if (wallPaperVc) {
-        [wallPaperVc performSelector:@selector(setImageAsLockScreenClicked:) withObject:nil];
-        return YES;
-    } else {
-        return NO;
-    }
-}
-
-/*
- *  保存到照片库
- */
-- (void)saveToPhotos
-{
-    UIImageWriteToSavedPhotosAlbum(self, nil,nil, NULL);
+    [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+        if (PHAuthorizationStatusAuthorized == status) {
+            
+            // 保存需要设置为壁纸的图片到相册
+            UIImageWriteToSavedPhotosAlbum(self, nil,nil, NULL);
+            
+            // 获取壁纸控制器
+            id wallPaperVc = self.wallPaperVC;
+            if (wallPaperVc) {
+                switch (imageScreen) {
+                    case UIImageScreenHome:
+                        [wallPaperVc performSelector:@selector(setImageAsHomeScreenClicked:) withObject:nil];
+                        break;
+                    case UIImageScreenLock:
+                        [wallPaperVc performSelector:@selector(setImageAsLockScreenClicked:) withObject:nil];
+                        break;
+                    case UIImageScreenBoth:
+                        [wallPaperVc performSelector:@selector(setImageAsHomeScreenAndLockScreenClicked:) withObject:nil];
+                        break;
+                    default:
+                        break;
+                }
+                finished(YES);
+            } else {
+                finished(NO);
+            }
+        } else {
+            // 无权限
+            finished(NO);
+        }
+    }];
 }
 
 #pragma clang diagnostic pop
