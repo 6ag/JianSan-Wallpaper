@@ -86,7 +86,6 @@ class JFFMDBManager: NSObject {
         dbQueue.inDatabase { (db) in
             do {
                 let result = try db.executeQuery(sql)
-                print(result.columnCount())
                 
                 var datas = [[String : AnyObject]]()
                 while result.next() {
