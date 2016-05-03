@@ -80,8 +80,16 @@ class JFBaseTableViewController: UITableViewController {
             
             /// 目标控制器类
             let destinationVcClass = cellArrow.destinationVc as! UIViewController.Type
+            
             let destinationVc = destinationVcClass.init()
             destinationVc.title = cellArrow.title
+            
+            // 如果是收藏控制器 就设置标识
+            if destinationVcClass.isEqual(JFTableViewController) {
+                print("是收藏控制器")
+                (destinationVc as! JFTableViewController).isStarVc = true
+            }
+            
             navigationController?.pushViewController(destinationVc, animated: true)
         }
         

@@ -90,11 +90,6 @@ class JFHomeViewController: UIViewController, JFCategoriesMenuViewDelegate {
         view.addGestureRecognizer(rightSwipeGesture)
         
     }
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
-    }
     
     /**
      滑动手势

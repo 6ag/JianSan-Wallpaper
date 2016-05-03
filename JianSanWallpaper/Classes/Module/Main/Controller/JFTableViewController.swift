@@ -33,11 +33,23 @@ class JFTableViewController: UITableViewController {
         }
     }
     
+    /// 是否是收藏控制器
+    var isStarVc = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         prepareUI()         // 准备UI
         setupRefreshView()  // 配置刷新控件
+        
+        if isStarVc {
+            pullDownRefresh()
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Fade)
     }
     
     /**
@@ -72,7 +84,12 @@ class JFTableViewController: UITableViewController {
     func pullDownRefresh() -> Void {
         array.removeAll()
         currentPage = 1
-        updateData(JFLoadMethod.pullDown, category: currentCategoryModel!.category!, currentPage: currentPage)
+        if isStarVc {
+            updateDataFromLocation(JFLoadMethod.pullDown, currentPage: currentPage)
+        } else {
+            updateDataFromNetwork(JFLoadMethod.pullDown, category: currentCategoryModel!.category!, currentPage: currentPage)
+        }
+        
     }
     
     /**
@@ -80,13 +97,70 @@ class JFTableViewController: UITableViewController {
      */
     func pullUpLoadMore() -> Void {
         currentPage += 1
-        updateData(JFLoadMethod.pullUp, category: currentCategoryModel!.category!, currentPage: currentPage)
+        if isStarVc {
+            updateDataFromLocation(JFLoadMethod.pullUp, currentPage: currentPage)
+        } else {
+           updateDataFromNetwork(JFLoadMethod.pullUp, category: currentCategoryModel!.category!, currentPage: currentPage)
+        }
     }
     
     /**
-     加载数据
+     从本地加载数据
+     
+     - parameter loadMethod:   加载方式
+     - parameter currentPage:  当前页
+     - parameter onePageCount: 每页数量
      */
-    private func updateData(loadMethod: JFLoadMethod, category: String, currentPage: Int, onePageCount: Int = 10) {
+    private func updateDataFromLocation(loadMethod: JFLoadMethod, currentPage: Int, onePageCount: Int = 10) {
+        
+        JFFMDBManager.sharedManager.getStarWallpaper(currentPage, onePageCount: onePageCount) { (result) in
+            
+            self.pullUpView.stopAnimating()
+            
+            if result != nil || result?.count != 0 {
+                let minId = self.array.last?.id ?? 0
+                let maxId = self.array.first?.id ?? 0
+                
+                if result == nil || result?.count == 0 {
+                    JFProgressHUD.showInfoWithStatus("没有更多数据")
+                    return
+                }
+                
+                // 返回的id是逆序的，所以拼接需要反转
+                if loadMethod == JFLoadMethod.pullDown  { // 加载最新
+                    for dict in result!.reverse() {
+                        let wallPaperModel = JFWallPaperModel(dict: dict)
+                        if wallPaperModel.id > maxId {
+                            self.array.insert(wallPaperModel, atIndex: 0)
+                        }
+                    }
+                } else {
+                    for dict in result! {
+                        let wallPaperModel = JFWallPaperModel(dict: dict)
+                        if wallPaperModel.id < minId {
+                            self.array.append(wallPaperModel)
+                        }
+                    }
+                }
+                
+                self.tableView.reloadData()
+            } else {
+                JFProgressHUD.showInfoWithStatus("没有更多数据")
+            }
+            
+        }
+        
+    }
+    
+    /**
+     从网络加载数据
+     
+     - parameter loadMethod:   加载方式
+     - parameter category:     分类
+     - parameter currentPage:  当前页
+     - parameter onePageCount: 每页数量
+     */
+    private func updateDataFromNetwork(loadMethod: JFLoadMethod, category: String, currentPage: Int, onePageCount: Int = 10) {
         
         let parameters = [
             "category" : category,

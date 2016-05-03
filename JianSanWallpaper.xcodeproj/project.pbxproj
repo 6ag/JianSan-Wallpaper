@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B208325C1CD8442600E1C296 /* JFDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208325A1CD8442600E1C296 /* JFDetailViewController.swift */; };
+		B208325D1CD8442600E1C296 /* JFTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208325B1CD8442600E1C296 /* JFTableViewController.swift */; };
+		B20832601CD8445200E1C296 /* JFWallPaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B208325F1CD8445200E1C296 /* JFWallPaperModel.swift */; };
 		B20953411CD2132800036163 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B20952D61CD2132800036163 /* Assets.xcassets */; };
 		B20953421CD2132800036163 /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952D91CD2132800036163 /* api.swift */; };
 		B20953431CD2132800036163 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952DA1CD2132800036163 /* AppDelegate.swift */; };
 		B20953441CD2132800036163 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952DB1CD2132800036163 /* Common.swift */; };
-		B20953451CD2132800036163 /* JFDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952DF1CD2132800036163 /* JFDetailViewController.swift */; };
 		B20953461CD2132800036163 /* JFHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952E01CD2132800036163 /* JFHomeViewController.swift */; };
-		B20953471CD2132800036163 /* JFTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952E11CD2132800036163 /* JFTableViewController.swift */; };
 		B20953481CD2132800036163 /* JFCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952E31CD2132800036163 /* JFCategoryModel.swift */; };
-		B20953491CD2132800036163 /* JFWallPaperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952E41CD2132800036163 /* JFWallPaperModel.swift */; };
 		B209534A1CD2132800036163 /* JFCategoriesMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952E61CD2132800036163 /* JFCategoriesMenuView.swift */; };
 		B209534B1CD2132800036163 /* JFCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952E71CD2132800036163 /* JFCategoryButton.swift */; };
 		B209534C1CD2132800036163 /* JFProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952E81CD2132800036163 /* JFProgressView.swift */; };
@@ -23,7 +23,6 @@
 		B209534E1CD2132800036163 /* JFNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952EC1CD2132800036163 /* JFNavigationController.swift */; };
 		B209534F1CD2132800036163 /* JFBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952EF1CD2132800036163 /* JFBaseTableViewController.swift */; };
 		B20953511CD2132800036163 /* JFProfileFeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952F11CD2132800036163 /* JFProfileFeedbackViewController.swift */; };
-		B20953531CD2132800036163 /* JFProfileStarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952F31CD2132800036163 /* JFProfileStarViewController.swift */; };
 		B20953541CD2132800036163 /* JFProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952F41CD2132800036163 /* JFProfileTableViewController.swift */; };
 		B20953561CD2132800036163 /* JFSettingCellArrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952F81CD2132800036163 /* JFSettingCellArrow.swift */; };
 		B20953571CD2132800036163 /* JFSettingCellLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B20952F91CD2132800036163 /* JFSettingCellLabel.swift */; };
@@ -83,15 +82,15 @@
 		8F3A1C8C1A7668E40465CAFE /* Pods-JianSanWallpaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JianSanWallpaper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JianSanWallpaper/Pods-JianSanWallpaper.debug.xcconfig"; sourceTree = "<group>"; };
 		9A8025C3C974F1C07803F61A /* Pods_JianSanWallpaper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JianSanWallpaper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A579010E1C62E31700B89DB7 /* JianSanWallpaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JianSanWallpaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B208325A1CD8442600E1C296 /* JFDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFDetailViewController.swift; sourceTree = "<group>"; };
+		B208325B1CD8442600E1C296 /* JFTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFTableViewController.swift; sourceTree = "<group>"; };
+		B208325F1CD8445200E1C296 /* JFWallPaperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFWallPaperModel.swift; sourceTree = "<group>"; };
 		B20952D61CD2132800036163 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B20952D91CD2132800036163 /* api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
 		B20952DA1CD2132800036163 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B20952DB1CD2132800036163 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		B20952DF1CD2132800036163 /* JFDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFDetailViewController.swift; sourceTree = "<group>"; };
 		B20952E01CD2132800036163 /* JFHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFHomeViewController.swift; sourceTree = "<group>"; };
-		B20952E11CD2132800036163 /* JFTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFTableViewController.swift; sourceTree = "<group>"; };
 		B20952E31CD2132800036163 /* JFCategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCategoryModel.swift; sourceTree = "<group>"; };
-		B20952E41CD2132800036163 /* JFWallPaperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFWallPaperModel.swift; sourceTree = "<group>"; };
 		B20952E61CD2132800036163 /* JFCategoriesMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCategoriesMenuView.swift; sourceTree = "<group>"; };
 		B20952E71CD2132800036163 /* JFCategoryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFCategoryButton.swift; sourceTree = "<group>"; };
 		B20952E81CD2132800036163 /* JFProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFProgressView.swift; sourceTree = "<group>"; };
@@ -99,7 +98,6 @@
 		B20952EC1CD2132800036163 /* JFNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFNavigationController.swift; sourceTree = "<group>"; };
 		B20952EF1CD2132800036163 /* JFBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFBaseTableViewController.swift; sourceTree = "<group>"; };
 		B20952F11CD2132800036163 /* JFProfileFeedbackViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFProfileFeedbackViewController.swift; sourceTree = "<group>"; };
-		B20952F31CD2132800036163 /* JFProfileStarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFProfileStarViewController.swift; sourceTree = "<group>"; };
 		B20952F41CD2132800036163 /* JFProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFProfileTableViewController.swift; sourceTree = "<group>"; };
 		B20952F81CD2132800036163 /* JFSettingCellArrow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFSettingCellArrow.swift; sourceTree = "<group>"; };
 		B20952F91CD2132800036163 /* JFSettingCellLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JFSettingCellLabel.swift; sourceTree = "<group>"; };
@@ -240,6 +238,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B208325E1CD8445200E1C296 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B208325F1CD8445200E1C296 /* JFWallPaperModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B20952D51CD2132800036163 /* JianSanWallpaper */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,9 +301,7 @@
 		B20952DE1CD2132800036163 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B20952DF1CD2132800036163 /* JFDetailViewController.swift */,
 				B20952E01CD2132800036163 /* JFHomeViewController.swift */,
-				B20952E11CD2132800036163 /* JFTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -306,7 +310,6 @@
 			isa = PBXGroup;
 			children = (
 				B20952E31CD2132800036163 /* JFCategoryModel.swift */,
-				B20952E41CD2132800036163 /* JFWallPaperModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 		B20952EA1CD2132800036163 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				B208325E1CD8445200E1C296 /* Model */,
 				B20952EB1CD2132800036163 /* Controller */,
 			);
 			path = Main;
@@ -334,6 +338,8 @@
 			isa = PBXGroup;
 			children = (
 				B20952EC1CD2132800036163 /* JFNavigationController.swift */,
+				B208325A1CD8442600E1C296 /* JFDetailViewController.swift */,
+				B208325B1CD8442600E1C296 /* JFTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -354,7 +360,6 @@
 				B20952EF1CD2132800036163 /* JFBaseTableViewController.swift */,
 				B20952F41CD2132800036163 /* JFProfileTableViewController.swift */,
 				B20952F11CD2132800036163 /* JFProfileFeedbackViewController.swift */,
-				B20952F31CD2132800036163 /* JFProfileStarViewController.swift */,
 				B2FE2FCF1CD31ADE0013FAEE /* JFDutyViewController.swift */,
 			);
 			path = Controller;
@@ -723,18 +728,19 @@
 				B20953481CD2132800036163 /* JFCategoryModel.swift in Sources */,
 				B20953571CD2132800036163 /* JFSettingCellLabel.swift in Sources */,
 				B209534D1CD2132800036163 /* JFTableViewCell.swift in Sources */,
+				B20832601CD8445200E1C296 /* JFWallPaperModel.swift in Sources */,
 				B209534E1CD2132800036163 /* JFNavigationController.swift in Sources */,
 				B20953511CD2132800036163 /* JFProfileFeedbackViewController.swift in Sources */,
 				B209534A1CD2132800036163 /* JFCategoriesMenuView.swift in Sources */,
+				B208325C1CD8442600E1C296 /* JFDetailViewController.swift in Sources */,
 				B2FE2FE81CD33F3B0013FAEE /* FMDatabaseQueue.m in Sources */,
 				B209535A1CD2132800036163 /* JFSettingGroup.swift in Sources */,
 				B209534F1CD2132800036163 /* JFBaseTableViewController.swift in Sources */,
 				B2FE2FD41CD33CE60013FAEE /* JFFMDBManager.swift in Sources */,
+				B208325D1CD8442600E1C296 /* JFTableViewController.swift in Sources */,
 				B209535B1CD2132800036163 /* JFSettingCell.swift in Sources */,
-				B20953491CD2132800036163 /* JFWallPaperModel.swift in Sources */,
 				B209535C1CD2132800036163 /* JFNetworkTools.swift in Sources */,
 				B2FE2FEA1CD33F3B0013FAEE /* FMResultSet.m in Sources */,
-				B20953451CD2132800036163 /* JFDetailViewController.swift in Sources */,
 				B20953561CD2132800036163 /* JFSettingCellArrow.swift in Sources */,
 				B209535E1CD2132800036163 /* JFContextSheet.swift in Sources */,
 				B20953441CD2132800036163 /* Common.swift in Sources */,
@@ -747,10 +753,8 @@
 				B20953541CD2132800036163 /* JFProfileTableViewController.swift in Sources */,
 				B209534C1CD2132800036163 /* JFProgressView.swift in Sources */,
 				B20953591CD2132800036163 /* JFSettingCellSwitch.swift in Sources */,
-				B20953531CD2132800036163 /* JFProfileStarViewController.swift in Sources */,
 				B20953581CD2132800036163 /* JFSettingCellModel.swift in Sources */,
 				B209535D1CD2132800036163 /* JFContextItem.swift in Sources */,
-				B20953471CD2132800036163 /* JFTableViewController.swift in Sources */,
 				B2FE2FE61CD33F3B0013FAEE /* FMDatabaseAdditionsVariadic.swift in Sources */,
 				B2FE2FE71CD33F3B0013FAEE /* FMDatabasePool.m in Sources */,
 			);

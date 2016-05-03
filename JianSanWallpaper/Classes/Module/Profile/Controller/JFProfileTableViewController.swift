@@ -29,8 +29,7 @@ class JFProfileTableViewController: JFBaseTableViewController {
         }
         let group1 = JFSettingGroup(cells: [group1CellModel1])
         
-        
-        let group2CellModel1 = JFSettingCellArrow(title: "我的收藏", icon: "setting_star_icon", destinationVc: JFProfileStarViewController.self)
+        let group2CellModel1 = JFSettingCellArrow(title: "我的收藏", icon: "setting_star_icon", destinationVc: JFTableViewController.self)
         let group2 = JFSettingGroup(cells: [group2CellModel1])
         
         let group3CellModel1 = JFSettingCellArrow(title: "意见反馈", icon: "setting_feedback_icon", destinationVc: JFProfileFeedbackViewController.self)

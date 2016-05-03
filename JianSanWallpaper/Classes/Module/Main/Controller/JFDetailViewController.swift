@@ -141,8 +141,12 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
             UIImageWriteToSavedPhotosAlbum(image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
             break
         case "收藏":
-            JFFMDBManager.sharedManager.insertStar(path!)
-            JFProgressHUD.showSuccessWithStatus("收藏成功")
+            if JFFMDBManager.sharedManager.checkIsExists(path!) {
+                JFProgressHUD.showInfoWithStatus("已经收藏过了")
+            } else {
+                JFFMDBManager.sharedManager.insertStar(path!)
+                JFProgressHUD.showSuccessWithStatus("收藏成功")
+            }
             break
         default:
             break

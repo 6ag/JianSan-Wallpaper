@@ -53,6 +53,36 @@ class JFFMDBManager: NSObject {
     }
     
     /**
+     检查是否存在
+     
+     - parameter path: 检查是否存在
+     
+     - returns: true 存在
+     */
+    func checkIsExists(path: String) -> Bool {
+        let sql = "SELECT * FROM \(tbName) WHERE path = \"\(path)\";"
+        
+        /// 是否存在
+        var isExists = false
+        
+        dbQueue.inDatabase { (db) in
+            do {
+                let result = try db.executeQuery(sql)
+                
+                if result.columnCount() == 0 {
+                    isExists = false
+                } else {
+                    isExists = true
+                }
+            } catch {
+                print("检测失败")
+            }
+        }
+        
+        return isExists
+    }
+    
+    /**
      插入收藏壁纸
      
      - parameter path:     收藏的壁纸路径
@@ -81,7 +111,7 @@ class JFFMDBManager: NSObject {
         
         let pre_count = (currentPage - 1) * onePageCount
         let oneCount = onePageCount
-        let sql = "SELECT * FROM \(tbName) LIMIT \(pre_count), \(oneCount);"
+        let sql = "SELECT * FROM \(tbName) ORDER BY id DESC LIMIT \(pre_count), \(oneCount);"
         
         dbQueue.inDatabase { (db) in
             do {
@@ -95,8 +125,7 @@ class JFFMDBManager: NSObject {
                         let id = result.intForColumn("id")
                         let path = result.stringForColumn("path")
                         
-                        datas.append(["id" : Int(id)])
-                        datas.append(["path" : path])
+                        datas.append(["id" : Int(id), "path" : path])
                     }
                     finished(result: datas)
                 }
@@ -113,8 +142,8 @@ class JFFMDBManager: NSObject {
      
      - parameter id: 本地数据库壁纸id
      */
-    func removeOneStarWallpaper(id: Int) -> Void {
-        let sql = "DELETE FROM \(tbName) WHERE id = \(id)"
+    func removeOneStarWallpaper(path: String) -> Void {
+        let sql = "DELETE FROM \(tbName) WHERE path = \"\(path)\""
         
         dbQueue.inDatabase { (db) in
             do {
@@ -139,6 +168,5 @@ class JFFMDBManager: NSObject {
             }
         }
     }
-    
     
 }
