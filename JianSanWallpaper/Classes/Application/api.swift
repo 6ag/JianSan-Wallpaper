@@ -16,3 +16,7 @@ let getWallpaper = "\(baseURL)getwallpaper.php"
 
 /// 意见反馈
 let commitFeebback = "\(baseURL)feedback.php"
+
+/// 检测壁纸保存状态
+let checkSaveState = "\(baseURL)fuck.php"
+

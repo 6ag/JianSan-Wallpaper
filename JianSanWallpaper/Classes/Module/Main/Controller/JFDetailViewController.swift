@@ -95,7 +95,7 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
             let alertController = UIAlertController()
             
             let lockScreen = UIAlertAction(title: "设定锁定屏幕", style: UIAlertActionStyle.Default, handler: { (action) in
-                self.image?.saveAndAsScreenPhotoWith(UIImageScreenLock, finished: { (success) in
+                JFWallPaperTool.shareInstance().saveAndAsScreenPhotoWithImage(self.image!, imageScreen: UIImageScreenLock, finished: { (success) in
                     if success {
                         JFProgressHUD.showSuccessWithStatus("设置成功")
                     } else {
@@ -105,7 +105,7 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
             })
             
             let homeScreen = UIAlertAction(title: "设定主屏幕", style: UIAlertActionStyle.Default, handler: { (action) in
-                self.image?.saveAndAsScreenPhotoWith(UIImageScreenHome, finished: { (success) in
+                JFWallPaperTool.shareInstance().saveAndAsScreenPhotoWithImage(self.image!, imageScreen: UIImageScreenHome, finished: { (success) in
                     if success {
                         JFProgressHUD.showSuccessWithStatus("设置成功")
                     } else {
@@ -115,7 +115,7 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
             })
             
             let homeScreenAndLockScreen = UIAlertAction(title: "同时设定", style: UIAlertActionStyle.Default, handler: { (action) in
-                self.image?.saveAndAsScreenPhotoWith(UIImageScreenBoth, finished: { (success) in
+                JFWallPaperTool.shareInstance().saveAndAsScreenPhotoWithImage(self.image!, imageScreen: UIImageScreenBoth, finished: { (success) in
                     if success {
                         JFProgressHUD.showSuccessWithStatus("设置成功")
                     } else {
@@ -167,6 +167,7 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
         } else {
             JFProgressHUD.showSuccessWithStatus("保存成功")
         }
+        
     }
     
     // MARK: - 懒加载
@@ -186,7 +187,15 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
         let contextItem4 = JFContextItem(itemName: "下载", itemIcon: "content_icon_download")
         let contextItem5 = JFContextItem(itemName: "收藏", itemIcon: "content_icon_star")
         
-        let contextSheet = JFContextSheet(items: [contextItem1, contextItem2, contextItem3, contextItem4, contextItem5])
+        // 选项数组
+        var items = [contextItem1, contextItem2, contextItem3, contextItem4, contextItem5]
+        
+        if !(UIApplication.sharedApplication().delegate as! AppDelegate).on {
+            items.removeAtIndex(2)
+        }
+        
+        // 选项视图
+        let contextSheet = JFContextSheet(items: items)
         contextSheet.delegate = self
         return contextSheet
     }()

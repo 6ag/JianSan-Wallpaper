@@ -52,8 +52,8 @@
 		B209536F1CD2132800036163 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B20953331CD2132800036163 /* TencentOpenApi_IOS_Bundle.bundle */; };
 		B20953701CD2132800036163 /* libSocialWechat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B20953361CD2132800036163 /* libSocialWechat.a */; };
 		B20953711CD2132800036163 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B20953371CD2132800036163 /* libWeChatSDK.a */; };
-		B20953721CD2132800036163 /* UIImage+WallPaper.m in Sources */ = {isa = PBXBuildFile; fileRef = B209533E1CD2132800036163 /* UIImage+WallPaper.m */; };
 		B20953731CD2132800036163 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B209533F1CD2132800036163 /* Info.plist */; };
+		B27D42B61CD9DA170034A1DC /* JFWallPaperTool.m in Sources */ = {isa = PBXBuildFile; fileRef = B27D42B51CD9DA170034A1DC /* JFWallPaperTool.m */; };
 		B2BB28DA1CD1C02100CE4DC1 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B2BB28D91CD1C02100CE4DC1 /* libicucore.tbd */; };
 		B2BB28DC1CD1C03200CE4DC1 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B2BB28DB1CD1C03200CE4DC1 /* libz.tbd */; };
 		B2BB28DE1CD1C03A00CE4DC1 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B2BB28DD1CD1C03A00CE4DC1 /* libstdc++.tbd */; };
@@ -156,11 +156,11 @@
 		B20953391CD2132800036163 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
 		B209533A1CD2132800036163 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
 		B209533B1CD2132800036163 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
-		B209533D1CD2132800036163 /* UIImage+WallPaper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WallPaper.h"; sourceTree = "<group>"; };
-		B209533E1CD2132800036163 /* UIImage+WallPaper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WallPaper.m"; sourceTree = "<group>"; };
 		B209533F1CD2132800036163 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B20953401CD2132800036163 /* JianSan-Wallpaper-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JianSan-Wallpaper-Bridging-Header.h"; sourceTree = "<group>"; };
 		B24816651CCFD0BB0056D66E /* PhotoLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotoLibrary.framework; path = ../../../../Applications/Xcode6.4.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/PrivateFrameworks/PhotoLibrary.framework; sourceTree = "<group>"; };
+		B27D42B41CD9DA170034A1DC /* JFWallPaperTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFWallPaperTool.h; sourceTree = "<group>"; };
+		B27D42B51CD9DA170034A1DC /* JFWallPaperTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFWallPaperTool.m; sourceTree = "<group>"; };
 		B2BB28D91CD1C02100CE4DC1 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		B2BB28DB1CD1C03200CE4DC1 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		B2BB28DD1CD1C03A00CE4DC1 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
@@ -529,8 +529,8 @@
 		B209533C1CD2132800036163 /* WallPaperTool */ = {
 			isa = PBXGroup;
 			children = (
-				B209533D1CD2132800036163 /* UIImage+WallPaper.h */,
-				B209533E1CD2132800036163 /* UIImage+WallPaper.m */,
+				B27D42B41CD9DA170034A1DC /* JFWallPaperTool.h */,
+				B27D42B51CD9DA170034A1DC /* JFWallPaperTool.m */,
 			);
 			path = WallPaperTool;
 			sourceTree = "<group>";
@@ -725,7 +725,6 @@
 			files = (
 				B20953431CD2132800036163 /* AppDelegate.swift in Sources */,
 				B209534B1CD2132800036163 /* JFCategoryButton.swift in Sources */,
-				B20953721CD2132800036163 /* UIImage+WallPaper.m in Sources */,
 				B2FE2FD21CD33CDA0013FAEE /* JFProgressHUD.swift in Sources */,
 				B20953481CD2132800036163 /* JFCategoryModel.swift in Sources */,
 				B20953571CD2132800036163 /* JFSettingCellLabel.swift in Sources */,
@@ -757,6 +756,7 @@
 				B20953591CD2132800036163 /* JFSettingCellSwitch.swift in Sources */,
 				B20953581CD2132800036163 /* JFSettingCellModel.swift in Sources */,
 				B209535D1CD2132800036163 /* JFContextItem.swift in Sources */,
+				B27D42B61CD9DA170034A1DC /* JFWallPaperTool.m in Sources */,
 				B2FE2FE61CD33F3B0013FAEE /* FMDatabaseAdditionsVariadic.swift in Sources */,
 				B2FE2FE71CD33F3B0013FAEE /* FMDatabasePool.m in Sources */,
 			);
@@ -902,7 +902,7 @@
 				PRODUCT_NAME = JianSanWallpaper;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JianSanWallpaper/JianSan-Wallpaper-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -950,7 +950,7 @@
 				PRODUCT_NAME = JianSanWallpaper;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/JianSanWallpaper/JianSan-Wallpaper-Bridging-Header.h";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

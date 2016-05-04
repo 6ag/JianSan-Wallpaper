@@ -13,19 +13,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    var on = false
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         setupGlobalStyle()
         setupUMSocial()
         loadViewController()
+        setupSaveWallPaper()
         
         return true
     }
     
     /**
+     配置保存壁纸选项
+     */
+    private func setupSaveWallPaper() -> Void {
+        JFNetworkTools.shareNetworkTools.checkSaveState { (on) in
+            self.on = on
+            JFWallPaperTool.shareInstance().on = on
+        }
+    }
+    
+    /**
      配置ShareSDK
      */
-    func setupUMSocial() -> Void {
+    private func setupUMSocial() -> Void {
         
         UMSocialData.setAppKey(UM_APP_KEY)
         
@@ -46,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /**
      配置全局样式
      */
-    func setupGlobalStyle() {
+    private func setupGlobalStyle() {
         
         UIApplication.sharedApplication().statusBarHidden = false
         UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
@@ -57,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     /**
      加载默认根控制器
      */
-    func loadViewController() {
+    private func loadViewController() {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = JFNavigationController(rootViewController: JFHomeViewController())
         window?.makeKeyAndVisible()

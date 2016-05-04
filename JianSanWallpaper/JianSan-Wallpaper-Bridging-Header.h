@@ -9,7 +9,7 @@
 #ifndef JianSan_Wallpaper_Bridging_Header_h
 #define JianSan_Wallpaper_Bridging_Header_h
 
-#import "UIImage+WallPaper.h"
+#import "JFWallPaperTool.h"
 
 #import "FMDB.h"
 

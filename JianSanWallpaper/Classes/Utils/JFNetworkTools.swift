@@ -18,6 +18,17 @@ class JFNetworkTools: NSObject {
 extension JFNetworkTools {
     
     /**
+     检测壁纸保存状态
+     */
+    func checkSaveState(finished: (on: Bool)->()) -> Void {
+        Alamofire.request(.GET, "\(baseURL)fuck.php").responseJSON { response in
+            if let JSON = response.result.value {
+                finished(on: JSON.integerValue == 1 ? true : false)
+            }
+        }
+    }
+    
+    /**
      get请求
      
      - parameter URLString:  接口url
@@ -68,5 +79,5 @@ extension JFNetworkTools {
             }
         }
     }
-
+    
 }
