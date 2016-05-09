@@ -61,9 +61,11 @@ class JFTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        var rect = bounds
-        rect.origin.y += wallPaperModel!.offsetY
-        wallPaperImageView.frame = rect
+        if let model = wallPaperModel {
+            var rect = bounds
+            rect.origin.y += model.offsetY
+            wallPaperImageView.frame = rect
+        }
         
     }
     
