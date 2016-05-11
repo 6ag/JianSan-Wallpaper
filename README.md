@@ -2,6 +2,8 @@
 
 采用swift编写的一个壁纸类app，PHP后台源码地址: [源码地址](https://github.com/6ag/JianSan-Wallpaper-php) 。项目持续更新完善中，如果您有啥建议请提交 `issues` 给我。
 
+本应用已经上架: [AppStore地址](https://itunes.apple.com/cn/app/id1110293594)
+
 #### 控制器切换
 
 ![image](https://github.com/6ag/JianSan-Wallpaper/blob/master/1.gif)
