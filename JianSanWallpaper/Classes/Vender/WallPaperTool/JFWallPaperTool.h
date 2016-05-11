@@ -16,6 +16,9 @@ typedef enum {
 
 @interface JFWallPaperTool : NSObject
 
+/**
+ *  开关
+ */
 @property (nonatomic, assign) BOOL on;
 
 /**

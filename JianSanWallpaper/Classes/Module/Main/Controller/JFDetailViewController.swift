@@ -93,7 +93,7 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
             break
         case "设定":
             let alertController = UIAlertController()
-            
+
             let lockScreen = UIAlertAction(title: "设定锁定屏幕", style: UIAlertActionStyle.Default, handler: { (action) in
                 JFWallPaperTool.shareInstance().saveAndAsScreenPhotoWithImage(self.image!, imageScreen: UIImageScreenLock, finished: { (success) in
                     if success {
@@ -103,7 +103,7 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
                     }
                 })
             })
-            
+
             let homeScreen = UIAlertAction(title: "设定主屏幕", style: UIAlertActionStyle.Default, handler: { (action) in
                 JFWallPaperTool.shareInstance().saveAndAsScreenPhotoWithImage(self.image!, imageScreen: UIImageScreenHome, finished: { (success) in
                     if success {
@@ -113,7 +113,7 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
                     }
                 })
             })
-            
+
             let homeScreenAndLockScreen = UIAlertAction(title: "同时设定", style: UIAlertActionStyle.Default, handler: { (action) in
                 JFWallPaperTool.shareInstance().saveAndAsScreenPhotoWithImage(self.image!, imageScreen: UIImageScreenBoth, finished: { (success) in
                     if success {
@@ -123,22 +123,22 @@ class JFDetailViewController: UIViewController, JFContextSheetDelegate {
                     }
                 })
             })
-            
+
             let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: { (action) in
                 
             })
-            
+
             // 添加动作
             alertController.addAction(lockScreen)
             alertController.addAction(homeScreen)
             alertController.addAction(homeScreenAndLockScreen)
             alertController.addAction(cancel)
-            
+
             // 弹出选项
             presentViewController(alertController, animated: true, completion: {
                 
             })
-            
+
             break
         case "下载":
             UIImageWriteToSavedPhotosAlbum(image!, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)

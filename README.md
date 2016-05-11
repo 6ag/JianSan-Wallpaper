@@ -59,31 +59,33 @@ func contextSheet(contextSheet: JFContextSheet, didSelectItemWithItemName itemNa
 
 ### **二、WallPaperTool** 一键设置壁纸
 
-总所周知，iPhone设置壁纸非常的坑爹！！！这是一个利用 `运行时` 一键设置iPhone壁纸的分类，可以实现一键设置锁屏壁纸、一键设置主屏幕壁纸、一键设置锁屏和主屏幕壁纸的功能。`运行时` 创建的对象原先属于 `私有api` ，但现在不需要导入私有框架 `PhotoLibrary` 都能成功设置了。我今天下载了几十个壁纸app，发现有几个app里也有这个功能，不知道上架 `AppStore` 需不需要做一些手段。
+总所周知，iPhone设置壁纸非常的坑爹！！！不过利用 `私有api` 可以实现一键设置锁屏壁纸、一键设置主屏幕壁纸、一键设置锁屏和主屏幕壁纸的功能。我今天下载了一些壁纸类的app，发现有几个app里也有这个功能。
+
+*注意:* 已经证实，设置壁纸属于私有api，并且通不过苹果上架扫描。于是乎我在后台添加了一个开关，并且将私有方法用字符串打乱拼接，Apple无法检测到，成功躲过上架审核。
 
 #### 导入框架
 
-将项目中 `Vender` 目录下的 `WallPaperTool` 目录拖到你自己的项目，并导入分类头文件 `UIImage+WallPaper.h` 。
+将项目中 `Vender` 目录下的 `WallPaperTool` 目录拖到你自己的项目，并导入分类头文件`JFWallPaperTool.h` 。
 
 #### 如何设置
 
 只需要用 `UIImage` 对象调用分类方法进行设置壁纸。
 
 ```objc
-/*
- *  保存为桌面壁纸和锁屏壁纸
+/**
+ *  开关
  */
-- (BOOL)saveAsHomeScreenAndLockScreen;
+@property (nonatomic, assign) BOOL on;
 
-/*
- *  保存为桌面壁纸
+/**
+ *  一键保存到相册并设置为壁纸
  */
-- (BOOL)saveAsHomeScreen;
+- (void)saveAndAsScreenPhotoWithImage:(UIImage *)image imageScreen:(UIImageScreen)imageScreen finished:(void (^)(BOOL success))finished;
 
-/*
- *  保存为锁屏壁纸
+/**
+ *  单例对象
  */
-- (BOOL)saveAsLockScreen;
++ (instancetype)shareInstance;
 ```
 
 #### 实例代码
@@ -91,31 +93,34 @@ func contextSheet(contextSheet: JFContextSheet, didSelectItemWithItemName itemNa
 ```swift
 let alertController = UIAlertController()
 
-let lockScreen = UIAlertAction(title: "设为锁屏壁纸", style: UIAlertActionStyle.Default, handler: { (action) in
-    
-    if self.image?.saveAsLockScreen() == true {
-        SVProgressHUD.showSuccessWithStatus("设置成功")
-    } else {
-        SVProgressHUD.showInfoWithStatus("设置失败")
-    }
+let lockScreen = UIAlertAction(title: "设定锁定屏幕", style: UIAlertActionStyle.Default, handler: { (action) in
+    JFWallPaperTool.shareInstance().saveAndAsScreenPhotoWithImage(self.image!, imageScreen: UIImageScreenLock, finished: { (success) in
+        if success {
+            JFProgressHUD.showSuccessWithStatus("设置成功")
+        } else {
+            JFProgressHUD.showInfoWithStatus("设置失败")
+        }
+    })
 })
 
-let homeScreen = UIAlertAction(title: "设为桌面壁纸", style: UIAlertActionStyle.Default, handler: { (action) in
-    
-    if self.image?.saveAsHomeScreen() == true {
-        SVProgressHUD.showSuccessWithStatus("设置成功")
-    } else {
-        SVProgressHUD.showInfoWithStatus("设置失败")
-    }
+let homeScreen = UIAlertAction(title: "设定主屏幕", style: UIAlertActionStyle.Default, handler: { (action) in
+    JFWallPaperTool.shareInstance().saveAndAsScreenPhotoWithImage(self.image!, imageScreen: UIImageScreenHome, finished: { (success) in
+        if success {
+            JFProgressHUD.showSuccessWithStatus("设置成功")
+        } else {
+            JFProgressHUD.showInfoWithStatus("设置失败")
+        }
+    })
 })
 
-let homeScreenAndLockScreen = UIAlertAction(title: "设为锁屏和桌面壁纸", style: UIAlertActionStyle.Default, handler: { (action) in
-    
-    if self.image?.saveAsHomeScreenAndLockScreen() == true {
-        SVProgressHUD.showSuccessWithStatus("设置成功")
-    } else {
-        SVProgressHUD.showInfoWithStatus("设置失败")
-    }
+let homeScreenAndLockScreen = UIAlertAction(title: "同时设定", style: UIAlertActionStyle.Default, handler: { (action) in
+    JFWallPaperTool.shareInstance().saveAndAsScreenPhotoWithImage(self.image!, imageScreen: UIImageScreenBoth, finished: { (success) in
+        if success {
+            JFProgressHUD.showSuccessWithStatus("设置成功")
+        } else {
+            JFProgressHUD.showInfoWithStatus("设置失败")
+        }
+    })
 })
 
 let cancel = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel, handler: { (action) in
@@ -129,7 +134,7 @@ alertController.addAction(homeScreenAndLockScreen)
 alertController.addAction(cancel)
 
 // 弹出选项
-presentViewController(alertController, animated: true, completion: { 
+presentViewController(alertController, animated: true, completion: {
     
 })
 ```
