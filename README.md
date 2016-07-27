@@ -4,9 +4,9 @@
 
 ## 提示
 
-这个项目已经不更新，新版本仓库地址 [剑三壁纸库](https://github.com/6ag/jiansan-swift) 。
-这个项目已经不更新，新版本仓库地址 [剑三壁纸库](https://github.com/6ag/jiansan-swift) 。
-这个项目已经不更新，新版本仓库地址 [剑三壁纸库](https://github.com/6ag/jiansan-swift) 。
+这个项目已经不更新，新版本仓库地址 [剑三壁纸库](https://github.com/6ag/jiansan-swift) 。   
+这个项目已经不更新，新版本仓库地址 [剑三壁纸库](https://github.com/6ag/jiansan-swift) 。   
+这个项目已经不更新，新版本仓库地址 [剑三壁纸库](https://github.com/6ag/jiansan-swift) 。   
 
 ### AppStore
 
