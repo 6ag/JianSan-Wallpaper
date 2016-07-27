@@ -2,6 +2,12 @@
 
 采用swift编写的一个壁纸类app，PHP后台源码地址: [源码地址](https://github.com/6ag/JianSan-Wallpaper-php) 。项目持续更新完善中，如果您有啥建议请提交 `issues` 给我。
 
+## 提示
+
+这个项目已经不更新，新版本仓库地址 [剑三壁纸库](https://github.com/6ag/jiansan-swift) 。
+这个项目已经不更新，新版本仓库地址 [剑三壁纸库](https://github.com/6ag/jiansan-swift) 。
+这个项目已经不更新，新版本仓库地址 [剑三壁纸库](https://github.com/6ag/jiansan-swift) 。
+
 ### AppStore
 
 <a target='_blank' href='https://itunes.apple.com/app/id1110293594'>
